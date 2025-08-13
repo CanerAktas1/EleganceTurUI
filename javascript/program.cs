@@ -15,7 +15,6 @@ public class GenerateTask{
     public string UserName {get;set;}
     public DateTime BirthDate {get;set;}
     public Tour FavoritedTours {get;set;}
-
 }
 
 public class HomeController:Controller{
@@ -46,6 +45,7 @@ public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
     await _context.SaveChangesAsync();
   }
 }
+
 
 public class TourReceiverDto{
     public Guid Id {get; set; }

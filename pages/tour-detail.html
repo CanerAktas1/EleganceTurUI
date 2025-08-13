@@ -2,9 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegance Tur | Yurtiçi ve Yurtdışı Turlar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
     <!-- ! SITE CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -21,7 +24,38 @@
 
     <!-- ! BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+
     <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?travel,nature') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .register-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            max-width: 40%;
+            width: 100%;
+        }
+
+        .form-label {
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #0066cc;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #005bb5;
+        }
+
         .dropdown-mega {
             display: none;
             position: absolute;
@@ -39,6 +73,22 @@
 
         .nav-item.dropdown:hover .dropdown-mega {
             display: block;
+        }
+
+        .fixed-carousel {
+            height: 50vh;
+            overflow: hidden;
+        }
+
+        .fixed-carousel .carousel-inner,
+        .fixed-carousel .carousel-item {
+            height: 100%;
+        }
+
+        .fixed-carousel .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
         }
 
         /* Hide mega menu inside offcanvas (mobile) */
@@ -85,39 +135,27 @@
                 padding: 0 !important;
             }
 
-            .navbar-brand{
+            .navbar-brand {
                 margin: 0;
             }
         }
     </style>
-
 </head>
 
 <body>
 
     <div class="main-header">
-        <div class="header-top py-2">
-            <div class="container-fluid px-5">
-                <div class="row align-items-center">
-                    <!-- Left Side: Contact Info -->
-                    <div class="col-md-6 col-12 text-center text-md-start">
-                        <p class="mb-0 contact-info ">
-                            <i class="fas fa-phone-alt me-2 text-white"></i>+90 212 452 52 52
-                            <span class="mx-2">/</span>
-                            <i class="fas fa-envelope me-2 text-white"></i>operation@elegancetur.com
-                        </p>
-                    </div>
-                    <!-- Right Side: Login/Register -->
-                    <div class="col-md-6 col-12 text-center text-md-end mt-2 mt-md-0">
-                        <a href="#" class="login-register-buttons me-3">Giriş Yap</a>
-                        <a href="#" class="login-register-buttons">Kayıt Ol</a>
-                    </div>
+        <div class="header-top ">
+            <div class="container d-flex justify-content-between ">
+                <p class="text-white mt-3">+90 212 452 52 52</p>
+                <!-- <a href="#" class="login-register-buttons">Giriş Yap</a> -->
+                <div class="mt-3">
+                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Giriş Yap</a>
+                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
                 </div>
             </div>
         </div>
     </div>
-
-
     <header class="header-bot">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 pe-5">
@@ -458,6 +496,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <ul class="list-unstyled m-0">
                     <li>
                         <button
@@ -515,81 +554,139 @@
                 </ul>
             </div>
         </div>
-
     </header>
 
+    <main>
+        <div id="carouselExampleControlsNoTouching" class="carousel slide position-relative fixed-carousel mb-3"
+            data-bs-ride="carousel">
 
-    <div class="container-fluid my-5 contact-container" style="width: 80%;">
-        <div class="row">
-
-            <aside class="col-lg-3 mb-4">
-                <div class="list-group ">
-                    <a href="/pages/terms-of-use.html" class="list-group-item list-group-item-action ">
-                        <i class="fas fa-file-alt me-2"></i> Kullanım Şartları
-                    </a>
-                    <a href="/pages/return-policy.html" class="list-group-item list-group-item-action">
-                        <i class="fas fa-undo policy-icon"></i>
-                        İade Koşulları
-                    </a>
-                    <a href="/pages/privacy.html" class="list-group-item list-group-item-action">
-                        <i class="fas fa-shield-virus me-2"></i> KVKK Aydınlatma Metni Ve Gizlilik Politikası
-                    </a>
-                    <a href="#sorumluluk" class="list-group-item list-group-item-action bg-info text-white">
-                        <i class="fas fa-circle-exclamation me-2"></i> İletişim
-                    </a>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/mavi yolculuk slider çalışması (1).png" class="d-block w-100" alt="...">
                 </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="col-lg-9 col-md-12">
-                <div class="bg-white p-4 shadow rounded">
-                    <h3>İletişim</h3>
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.5961720684136!2d28.935955776450356!3d41.01221121918196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba305293de47%3A0x912f8b355b509369!2sElegance%20Tur!5e0!3m2!1str!2str!4v1754918641788!5m2!1str!2str"
-                        height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="carousel-item">
+                    <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="d-block w-100" alt="...">
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="card mt-3 ">
-                            <h2 class="bg-info text-white px-3 py-1">İletişim Bilgilerimiz</h2>
-                            <div class="card-body p-4">
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-geo-alt"></i> Şehremini Mah. Turgut Özal Caddesi No:73
-                                        Daire:8 Fatih / İSTANBUL</li>
-                                    <li><i class="bi bi-envelope"></i> info@elegancetur.com</li>
-                                    <li><i class="bi bi-phone"></i> 0 212 588 00 30</li>
-                                    <li><i class="fa-solid fa-fax"></i> 0 212 588 00 61 (Fax)</li>
-                                    <li><i class="bi bi-whatsapp"></i> whatsapp</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="card mt-3 ">
-                            <h3 class="bg-info text-white px-3 py-1">Çalışma Saatleri</h3>
-                            <table class="table table-hover table-borderless">
-                                <tr>
-                                    <td>Pazartesi - Cumartesi:</td>
-                                    <td>09.00-19.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Pazar:</td>
-                                    <td>Kapalı</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                <div class="carousel-item">
+                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" class="d-block w-100"
+                        alt="...">
                 </div>
-            </main>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
-    </div>
+        <div class="container">
+            <div class="row column-gap-lg-5 mb-4">
+                <div class="col-12 col-xl-7 mb-xl-0 mb-4 shadow rounded">
+                    <div class="tour-title-container">
+                        <div class="card p-4 border-0">
+                            <h3 class="fw-bold">YUNANİSTAN İNCİLERİ TURU</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="card mt-2 border-0">
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-geo-alt-fill"></i> İstanbul Çıkışlı</li>
+                            <li class="mb-2"><i class="bi bi-moon"></i> 5 gece 6 gün</li>
+                            <li class="mb-2"><i class="bi bi-calendar3"></i> 19 Ağustos 2025 - 16 Aralık 2025</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <ul class="nav column-gap-5" role="tablist">
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab1"
+                        aria-selected="true" role="tab"><i class="icon icon-calendar-plus"></i> Rezervasyon</a></li>
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab2" aria-selected="false"
+                        role="tab" class="" tabindex="-1"><i class="icon icon-map"></i> Tur Programı</a></li>
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab3" aria-selected="false"
+                        role="tab" class="" tabindex="-1"><i class="icon icon-weekly-calendar"></i> Fiyatlar &amp;
+                        Tarihler</a></li>
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab4" aria-selected="false"
+                        role="tab" class="" tabindex="-1"><i class="icon icon-question"></i> Genel Şartlar</a></li>
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab5" aria-selected="false"
+                        tabindex="-1" role="tab"><i class="icon icon-credit-card"></i> Fiyata Dahil Olan &amp;
+                        Olmayan</a></li>
+                <li><a href="javascript:void(0);" class="active text-decoration-none text-black" data-bs-toggle="tab" data-bs-target="#tab6" aria-selected="false"
+                        tabindex="-1" role="tab"><i class="icon icon-visa-1"></i> Vize İşlemleri</a></li>
+            </ul> -->
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Rezervasyon</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Tur Programı</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Fiyatlar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled"
+                        aria-selected="false">Genel Şartlar</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-pricings" type="button" role="tab" aria-controls="pills-pricings"
+                        aria-selected="false">Fiyata Dahil Olan</button>
+                </li>
+            </ul>
 
 
-    <!-- ! FOOTER START-->
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <table class="table table-responsive table-bordered table-striped table-hover">
+                        <tr>
+                            <th>Otel ve Kategori Adı</th>
+                            <th>İki Kişilik Oda Kişi Başı</th>
+                            <th>Tek Kişilik Oda Fiyat Farkı	</th>
+                            <th>İlave Yatak </th>
+                            <th>(2 - 12 Yaş)</th>
+                            <th>(0 - 2 Yaş)</th>
+                        </tr>
+                        <tr>
+                            <td>MIAMI & ORLANDO TURU KIYI ROTALARI - TÜRK HAVA YOLLARI ILE 6 GECE
+                                2 & 3 Yıldızlı Uzak Oteller / Oda + Kahvaltı </td>
+                                <td>1,699.00 €	</td>
+                                <td>1,000.00 €	</td>
+                                <td>1,699.00 €	</td>
+                                <td>999.00 € </td>
+                                <td>599.00 € </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">..2.</div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">..3.</div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
+                    tabindex="0">..4.</div>
+                <div class="tab-pane fade" id="pills-pricings" role="tabpanel" aria-labelledby="pills-pricings-tab"
+                    tabindex="0">..5.</div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ! FOOTER START -->
     <footer class="footer pt-5">
         <div class="container text-dark mt-5">
             <div class="row">
@@ -693,21 +790,43 @@
         </div>
     </footer>
 
-    <!-- ! FOOTER END-->
-
-
-
-
 
     <!-- ? BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
-
     <!-- ? SITE JS -->
     <!-- <script src="/javascript/script.js"></script> -->
 
+
+    <!-- ? DATA AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <!-- ! DATA AOS SCRIPT -->
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: url,
+            data: JSON.stringify(url),
+            error: function (response) {
+                alert("");
+            },
+            success: function (response) {
+                if (response == null) {
+                    console.log("response is null");
+                }
+                return response;
+            }
+
+        });
+    </script>
 </body>
 
 </html>
