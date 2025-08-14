@@ -95,6 +95,7 @@ public class BmdCalculator{
        return RedirectToAction("Login");
     else
     {
+        
         Microsoft.AspNetCore.Identity.SignInResult loginResult = await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
         
         if (loginResult.Succeeded)
@@ -108,6 +109,10 @@ public class BmdCalculator{
             };
             
             IdentityResult createResult = await _userManager.CreateAsync(user);
+
+            if(createResult == null){
+                throw new Exception("User can not created");
+            }
             
             if (createResult.Succeeded)
             {

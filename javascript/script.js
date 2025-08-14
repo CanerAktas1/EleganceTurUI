@@ -116,13 +116,13 @@ class Node {
     }
 }
 
-class BinaryNode{
+class BinaryNode {
 
     constructor() {
         let inputBox = document.createElement("input")
-        inputBox.setAttribute("type","text");
+        inputBox.setAttribute("type", "text");
         let userPrompt = inputBox.value;
-        
+
     }
 }
 
@@ -140,7 +140,7 @@ class BinarySearchTree {
         }
 
         let current = this.root;
-        
+
         while (true) {
             if (value === current.value) return undefined;
             if (value < current.value) {
@@ -198,4 +198,5 @@ bst.insert(7);
 console.log("BST In-order traversal:", bst.inOrderTraversal());
 console.log("Search for 7:", bst.search(7));
 console.log("Search for 9:", bst.search(9));
+
 
