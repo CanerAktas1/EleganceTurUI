@@ -1,0 +1,11 @@
+public class RoomViewModel
+{
+    public int Adults { get; set; }
+    public int Kids { get; set; }
+    public List<int> KidAges { get; set; }
+}
+
+public class BookingViewModel
+{
+    public List<RoomViewModel> Rooms { get; set; }
+}

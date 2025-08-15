@@ -6,6 +6,7 @@ public class BmdCalculator{
         public double ServiceStartTime { get; set; }
         public double ServiceDuration { get; set; }
         public double DepartureTime => ServiceStartTime + ServiceDuration;
+        public string[] Cities {get; set; }= new [];
     }
 
     public class CenterSimulator{
@@ -80,59 +81,61 @@ public class BmdCalculator{
         else if(DateTime customer.arrivalTime > DateTime.Now){
             for(int i = 0; i<=customer.DepartureTime;i++){
                 switch(DateTime.Now - customer.ArrivalTime){
-
+                    
                 }
             }
         }
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> ExternalResponse(string ReturnUrl = "/")
- {
-    ExternalLoginInfo loginInfo = await _signInManager.GetExternalLoginInfoAsync();
-    //Kullanıcıyla ilgili dış kaynaktan gelen tüm bilgileri taşıyan nesnedir.
-    //Bu nesnesnin 'LoginProvider' propertysinin değerine göz atarsanız eğer hangi dış kaynaktan geliniyorsa onun bilgisinin yazdığını göreceksiniz.
-    if (loginInfo == null)
-       return RedirectToAction("Login");
-    else
     {
-        
-        Microsoft.AspNetCore.Identity.SignInResult loginResult = await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
-        
-        if (loginResult.Succeeded)
-            return Redirect(ReturnUrl);
+        ExternalLoginInfo loginInfo = await _signInManager.GetExternalLoginInfoAsync();
+        //Kullanıcıyla ilgili dış kaynaktan gelen tüm bilgileri taşıyan nesnedir.
+        //Bu nesnesnin 'LoginProvider' propertysinin değerine göz atarsanız eğer hangi dış kaynaktan geliniyorsa onun bilgisinin yazdığını göreceksiniz.
+        if (loginInfo == null)
+        return RedirectToAction("Login");
         else
         {
-            AppUser user = new AppUser
-            {
-                Email = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value,
-                UserName = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value
-            };
+            Microsoft.AspNetCore.Identity.SignInResult loginResult = await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
             
-            IdentityResult createResult = await _userManager.CreateAsync(user);
-
-            if(createResult == null){
-                throw new Exception("User can not created");
-            }
-            
-            if (createResult.Succeeded)
-            {
-                IdentityResult addLoginResult = await _userManager.AddLoginAsync(user, loginInfo);
-                
-                if (addLoginResult.Succeeded)
-                {
-                    await _signInManager.SignInAsync(user, true);
-                    //await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
-                    return Redirect(ReturnUrl);
-                }
-            }
+            if (loginResult.Succeeded)
+                return Redirect(ReturnUrl);
             else
             {
-                foreach(var error in addLoginResult.Errors){
-                    ModelState.AddModelError("",error);
+                AppUser user = new AppUser
+                {
+                    Email = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value,
+                    UserName = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value
+                };
+                
+                IdentityResult createResult = await _userManager.CreateAsync(user);
+
+                if(createResult == null){
+                    throw new Exception("User can not created");
+                }
+                
+                if (createResult.Succeeded)
+                {
+                    IdentityResult addLoginResult = await _userManager.AddLoginAsync(user, loginInfo);
+
+                    
+                    if (addLoginResult.Succeeded)
+                    {
+                        await _signInManager.SignInAsync(user, true);
+                        //await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
+                        return Redirect(ReturnUrl);
+                    }
+                }
+                else
+                {
+                    foreach(var error in addLoginResult.Errors){
+                        ModelState.AddModelError("",error);
+                    }
                 }
             }
         }
+        return Redirect(ReturnUrl);
     }
-    return Redirect(ReturnUrl);
- }
 }

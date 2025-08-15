@@ -745,22 +745,278 @@
     padding-left: 12px;
 }
 
-@media (max-width: 768px) {
-    .about-header h1 {
-        font-size: 2rem;
-    }
-}
-
-
-
 
 /* ! ABOUT END */
+
+
 
 /* ! CONTACT START */
 
 /* ! CONTACT END */
 
+/* ! TOUR DETAIL START */
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    max-width: 40%;
+    width: 100%;
+}
 
+.form-label {
+    font-weight: 600;
+}
+
+.btn-primary {
+    background-color: #0066cc;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #005bb5;
+}
+
+.dropdown-mega {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-item:hover {
+    color: #d12f2f;
+}
+
+.nav-item.dropdown:hover .dropdown-mega {
+    display: block;
+}
+
+.fixed-carousel {
+    height: 50vh;
+    overflow: hidden;
+}
+
+.fixed-carousel .carousel-inner,
+.fixed-carousel .carousel-item {
+    height: 100%;
+}
+
+.fixed-carousel .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-header,
+.card-footer {
+    background-color: #fff;
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.price-box {
+    background-color: #f8f9fa;
+    border-left: 5px solid #ffc107;
+}
+
+.checkmark {
+    color: green;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+    /* background-color: #0dcaf0 !important; */
+    /* color: #fff !important; */
+
+    color: #0dcaf0 !important;
+    border-bottom: 2px solid #0dcaf0 !important;
+    background: white !important;
+    border-radius: 0px !important;
+}
+
+.nice-select .list {
+    min-width: 100%;
+    width: 100%;
+    white-space: normal !important;
+}
+
+.nice-select .list li {
+    line-height: 25px;
+    align-content: center;
+}
+
+.nice-select .option {
+    white-space: normal !important;
+    white-space: unset !important;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    white-space: break-spaces;
+}
+
+.nice-select {
+    white-space: normal !important;
+    line-height: 1.5;
+}
+
+.nice-select-sm {
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+    height: 35px;
+    line-height: 32px;
+}
+
+
+/* PRICE INCLUDED EXCLUDED  AREA START */
+.services-section {
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+}
+
+.service-box {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.service-box h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #0d3b66;
+}
+
+.service-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-box li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.service-box i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.included i {
+    color: #28a745;
+}
+
+.excluded i {
+    color: #dc3545;
+}
+
+/* PRICE INCLUDED EXCLUDED AREA END */
+
+
+/* Hide mega menu inside offcanvas (mobile) */
+@media (max-width: 991px) {
+    .dropdown-mega {
+        display: none !important;
+    }
+
+    .responsive-logo {
+        padding: 0 !important;
+    }
+
+    .navbar {
+        padding: 0 !important;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .dropdown-mega {
+        display: none !important;
+    }
+
+    .responsive-logo {
+        padding: 0 !important;
+    }
+
+    .navbar {
+        padding: 5% !important;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .dropdown-mega {
+        display: none !important;
+    }
+
+    .responsive-logo {
+        padding: 0 !important;
+    }
+
+    .navbar {
+        padding: 0 !important;
+    }
+
+    .navbar-brand {
+        margin: 0 !important;
+    }
+}
+
+/* ! RESPONSIVE TABLE */
+@media (max-width: 768px) {
+    table thead {
+        display: none;
+    }
+
+    /* Make each row a block */
+    table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        padding: 1rem;
+        background: #fff;
+    }
+
+    /* Make each cell a flex container */
+    table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+        border-bottom: 1px solid #dee2e6;
+        font-size: 0.9rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    /* Remove border on last td */
+    table tbody td:last-child {
+        border-bottom: none;
+    }
+
+    /* Add label before each cell content */
+    table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: uppercase;
+        flex-basis: 50%;
+        color: #555;
+    }
+}
+
+/* ! TOUR DETAIL END */
 
 
 
@@ -770,6 +1026,10 @@
 @media (max-width: 768px) {
     .nav-list div {
         flex-direction: column !important;
+    }
+
+    .about-header h1 {
+        font-size: 2rem;
     }
 }
 
@@ -795,5 +1055,12 @@
     .contact-container {
         width: 100% !important;
         margin: 0 !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .search-area {
+        padding-bottom: 40px;
+        margin-bottom: 120px;
     }
 }

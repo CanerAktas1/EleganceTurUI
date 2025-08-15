@@ -81,122 +81,122 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-function bubbleSort(arr) {
-    let n = arr.length;
+// function bubbleSort(arr) {
+//     let n = arr.length;
 
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    return arr;
-}
-
-
-
-let array = [64, 34, 25, 12, 22, 11, 90];
-console.log("Original array:", array);
-console.log("Sorted array:", bubbleSort(array));
-
-
-// ! IMAGE GALLERY END
+//     for (let i = 0; i < n - 1; i++) {
+//         for (let j = 0; j < n - i - 1; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 let temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//             }
+//         }
+//     }
+//     return arr;
+// }
 
 
 
-// ! BINARY SEARCH TREE
-class Node {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
-}
+// let array = [64, 34, 25, 12, 22, 11, 90];
+// console.log("Original array:", array);
+// console.log("Sorted array:", bubbleSort(array));
 
-class BinaryNode {
 
-    constructor() {
-        let inputBox = document.createElement("input")
-        inputBox.setAttribute("type", "text");
-        let userPrompt = inputBox.value;
+// // ! IMAGE GALLERY END
 
-    }
-}
 
-class BinarySearchTree {
-    constructor() {
-        this.root = null;
-    }
 
-    insert(value) {
-        const newNode = new Node(value);
+// // ! BINARY SEARCH TREE
+// class Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.left = null;
+//         this.right = null;
+//     }
+// }
 
-        if (this.root === null) {
-            this.root = newNode;
-            return this;
-        }
+// class BinaryNode {
 
-        let current = this.root;
+//     constructor() {
+//         let inputBox = document.createElement("input")
+//         inputBox.setAttribute("type", "text");
+//         let userPrompt = inputBox.value;
 
-        while (true) {
-            if (value === current.value) return undefined;
-            if (value < current.value) {
-                if (current.left === null) {
-                    current.left = newNode;
-                    return this;
-                }
-                current = current.left;
-            } else {
-                if (current.right === null) {
-                    current.right = newNode;
-                    return this;
-                }
-                current = current.right;
-            }
-        }
-    }
+//     }
+// }
 
-    search(value) {
-        if (!this.root) return false;
+// class BinarySearchTree {
+//     constructor() {
+//         this.root = null;
+//     }
 
-        let current = this.root;
-        while (current) {
-            if (value === current.value) return true;
-            if (value < current.value) {
-                current = current.left;
-            } else {
-                current = current.right;
-            }
-        }
-        return false;
-    }
+//     insert(value) {
+//         const newNode = new Node(value);
 
-    inOrderTraversal() {
-        const result = [];
+//         if (this.root === null) {
+//             this.root = newNode;
+//             return this;
+//         }
 
-        function traverse(node) {
-            if (node.left) traverse(node.left);
-            result.push(node.value);
-            if (node.right) traverse(node.right);
-        }
+//         let current = this.root;
 
-        if (this.root) traverse(this.root);
-        return result;
-    }
-}
+//         while (true) {
+//             if (value === current.value) return undefined;
+//             if (value < current.value) {
+//                 if (current.left === null) {
+//                     current.left = newNode;
+//                     return this;
+//                 }
+//                 current = current.left;
+//             } else {
+//                 if (current.right === null) {
+//                     current.right = newNode;
+//                     return this;
+//                 }
+//                 current = current.right;
+//             }
+//         }
+//     }
 
-const bst = new BinarySearchTree();
-bst.insert(10);
-bst.insert(5);
-bst.insert(15);
-bst.insert(3);
-bst.insert(7);
+//     search(value) {
+//         if (!this.root) return false;
 
-console.log("BST In-order traversal:", bst.inOrderTraversal());
-console.log("Search for 7:", bst.search(7));
-console.log("Search for 9:", bst.search(9));
+//         let current = this.root;
+//         while (current) {
+//             if (value === current.value) return true;
+//             if (value < current.value) {
+//                 current = current.left;
+//             } else {
+//                 current = current.right;
+//             }
+//         }
+//         return false;
+//     }
+
+//     inOrderTraversal() {
+//         const result = [];
+
+//         function traverse(node) {
+//             if (node.left) traverse(node.left);
+//             result.push(node.value);
+//             if (node.right) traverse(node.right);
+//         }
+
+//         if (this.root) traverse(this.root);
+//         return result;
+//     }
+// }
+
+// const bst = new BinarySearchTree();
+// bst.insert(10);
+// bst.insert(5);
+// bst.insert(15);
+// bst.insert(3);
+// bst.insert(7);
+
+// console.log("BST In-order traversal:", bst.inOrderTraversal());
+// console.log("Search for 7:", bst.search(7));
+// console.log("Search for 9:", bst.search(9));
 
 
