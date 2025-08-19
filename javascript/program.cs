@@ -48,6 +48,9 @@ public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
 
 
 public class TourReceiverDto{
+  public TourReceiverDto(){
+    
+  }
     public Guid Id {get; set; }
     public string Name {get; set; }
     public List<Category> Category {get; set;} 

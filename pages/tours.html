@@ -498,17 +498,16 @@
             </div> -->
 
             <div class="col-lg-3 col-md-4 col-12 filter-wrapper border-0">
-                <div class="card p-3 border-0 filter-container">
-
+                <!--  DESKTOP FILTER (visible ≥ lg) -->
+                <div class="card p-3 border-0 filter-container d-none d-lg-block">
                     <h5 class="fw-bold mb-3">Sonuçları Filtrele</h5>
-
-                    <button class="btn  btn-danger btn-sm w-75  my-2">Filtreleri temizle</button>
+                    <button class="btn btn-danger btn-sm w-75 my-2">Filtreleri temizle</button>
 
                     <!-- Kalkış Yeri -->
                     <div class="mb-3">
                         <h6 class="text-muted">Kalkış Yeri</h6>
                         <div class="form-check">
-                            <input class="form-check-input filter-checkbox" type="checkbox" id="departure1">
+                            <input class="form-check-input" type="checkbox" id="departure1">
                             <label class="form-check-label" for="departure1">İstanbul Çıkışlı</label>
                         </div>
                         <div class="form-check">
@@ -524,70 +523,42 @@
                     <!-- Süre -->
                     <div class="mb-3">
                         <h6 class="text-muted">Süre</h6>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="duration1">
-                            <label class="form-check-label" for="duration1">3 Gün</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="duration2">
-                            <label class="form-check-label" for="duration2">4 Gün</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="duration3">
-                            <label class="form-check-label" for="duration3">5 Gün</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="duration4">
-                            <label class="form-check-label" for="duration4">6 Gün</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="duration5">
-                            <label class="form-check-label" for="duration5">7 Gün</label>
-                        </div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration1"><label
+                                class="form-check-label" for="duration1">3 Gün</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration2"><label
+                                class="form-check-label" for="duration2">4 Gün</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration3"><label
+                                class="form-check-label" for="duration3">5 Gün</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration4"><label
+                                class="form-check-label" for="duration4">6 Gün</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration5"><label
+                                class="form-check-label" for="duration5">7 Gün</label></div>
                     </div>
 
-                    <!-- Havayolu -->
+                    <!-- Ulaşım -->
                     <div class="mb-3">
                         <h6 class="text-muted">Ulaşım</h6>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="airline">
-                            <label class="form-check-label" for="airline">Uçak</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="bus">
-                            <label class="form-check-label" for="bus">Otobüs</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="ship">
-                            <label class="form-check-label" for="ship">Gemi</label>
-                        </div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport1"><label
+                                class="form-check-label" for="transport1">Uçak</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport2"><label
+                                class="form-check-label" for="transport2">Otobüs</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport3"><label
+                                class="form-check-label" for="transport3">Gemi</label></div>
                     </div>
 
                     <!-- Dönem -->
                     <div class="mb-3">
                         <h6 class="text-muted">Dönem</h6>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="date1">
-                            <label class="form-check-label" for="date1">Ağustos 2025</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="date2">
-                            <label class="form-check-label" for="date2">Eylül 2025</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="date3">
-                            <label class="form-check-label" for="date3">Ekim 2025</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="date4">
-                            <label class="form-check-label" for="date4">Kasım 2025</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="date5">
-                            <label class="form-check-label" for="date5">Aralık 2025</label>
-                        </div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date1"><label
+                                class="form-check-label" for="date1">Ağustos 2025</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date2"><label
+                                class="form-check-label" for="date2">Eylül 2025</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date3"><label
+                                class="form-check-label" for="date3">Ekim 2025</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date4"><label
+                                class="form-check-label" for="date4">Kasım 2025</label></div>
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date5"><label
+                                class="form-check-label" for="date5">Aralık 2025</label></div>
                     </div>
 
                     <!-- Fiyat Aralığı -->
@@ -598,9 +569,109 @@
                             <input type="number" class="form-control" placeholder="Max. Fiyat">
                         </div>
                     </div>
-                    <!-- Filter Button -->
+
                     <button class="btn btn-dark w-100 mt-2">Filtrele</button>
                 </div>
+
+                <!--  MOBILE FILTER ACCORDION (visible < lg) -->
+                <div class="accordion d-block d-lg-none mb-3" id="mobileFilterAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFilters">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters">
+                                Sonuçları Filtrele
+                            </button>
+                        </h2>
+                        <div id="collapseFilters" class="accordion-collapse collapse show"
+                            aria-labelledby="headingFilters" data-bs-parent="#mobileFilterAccordion">
+                            <div class="accordion-body">
+                                <button class="btn btn-danger btn-sm w-100 mb-3">Filtreleri temizle</button>
+
+                                <!-- Repeat filter sections (use different IDs to avoid conflict) -->
+
+                                <!-- Kalkış Yeri -->
+                                <div class="mb-3">
+                                    <h6 class="text-muted">Kalkış Yeri</h6>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-departure1"><label class="form-check-label"
+                                            for="m-departure1">İstanbul Çıkışlı</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-departure2"><label class="form-check-label" for="m-departure2">İzmir
+                                            Çıkışlı</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-departure3"><label class="form-check-label"
+                                            for="m-departure3">İstanbul Havalimanı</label></div>
+                                </div>
+
+                                <!-- Süre -->
+                                <div class="mb-3">
+                                    <h6 class="text-muted">Süre</h6>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-duration1"><label class="form-check-label" for="m-duration1">3
+                                            Gün</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-duration2"><label class="form-check-label" for="m-duration2">4
+                                            Gün</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-duration3"><label class="form-check-label" for="m-duration3">5
+                                            Gün</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-duration4"><label class="form-check-label" for="m-duration4">6
+                                            Gün</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-duration5"><label class="form-check-label" for="m-duration5">7
+                                            Gün</label></div>
+                                </div>
+
+                                <!-- Ulaşım -->
+                                <div class="mb-3">
+                                    <h6 class="text-muted">Ulaşım</h6>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-transport1"><label class="form-check-label"
+                                            for="m-transport1">Uçak</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-transport2"><label class="form-check-label"
+                                            for="m-transport2">Otobüs</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-transport3"><label class="form-check-label"
+                                            for="m-transport3">Gemi</label></div>
+                                </div>
+
+                                <!-- Dönem -->
+                                <div class="mb-3">
+                                    <h6 class="text-muted">Dönem</h6>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-date1"><label class="form-check-label" for="m-date1">Ağustos
+                                            2025</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-date2"><label class="form-check-label" for="m-date2">Eylül
+                                            2025</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-date3"><label class="form-check-label" for="m-date3">Ekim 2025</label>
+                                    </div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-date4"><label class="form-check-label" for="m-date4">Kasım
+                                            2025</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="checkbox"
+                                            id="m-date5"><label class="form-check-label" for="m-date5">Aralık
+                                            2025</label></div>
+                                </div>
+
+                                <!-- Fiyat Aralığı -->
+                                <div class="mb-3">
+                                    <h6 class="text-muted">Fiyat Aralığı</h6>
+                                    <div class="d-flex gap-2">
+                                        <input type="number" class="form-control" placeholder="Min. Fiyat">
+                                        <input type="number" class="form-control" placeholder="Max. Fiyat">
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-dark w-100 mt-2">Filtrele</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="col-xl-9 col-lg-12">

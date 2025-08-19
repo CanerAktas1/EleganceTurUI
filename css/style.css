@@ -659,6 +659,14 @@
     outline: none !important;
 }
 
+@media (max-width: 450px) {
+    .quick-filters-wrapper {
+        row-gap: 10px;
+        text-align: center;
+       flex-direction: column; 
+    }
+}
+
 /* ! FILTER SECTION END */
 
 
