@@ -41,7 +41,6 @@ function typeEffect() {
 typeEffect();
 
 
-
 // ! IMAGE GALLERY START
 document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById('carouselTrack');
@@ -71,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateTrack() {
         track.style.transform = `translateX(-${position * itemWidth}px)`;
     }
+
 
     // responsive section
     window.addEventListener('resize', () => {

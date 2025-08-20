@@ -21,13 +21,21 @@ public class HomeController:Controller{
   private readonly PropertyContext _context;
   private readonly IHttpClientFactory _client;
   private readonly IMapper _mapper;
-  public HomeController(PropertyContext context, IHttpClientFactory client, IMapper mapper){
+  private readonly IMemoryCache _memoryCache;
+
+  public HomeController(PropertyContext context, IHttpClientFactory client, IMapper mapper, IMemoryCache memorycache){
     _context = context;
     _client = client;
     _mapper = mapper;
+    _memoryCache = memorycache;
 }
 
 public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
+    if(!_memoryCache.TryGetValue(CacheKeys.Entry, out NewCachedValue)){
+        NewCachedValue.CachedTime = Datetime.Now;
+        _memoryCache.Set(CacheKeys.Entry, NewCachedValue);
+    }
+    
     var client = _client.CreateClient();
     var response = await client.GetAsync("");
     if(!response.IsSucceddedStatusCode()){
@@ -48,9 +56,9 @@ public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
 
 
 public class TourReceiverDto{
-  public TourReceiverDto(){
-    
-  }
+    public TourReceiverDto(){
+      
+    }
     public Guid Id {get; set; }
     public string Name {get; set; }
     public List<Category> Category {get; set;} 
@@ -58,4 +66,13 @@ public class TourReceiverDto{
     public DateTime StartDate {get; set; }
     public DateTime EndDate {get; set; }
     public AppUser Customers {get; set; }
+}
+
+public class SignalRHub:Hub{
+   public SignalRHub(){
+    var connection = new signalR.HubConnectionBuilder().withUrl("/signalRHub").build();
+
+    connection.startConnection();
+
+   }
 }

@@ -30,7 +30,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"></script>
 
 
-
     <style>
         .form-control:focus {
             /* box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25); */
@@ -482,6 +481,10 @@
                         </div>
                     </li>
                 </ul>
+                <div class="">
+                    <button class="btn btn-dark d-block w-75 mb-1">Giriş Yap</button>
+                    <button class="btn btn-dark d-block w-75">Kayıt Ol</button>
+                </div>
             </div>
         </div>
     </header>
@@ -553,16 +556,17 @@
                             </ul>
                         </div>
                         <hr>
-                        <div class=" p-4 text-end">
+                        <div class="p-4 text-end">
                             <p class="text-danger fw-semibold mb-1">Toplam Fiyat</p>
-                            <h3 class="text-success fw-bold ">9790.80 ₺</h3>
+                            <h3 class="text-success fw-bold ">3999.00 €</h3>
+                            <small class="fs-6">(190.626,77 ₺)</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
+
     <!-- ! CHECKOUT SECTION END -->
 
     <!-- ! FOOTER START -->
@@ -689,7 +693,7 @@
                 },
                 formatting: true,
                 placeholders: {
-                    number: '•••• •••• •••• ••••',
+                    number: '**** **** **** ****',
                     name: 'Ad Soyad',
                     expiry: 'MM/YY',
                     cvc: 'CVV'

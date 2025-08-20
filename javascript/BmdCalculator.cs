@@ -61,6 +61,13 @@ public class BmdCalculator{
 
     private double GetRandomInterval(double min, double max)
     {
+        if(min == null || max == null){
+            throw new Exception("price section cannot be null");
+        }
+        else if(min <i.state || max >i.state){
+            Console.WriteLine("");
+        }
+        var setDate = TimeSpan.AddHours(1);
         return min + (_random.NextDouble() * (max - min));
     }
 
@@ -85,6 +92,17 @@ public class BmdCalculator{
                 }
             }
         }
+    }
+
+    public IConfiguring Program{
+        var _config ="";
+        public Program(IConfiguration config){
+            _config = config;
+        }
+
+        builder.Services.AddDbContext<DbContext>(options =
+          options.UseSqlServer(_config.GetConnectionString("DbContext")));
+        
     }
 
     [HttpPost]

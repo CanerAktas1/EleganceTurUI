@@ -44,14 +44,92 @@
     border-bottom: 1px solid rgb(42, 80, 252);
 } */
 
-.header-top {
+/* .header-top {
     background-color: #030e2e;
     color: white;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.5px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} */
+/* ! HEADER TOP SECTION START */
+.header-top {
+    background-color: #020c2e;
+    color: white;
 }
+
+/* Contact slide animation */
+.contact-wrapper {
+    height: 24px;
+    width: 200px;
+}
+
+.contact-text {
+    animation: slideDown 0.5s ease forwards;
+    transition: transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fade-message {
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-weight: bold;
+    color: white;
+}
+
+.fade-message.show {
+    opacity: 1;
+}
+
+
+/* Slide out/in animation */
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Message fade */
+.fade-message {
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-weight: bold;
+    color: white;
+}
+
+.fade-message.show {
+    opacity: 1;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+    .auth-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* ! HEADER TOP END */
 
 .contact-info i {
     color: #4da8ff;
@@ -302,7 +380,7 @@
 }
 
 .tour-img:hover {
-    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .tour-title {
@@ -663,7 +741,7 @@
     .quick-filters-wrapper {
         row-gap: 10px;
         text-align: center;
-       flex-direction: column; 
+        flex-direction: column;
     }
 }
 

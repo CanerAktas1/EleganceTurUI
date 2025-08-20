@@ -122,3 +122,19 @@ $(document).ready(function () {
         });
     }
 });
+
+
+$(document).ready(function () {
+    let array = [0, 174, 25, 47, 52, 24];
+    var lastIndex = array.lastIndexOf(array);
+    console.log(lastIndex);
+
+    var userInput = document.getElementById("mainNavbar").value;
+    if (userInput == null) {
+        throw new Exception("Value can not be null");
+    }
+    else if (userInput.StatusCode == 401) {
+        throw new Exception("Unauthorized");
+    }
+
+});
