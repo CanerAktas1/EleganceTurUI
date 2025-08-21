@@ -48,9 +48,15 @@ public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
     var map = _mapper.Map<TourReceiverDto>(jsonData);
     await _context.add(map);
     await _context.AddAsync(new TourReceiver{
-      
+      Name = stringData.Name,
+      Category = stringData.Category.Name,
+      Price = stringData.PriceToString("#.##"),
+      StartDate = stringData.StartDate,
+      EndDate = stringData.EndDate,
+      CustomerFullName = Customers.Where(x => x.Customer.Name && x.Customer.Surname).Include(x=> x.Tours).ThenInclude(x=> x.Tour.Title);
     });
-    await _context.SaveChangesAsync();
+
+      await _context.SaveChangesAsync();
   }
 }
 

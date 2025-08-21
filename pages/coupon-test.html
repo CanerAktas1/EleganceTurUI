@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #promoOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        /* Main popup box */
+        .promo-popup {
+            background: #fff;
+            padding: 30px 25px;
+            max-width: 400px;
+            width: 90%;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .promo-popup .btn-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            /* background-color: #e6e6e6; */
+            border: #000 2px solid;
+            border-radius: 50%;
+            padding: 6px;
+            opacity: 1;
+        }
+
+        z .promo-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .promo-subtitle {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .promo-text {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .coupon-code-box {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            width: 100%;
+            background-color: #fff;
+            cursor: default;
+        }
+
+        .btn-black {
+            background-color: #000 !important;
+            color: #fff !important;
+            font-weight: 600;
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-black:hover {
+            background-color: #222;
+        }
+
+        @media (max-width: 576px) {
+            .promo-popup {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="promoOverlay" class="d-flex ">
+        <div class="promo-popup p-5">
+            <button type="button" class="btn-close" id="closePromo" aria-label="Kapat"></button>
+            <div class="promo-title h1 fw-bold text-danger">İNDİRİM!</div>
+            <div class="promo-subtitle">Size Özel Kuponumuz var!</div>
+            <div class="promo-text">Aşağıdaki kodu kullanarak siparişinizi hemen tamamlayın:</div>
+            <div class="promo-text"><a href="#" class="fw-semibold text-danger">İndirimli Turları Gör</a></div>
+            <div class="coupon-code-box fw-bold h3 ">{ ELEGANCE10 }</div>
+            <button class="btn btn-black mt-2 fw-bold" onclick="closePopup()">Kodu Kopyala</button>
+        </div>
+    </div>
+
+    <script>
+
+        function closePopup() {
+            document.getElementById('promoOverlay').style.display = 'none';
+        }
+
+        function showPopup() {
+            document.getElementById('promoOverlay').style.display = 'flex';
+        }
+
+        function copyCoupon() {
+            const couponText = document.getElementById('couponCode').textContent;
+            navigator.clipboard.writeText(couponText).then(function () {
+                alert('Kupon kodu kopyalandı: ' + couponText);
+            }).catch(function () {
+
+                const textArea = document.createElement('textarea');
+                textArea.value = couponText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Kupon kodu kopyalandı: ' + couponText);
+            });
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                document.getElementById('promoOverlay').style.display = 'flex';
+            }, 5000);
+
+
+            document.getElementById('closePromo').addEventListener('click', closePopup);
+
+
+            document.getElementById('promoOverlay').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closePopup();
+                }
+            });
+
+        });
+
+    </script>
+    <!-- ? SITE JS -->
+    <script src="/javascript/script.js"></script>
+
+
+    <script>
+        // Counter function
+        function animateCounter(counter) {
+            const target = +counter.getAttribute('data-target');
+            const speed = 200; // lower is faster
+            const increment = target / speed;
+
+            const updateCount = () => {
+                const count = +counter.innerText;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        }
+
+        // Scroll observer setup
+        const counters = document.querySelectorAll('.counter');
+        let hasAnimated = false;
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    counters.forEach(counter => animateCounter(counter));
+                    hasAnimated = true;
+                    observer.disconnect(); // Optional: stop observing after animation
+                }
+            });
+        }, {
+            threshold: 0.3 // Trigger when 30% visible
+        });
+
+        const section = document.querySelector('.counter').closest('section');
+        if (section) {
+            observer.observe(section);
+        }
+    </script>
+</body>
+
+</html>

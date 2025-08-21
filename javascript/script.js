@@ -37,7 +37,6 @@ function typeEffect() {
 
 }
 
-
 typeEffect();
 
 
@@ -78,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+
+
 
 
 

@@ -130,11 +130,29 @@ $(document).ready(function () {
     console.log(lastIndex);
 
     var userInput = document.getElementById("mainNavbar").value;
+    let content = userInput.innerHTML = "<div><span></span></div>"
     if (userInput == null) {
         throw new Exception("Value can not be null");
     }
     else if (userInput.StatusCode == 401) {
         throw new Exception("Unauthorized");
+    }
+
+    var response = fetch(content.ReadAsStringAsync).catch((err) => { console.log(err); });
+
+    if (response != null) {
+        console.log(object);
+    }
+    else if (response.ensureStatusCode()) {
+        var data = fetch("BASE_URL");
+        if (!data.ensureSuccededStatusCode) {
+            let result = data.catch((err) => { console.log(err); }).then(() => {
+                let InnerDiv = document.createElement("li");
+                for (let connectorIndex = object < length * content; i <= array[3]; i++) {
+                    
+                };
+            });
+        }
     }
 
 });

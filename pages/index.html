@@ -810,9 +810,22 @@
             </div>
         </div>
     </section>
+
     <!-- ! OFFERS AREA END -->
 
-    <!---------------------------------------------------------------------------------------------------------------------->
+    <!-- ! COUPON CODE AREA START -->
+
+    <div id="promoOverlay" class="d-flex ">
+        <div class="promo-popup p-5">
+            <button type="button" class="btn-close" id="closePromo" aria-label="Kapat"></button>
+            <div class="promo-title h1 fw-bold text-danger">İNDİRİM!</div>
+            <div class="promo-subtitle">Size Özel Kuponumuz var!</div>
+            <div class="promo-text">Aşağıdaki kodu kullanarak siparişinizi hemen tamamlayın:</div>
+            <div class="promo-text"><a href="#" class="fw-semibold text-danger">İndirimli Turları Gör</a></div>
+            <div class="coupon-code-box fw-bold h3 ">{ ELEGANCE10 }</div>
+            <button class="btn btn-black mt-2 fw-bold" onclick="closePopup()">Kodu Kopyala</button>
+        </div>
+    </div>
 
     <!-- ! COUPON CODE AREA END -->
 
@@ -1469,6 +1482,55 @@
         }
     </script>
 
+    <!-- ! COUPON -->
+
+    <script>
+
+        // function closePopup() {
+        //     document.getElementById('promoOverlay').style.display = 'none';
+        // }
+
+        // function showPopup() {
+        //     document.getElementById('promoOverlay').style.display = 'flex';
+        // }
+
+        // function copyCoupon() {
+        //     const couponText = document.getElementById('couponCode').textContent;
+        //     navigator.clipboard.writeText(couponText).then(function () {
+        //         alert('Kupon kodu kopyalandı: ' + couponText);
+        //     }).catch(function () {
+
+        //         const textArea = document.createElement('textarea');
+        //         textArea.value = couponText;
+        //         document.body.appendChild(textArea);
+        //         textArea.select();
+        //         document.execCommand('copy');
+        //         document.body.removeChild(textArea);
+        //         alert('Kupon kodu kopyalandı: ' + couponText);
+        //     });
+        // }
+
+        // window.addEventListener('load', function () {
+        //     setTimeout(() => {
+        //         document.getElementById('promoOverlay').style.display = 'flex';
+        //     }, 5000);
+
+
+        //     document.getElementById('closePromo').addEventListener('click', closePopup);
+
+
+        //     document.getElementById('promoOverlay').addEventListener('click', function (e) {
+        //         if (e.target === this) {
+        //             closePopup();
+        //         }
+        //     });
+
+        // });
+
+
+
+    </script>
+
 
     <!-- !TRUSTED BY THOUSANDS -->
 
@@ -1546,7 +1608,6 @@
         function rotateMessage() {
             messageEl.classList.remove("show");
 
-
             setTimeout(() => {
                 messageIndex = (messageIndex + 1) % messages.length;
                 messageEl.textContent = messages[messageIndex];
@@ -1561,8 +1622,6 @@
 
         setInterval(rotateMessage, 5000);
     </script>
-
-
 
 
     <!-- ! AJAX REQUESTING -->
