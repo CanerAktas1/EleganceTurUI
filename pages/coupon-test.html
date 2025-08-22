@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
     <style>
         #promoOverlay {
             position: fixed;
@@ -127,6 +128,7 @@
     <script>
 
         function closePopup() {
+
             document.getElementById('promoOverlay').style.display = 'none';
         }
 
@@ -152,8 +154,9 @@
 
         window.addEventListener('load', function () {
             setTimeout(() => {
+
                 document.getElementById('promoOverlay').style.display = 'flex';
-            }, 5000);
+            }, 2000);
 
 
             document.getElementById('closePromo').addEventListener('click', closePopup);
@@ -164,7 +167,6 @@
                     closePopup();
                 }
             });
-
         });
 
     </script>
@@ -189,6 +191,7 @@
                     counter.innerText = target;
                 }
             };
+
 
             updateCount();
         }

@@ -81,7 +81,7 @@ public class BmdCalculator{
         return -1;
     }
 
-    private int SetRandomInterval(int agentRow, DateTime customer.ArrivalTime ){
+    private int SetRandomInterval(int agentRow, DateTime customer.ArrivalTime){
         if(agentRow == 0 ){
             throw new Exception("User not found!");
         }
@@ -127,6 +127,18 @@ public class BmdCalculator{
                     Email = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value,
                     UserName = loginInfo.Principal.FindFirst(ClaimTypes.Email).Value
                 };
+
+                var users = await user.Where(x => x.Email != loginInfo.Principal.FindFirst(ClaimTypes.Email).Value).ToListAsync();
+
+                if(users == null){
+                  throw new Exception("There is no user with this email address!");  
+                }
+                else if( await users.Where(x => x.UserName !=loginInfo.Principal.FindFirst(ClaimTypes.UserName).value).ToListAsync()){
+                    throw new Exception("This user already authenticated!");
+                }
+                else{
+                    return Ok(new  {Message = "Successfully authenticated, you are redirecting to website..."});
+                }
                 
                 IdentityResult createResult = await _userManager.CreateAsync(user);
 
@@ -149,11 +161,65 @@ public class BmdCalculator{
                 else
                 {
                     foreach(var error in addLoginResult.Errors){
-                        ModelState.AddModelError("",error);
+                        ModelState.AddModelError(error.Key,error);
                     }
                 }
             }
         }
         return Redirect(ReturnUrl);
+    }
+
+    public class CalculatingAlgorythms{
+        private int CalculateFactorial(int number)
+        {
+            var sum = 0;
+
+            for(int i = number-1; i <=0; i--){
+                sum += number*i;
+            }
+
+            return sum;
+
+        }
+
+        private int SumBetween(int number1, int number2)
+        {
+            var smallerNum = 0;
+            var greaterNum = 0;
+            var sum = 0;
+            if(number1<number2)
+            {
+                smallerNum = number1;
+                greaterNum = number2;
+            }
+            else
+            {
+                smallerNum = number2;
+                greaterNum = number1;
+            }
+
+            if(number1 == null || number2 == null)
+                throw new Exception("Numbers can not be null");
+            
+
+
+            for(int i = smallerNum; i>=greaterNum; i++)
+            {
+                sum += smallernum + (smallerNum + 1);
+            }
+        }
+
+        private bool CheckAsal(int value){
+            if(value == null){
+                throw new Exception("Value can not be null!");
+            }
+
+            if(value %% value = 0){
+                return true;
+            }
+            else{
+                
+            }
+        }
     }
 }

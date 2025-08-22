@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegance | Yurtiçi ve Yurtdışı Turlar</title>
+    <title>Document</title>
     <!-- ! SITE CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -14,9 +14,10 @@
     <!-- ! FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- ! JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- ! NICE SELECT -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
+        integrity="sha512-CNHBsG9yqXzZbG6b7Q1XW0Ov+uWcSx9YDGJ0fB0KFG1fSS2xd2vM8JQx1J+Peuyq+S3dxw9NsWa6zyxSFMojZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- ! BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,62 +26,118 @@
     <!-- ! BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Alternative CDN for Card.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/card/2.5.0/card.min.js"></script>
+    <!-- ! OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+    <!-- ! DATA AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .form-control:focus {
-            /* box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25); */
-            /* border-color: #198754; */
-            box-shadow: none;
-            border: none;
+        .dropdown-mega {
+            display: none;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
-        .card-wrapper {
-            transition: transform 0.3s ease-in-out;
+        .navbar-item:hover {
+            color: #d12f2f;
         }
 
-        .card-wrapper:hover {
-            transform: scale(1.03);
+        .nav-item.dropdown:hover .dropdown-mega {
+            display: block;
+        }
+
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #007bff;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .sidebar-toggle {
+            display: none;
         }
 
         @media (max-width: 768px) {
-            .btn-lg {
-                font-size: 1rem;
-                padding: 0.75rem;
+            .sidebar {
+                width: 200px;
+                position: absolute;
+                height: auto;
+                top: 0;
+                left: -250px;
+                transition: 0.3s;
             }
 
-            .card-title {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .dropdown-mega {
-                display: none !important;
+            .sidebar.open {
+                left: 0;
             }
 
-            .responsive-logo {
-                padding: 0 !important;
+            .content {
+                margin-left: 0;
             }
 
-            .navbar {
-                padding: 0 !important;
+            .sidebar-toggle {
+                display: block;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: #fff;
+                font-size: 24px;
+                z-index: 1000;
             }
-
         }
     </style>
 </head>
 
 <body>
-    <!-- ! Header Area Start -->
+    <!-- ! HEADER START-->
+
     <div class="main-header">
         <div class="header-top ">
             <div class="container d-flex justify-content-between ">
                 <p class="text-white mt-3">+90 212 452 52 52</p>
-
+                <!-- <a href="#" class="login-register-buttons">Giriş Yap</a> -->
                 <div class="mt-3">
                     <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Giriş Yap</a>
                     <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
@@ -481,108 +538,115 @@
                         </div>
                     </li>
                 </ul>
-                <div class="">
-                    <button class="btn btn-dark d-block w-75 mb-1">Giriş Yap</button>
-                    <button class="btn btn-dark d-block w-75">Kayıt Ol</button>
-                </div>
             </div>
         </div>
     </header>
-    <!-- ! Header Area End -->
+    <!-- ! HEADER END-->
 
-    <!-- ! CHECKOUT SECTION START -->
-    <section class="section">
-        <h2 class="section-header bg-light py-3">Ödeme Yap</h2>
-        <div class="container py-5">
-            <div class="row g-5 justify-content-center">
-                <!-- Payment Section -->
-                <div class="col-lg-7">
-                    <div class="bg-white p-4 shadow rounded-3">
-                        <div class="card-wrapper mb-4"></div>
 
-                        <form id="payment-form">
-                            <div class="mb-3">
-                                <label class="form-label">Kart Numarası <span class="text-danger">*</span></label>
-                                <input type="text" name="number" class="form-control" placeholder="•••• •••• •••• ••••"
-                                    required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Ad Soyad <span class="text-danger">*</span></label>
-                                <input type="text" name="name" class="form-control" placeholder="Kart Üzerindeki İsim"
-                                    required>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">Son Kullanma Tarihi <span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" name="expiry" class="form-control" placeholder="MM/YY" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="form-label">CVV <span class="text-danger">*</span></label>
-                                    <input type="text" name="cvc" class="form-control" placeholder="CVV" required>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-success btn-lg w-100 mt-3"><i
-                                        class="bi bi-credit-card me-1"></i> Rezervasyonu Tamamla</button>
-                            </div>
-                        </form>
+    <section>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3 class="text-white text-center mb-4">Kullanıcı Paneli</h3>
+            <a href="#profile">Profilim</a>
+            <a href="#favorites">Favori Turlarım</a>
+            <a href="#purchases">Satın Aldığım Turlar</a>
+            <a href="#settings">Ayarlar</a>
+            <a href="#logout">Çıkış</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Sidebar Toggle Button -->
+            <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+            <div id="profile">
+                <h2>Hesap Bilgilerim</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehmet Yılmaz</h5>
+                        <p class="card-text">E-posta: mehmet@example.com</p>
+                        <p class="card-text">Telefon: +90 555 555 5555</p>
+                        <a href="#" class="btn btn-primary">Bilgileri Düzenle</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Order Summary Section -->
-                <div class="col-lg-5">
-                    <div class="card border-0 shadow-lg h-100 overflow-hidden">
-                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                            class="card-img-top object-fit-cover" alt="Tour Image"
-                            style="height: 240px; object-fit: cover;">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold text-dark mb-3">
-                                Bernina Ekspress ile Noel Pazarları Turu
-                            </h5>
-                            <ul class="list-unstyled mb-4">
-                                <li class="d-flex justify-content-between mb-3">
-                                    <span>Kişi Sayısı</span>
-                                    <span>2 Yetişkin, 1 Çocuk</span>
-                                </li>
-                                <li class="d-flex justify-content-between mb-3">
-                                    <span>Tur Tarihi</span>
-                                    <span>21.08.2025 - 24.08.2025</span>
-                                </li>
-                                <li class="d-flex justify-content-between">
-                                    <span>Tur Süresi</span>
-                                    <span>6 Gece / 7 Gün</span>
-                                </li>
-                            </ul>
-
-                            <!-- Coupon Section -->
-                            <div class="mt-4">
-                                <label for="couponCode" class="form-label">Kupon Kodu</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="couponCode"
-                                        placeholder="Kupon kodunu girin">
-                                    <button class="btn btn-dark" type="button" id="applyCouponBtn">Uygula</button>
-                                </div>
-                                <small id="couponHelp" class="form-text text-muted mt-2">Geçerli bir kupon kodu
-                                    girin.</small>
+            <div id="favorites" class="mt-5">
+                <h2>Favori Turlarım</h2>
+                <div class="row">
+                    <!-- Example Tour 1 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="tour1.jpg" class="card-img-top" alt="Tour 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Paris Turu</h5>
+                                <p class="card-text">Büyüleyici Paris şehri turu...</p>
+                                <a href="#" class="btn btn-primary">Detaylar</a>
                             </div>
                         </div>
-                        <hr>
-                        <div class="p-4 text-end">
-                            <p class="text-danger fw-semibold mb-1">Toplam Fiyat</p>
-                            <h3 class="text-success fw-bold">3999.00 €</h3>
-                            <small class="fs-6">(190.626,77 ₺)</small>
+                    </div>
+                    <!-- Example Tour 2 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="tour2.jpg" class="card-img-top" alt="Tour 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Londra Turu</h5>
+                                <p class="card-text">Londra'nın tarihi güzelliklerini keşfedin.</p>
+                                <a href="#" class="btn btn-primary">Detaylar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Example Tour 3 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="tour3.jpg" class="card-img-top" alt="Tour 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Roma Turu</h5>
+                                <p class="card-text">Roma'da antik tarihi yerleri gezip görün.</p>
+                                <a href="#" class="btn btn-primary">Detaylar</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div id="purchases" class="mt-5">
+                <h2>Satın Aldığım Turlar</h2>
+                <div class="row">
+                    <!-- Purchased Tour 1 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="tour4.jpg" class="card-img-top" alt="Tour 4">
+                            <div class="card-body">
+                                <h5 class="card-title">İstanbul Turu</h5>
+                                <p class="card-text">İstanbul'un tarihi yerlerini keşfedin.</p>
+                                <a href="#" class="btn btn-secondary">Tur Detayları</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Purchased Tour 2 -->
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="tour5.jpg" class="card-img-top" alt="Tour 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Kapadokya Turu</h5>
+                                <p class="card-text">Kapadokya'nın büyüleyici manzarası.</p>
+                                <a href="#" class="btn btn-secondary">Tur Detayları</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings" class="mt-5">
+                <h2>Ayarlar</h2>
+                <p>Burada kullanıcı ayarlarını düzenleyebilirsiniz.</p>
             </div>
         </div>
     </section>
 
-    <!-- ! CHECKOUT SECTION END -->
-
-    <!-- ! FOOTER START -->
+    <!-- ! FOOTER START-->
     <footer class="footer pt-5">
         <div class="container text-dark mt-5">
             <div class="row">
@@ -616,7 +680,7 @@
                     <ul class="list-unstyled ms-3 mt-4 footer-list">
                         <a href="#">
                             <li><i class="fa-solid fa-location-dot"></i> Turgut Özel Millet Caddesi No:73 Daire:8
-                                Fındıkzade-Fatih / İSTANBUL</li>
+                                Findikzade-Fatih / İSTANBUL</li>
                         </a>
                         <a href="#">
                             <li><i class="fa-solid fa-envelope"></i> operation@elegancetur.com</li>
@@ -683,9 +747,14 @@
                 <p class="d-flex justify-content-center footer-rights-deserved">2025 © Copyright Elegance Tur. Tüm
                     Hakları Saklıdır.</p>
             </div>
-
         </div>
     </footer>
+
+    <!-- ! FOOTER END-->
+
+
+
+
     <!-- ? BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
@@ -693,28 +762,6 @@
 
     <!-- ? SITE JS -->
     <script src="/javascript/script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new Card({
-                form: '#payment-form',
-                container: '.card-wrapper',
-                formSelectors: {
-                    numberInput: 'input[name="number"]',
-                    expiryInput: 'input[name="expiry"]',
-                    cvcInput: 'input[name="cvc"]',
-                    nameInput: 'input[name="name"]'
-                },
-                formatting: true,
-                placeholders: {
-                    number: '**** **** **** ****',
-                    name: 'Ad Soyad',
-                    expiry: 'MM/YY',
-                    cvc: 'CVV'
-                }
-            });
-        });
-    </script>
-
 </body>
 
 </html>

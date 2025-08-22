@@ -149,10 +149,9 @@ $(document).ready(function () {
             let result = data.catch((err) => { console.log(err); }).then(() => {
                 let InnerDiv = document.createElement("li");
                 for (let connectorIndex = object < length * content; i <= array[3]; i++) {
-                    
+
                 };
             });
         }
     }
-
 });

@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- ! NICE SELECT -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
         integrity="sha512-CNHBsG9yqXzZbG6b7Q1XW0Ov+uWcSx9YDGJ0fB0KFG1fSS2xd2vM8JQx1J+Peuyq+S3dxw9NsWa6zyxSFMojZA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
     <!-- ! BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -68,7 +68,6 @@
                         Yap</a>
                     <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
                 </div>
-
             </div>
         </div>
     </div>
@@ -449,8 +448,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="nav-link">Plus turlar</a>
-
+                <a href="#" class="nav-link">Vizesiz Turlar</a>
             </nav>
         </div>
     </header>
@@ -821,7 +819,8 @@
             <div class="promo-title h1 fw-bold text-danger">İNDİRİM!</div>
             <div class="promo-subtitle">Size Özel Kuponumuz var!</div>
             <div class="promo-text">Aşağıdaki kodu kullanarak siparişinizi hemen tamamlayın:</div>
-            <div class="promo-text"><a href="#" class="fw-semibold text-danger">İndirimli Turları Gör</a></div>
+            <div class="promo-text"><a href="#" class="fw-semibold text-danger">İndirimli Turları Gör <i
+                        class="fa-solid fa-arrow-right"></i></a></div>
             <div class="coupon-code-box fw-bold h3 ">{ ELEGANCE10 }</div>
             <button class="btn btn-black mt-2 fw-bold" onclick="closePopup()">Kodu Kopyala</button>
         </div>
@@ -1486,46 +1485,47 @@
 
     <script>
 
-        // function closePopup() {
-        //     document.getElementById('promoOverlay').style.display = 'none';
-        // }
+        function closePopup() {
+            // document.getElementById('promoOverlay').style.display = 'none';
+            document.getElementById('promoOverlay').classList.add('d-none');
+        }
 
-        // function showPopup() {
-        //     document.getElementById('promoOverlay').style.display = 'flex';
-        // }
+        function showPopup() {
+            document.getElementById('promoOverlay').style.display = 'flex';
+        }
 
-        // function copyCoupon() {
-        //     const couponText = document.getElementById('couponCode').textContent;
-        //     navigator.clipboard.writeText(couponText).then(function () {
-        //         alert('Kupon kodu kopyalandı: ' + couponText);
-        //     }).catch(function () {
+        function copyCoupon() {
+            const couponText = document.getElementById('couponCode').textContent;
+            navigator.clipboard.writeText(couponText).then(function () {
+                alert('Kupon kodu kopyalandı: ' + couponText);
+            }).catch(function () {
+                const textArea = document.createElement('textarea');
+                textArea.value = couponText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Kupon kodu kopyalandı: ' + couponText);
+            });
+        }
 
-        //         const textArea = document.createElement('textarea');
-        //         textArea.value = couponText;
-        //         document.body.appendChild(textArea);
-        //         textArea.select();
-        //         document.execCommand('copy');
-        //         document.body.removeChild(textArea);
-        //         alert('Kupon kodu kopyalandı: ' + couponText);
-        //     });
-        // }
+        window.addEventListener('load', function () {
+            setTimeout(() => {
 
-        // window.addEventListener('load', function () {
-        //     setTimeout(() => {
-        //         document.getElementById('promoOverlay').style.display = 'flex';
-        //     }, 5000);
-
-
-        //     document.getElementById('closePromo').addEventListener('click', closePopup);
+                document.getElementById('promoOverlay').style.display = 'flex';
+            }, 2000);
 
 
-        //     document.getElementById('promoOverlay').addEventListener('click', function (e) {
-        //         if (e.target === this) {
-        //             closePopup();
-        //         }
-        //     });
+            document.getElementById('closePromo').addEventListener('click', closePopup);
 
-        // });
+
+            document.getElementById('promoOverlay').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closePopup();
+                }
+            });
+
+        });
 
 
 
@@ -1581,7 +1581,7 @@
     <script>
 
         const contactInfo = document.getElementById("contactInfo");
-        const contactList = ["+90 212 452 52 52", "info@example.com"];
+        const contactList = ["+90 212 452 52 52", "info@elegancetur.com", "operation@elegancetur.com"];
         let contactIndex = 0;
 
         function rotateContact() {
@@ -1600,7 +1600,7 @@
         const messageEl = document.getElementById("rotatingMessage");
         const messages = [
             "Size Özel İndirimlerden Faydalanmak İçin Sitemize Üye Olmayı Unutmayın",
-            "Lorem ipsum dolor sit amet.",
+            "Balkan Turlarında %15 indirim 🔥🥳",
 
         ];
         let messageIndex = 0;
@@ -1625,7 +1625,7 @@
 
 
     <!-- ! AJAX REQUESTING -->
-    <script>
+    <!-- <script>
         $.ajax({
             type: "POST",
             contentType: "application/json;charset = utf8",
@@ -1656,7 +1656,7 @@
                 return response;
             }
         })
-    </script>
+    </script> -->
 
 </body>
 

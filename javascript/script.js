@@ -80,9 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
 // function bubbleSort(arr) {
 //     let n = arr.length;
 
