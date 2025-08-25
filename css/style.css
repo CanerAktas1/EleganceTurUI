@@ -885,7 +885,6 @@ z .promo-title {
 }
 
 .tour-single:hover {
-    /* border: none; */
     box-shadow: -1px 0px 9px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -938,7 +937,6 @@ z .promo-title {
     padding-left: 12px;
 }
 
-
 /* ! ABOUT END */
 
 
@@ -969,6 +967,12 @@ z .promo-title {
 .btn-primary:hover {
     background-color: #005bb5;
 }
+
+.dropdown-toggle:hover {
+    /* color: #d12f2f !important; */
+    color: #00acdc !important;
+}
+
 
 .dropdown-mega {
     display: none;

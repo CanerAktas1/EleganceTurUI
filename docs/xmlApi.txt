@@ -1,1 +1,6 @@
+-istya
 https://www.istyatur.com/apidocs/#overseas-tours-results
+
+
+--otto
+https://kplus.stoplight.io/docs/travelrobot/bd2b59527991b-search-availability

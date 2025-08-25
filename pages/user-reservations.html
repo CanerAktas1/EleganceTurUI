@@ -38,94 +38,92 @@
     <!-- ! DATA AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .dropdown-mega {
-            display: none;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            background: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .navbar-item:hover {
-            color: #d12f2f;
-        }
-
-        .nav-item.dropdown:hover .dropdown-mega {
-            display: block;
-        }
-
-
-        .sidebar {
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            background-color: #343a40;
-            padding-top: 20px;
-        }
-
-        .sidebar a {
-            color: #fff;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            font-size: 16px;
-        }
-
-        .sidebar a:hover {
-            background-color: #007bff;
-        }
-
-        .content {
-            margin-left: 250px;
+        .profile-card {
             padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .content h2 {
-            font-size: 28px;
+        .dashboard-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .empty-state {
+            font-size: 16px;
+            color: #888;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .arrow-icon {
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .reservations-section {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .reservation-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .reservation-title {
+            font-size: 18px;
             font-weight: bold;
         }
 
-        .card img {
-            height: 200px;
-            object-fit: cover;
+        .reservation-details {
+            font-size: 14px;
+            color: #555;
         }
 
-        .sidebar-toggle {
-            display: none;
+        .reservation-date {
+            font-size: 14px;
+            color: #777;
         }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 200px;
-                position: absolute;
-                height: auto;
-                top: 0;
-                left: -250px;
-                transition: 0.3s;
-            }
+        .search-bar {
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            padding: 10px 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+        }
 
-            .sidebar.open {
-                left: 0;
-            }
+        .search-bar input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 16px;
+        }
 
-            .content {
-                margin-left: 0;
-            }
-
-            .sidebar-toggle {
-                display: block;
-                position: absolute;
-                top: 10px;
-                left: 10px;
-                color: #fff;
-                font-size: 24px;
-                z-index: 1000;
-            }
+        .search-bar button {
+            border: none;
+            background: none;
+            color: #007bff;
+            font-size: 18px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -543,105 +541,339 @@
     </header>
     <!-- ! HEADER END-->
 
+    <section style="min-height: 70vh; ">
+        <div class="container mt-5">
+            <div class="row my-5">
+                <!-- Sidebar -->
+                <div class="col-md-3 col-lg-3 sidebar">
+                    <div class="profile-card">
+                        <h5>Caner Aktaş</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">
+                                    <i class="fas fa-user"></i> Profilim
+                                </a>
+                            </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/pages/user-reservations.html">
+                                    <i class="fas fa-clipboard-list"></i> Rezervasyonlarım
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="/pages/user-favorited-tours.html">
+                                    <i class="bi bi-heart-fill"></i> Beğendiklerim
+                                </a>
+                            </li>
 
-    <section>
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <h3 class="text-white text-center mb-4">Kullanıcı Paneli</h3>
-            <a href="#profile">Profilim</a>
-            <a href="#favorites">Favori Turlarım</a>
-            <a href="#purchases">Satın Aldığım Turlar</a>
-            <a href="#settings">Ayarlar</a>
-            <a href="#logout">Çıkış</a>
-        </div>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">
+                                    <i class="fas fa-cogs"></i> Hesap Ayarları
+                                </a>
+                            </li>
 
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Sidebar Toggle Button -->
-            <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">
+                                    <i class="fas fa-tags"></i> Kuponlarım
+                                </a>
+                            </li>
 
-            <div id="profile">
-                <h2>Hesap Bilgilerim</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Mehmet Yılmaz</h5>
-                        <p class="card-text">E-posta: mehmet@example.com</p>
-                        <p class="card-text">Telefon: +90 555 555 5555</p>
-                        <a href="#" class="btn btn-primary">Bilgileri Düzenle</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="#">
+                                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <div id="favorites" class="mt-5">
-                <h2>Favori Turlarım</h2>
-                <div class="row">
-                    <!-- Example Tour 1 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="tour1.jpg" class="card-img-top" alt="Tour 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Paris Turu</h5>
-                                <p class="card-text">Büyüleyici Paris şehri turu...</p>
-                                <a href="#" class="btn btn-primary">Detaylar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Example Tour 2 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="tour2.jpg" class="card-img-top" alt="Tour 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Londra Turu</h5>
-                                <p class="card-text">Londra'nın tarihi güzelliklerini keşfedin.</p>
-                                <a href="#" class="btn btn-primary">Detaylar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Example Tour 3 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="tour3.jpg" class="card-img-top" alt="Tour 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Roma Turu</h5>
-                                <p class="card-text">Roma'da antik tarihi yerleri gezip görün.</p>
-                                <a href="#" class="btn btn-primary">Detaylar</a>
+                <!-- Main Content -->
+                <div class="col-md-9 col-lg-9 p-3">
+                    <div class="empty-state">
+                        <div class="reservations-section">
+                            <h2 class="dashboard-header text-black text-start">Rezervasyonlarım</h2>
+                            <hr>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                        aria-selected="true">Tümü</button>
+                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-profile" type="button" role="tab"
+                                        aria-controls="nav-profile" aria-selected="false">Aktif Rezervasyonlar</button>
+                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-contact" type="button" role="tab"
+                                        aria-controls="nav-contact" aria-selected="false">Geçmiş Rezervasyonlar</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                    aria-labelledby="nav-home-tab" tabindex="0">
+                                    <!-- Real Reservations List -->
+                                    <!-- <div class="reservation-item">
+                                        <div class="reservation-title text-black">SELANİK - HALKİDİKİ - THASSOS TURU
+                                        </div>
+                                        <div class="reservation-details">
+                                            Süre: 3 Gece 4 Gün<br>
+                                            Kişi Bilgileri: 2 Yetişkin, 1 Çocuk
+                                        </div>
+                                        <div class="reservation-date">
+                                            Tarih: 28 Ağustos 2025 - 11 Eylül 2025
+                                        </div>
+                                    </div> -->
+
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+                                            <!-- Image Section -->
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <!-- Text Content Section -->
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            SELANİK - HALKİDİKİ - THASSOS TURU
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 3 Gece 4 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin, 1 Çocuk
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 28 Ağustos 2025 - 11 Eylül
+                                                        2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            BERNİNA EKSPRESS ILE NOEL PAZARLARI TURU Pegasus Havayolları
+                                                            ile 4 gece
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 4 Gece 5 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 26 Kasım 2025 - 20 Aralık 2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+                                            <!-- Image Section -->
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <!-- Text Content Section -->
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            BERNİNA EKSPRESS ILE NOEL PAZARLARI TURU Pegasus Havayolları
+                                                            ile 4 gece
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 4 Gece 5 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 26 Kasım 2025 - 20 Aralık 2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="reservation-item">
+                                        <div class="reservation-title text-black">BERNİNA EKSPRESS ILE NOEL PAZARLARI
+                                            TURU
+                                            Pegasus Havayolları ile 4 gece</div>
+                                        <div class="reservation-details">
+                                            Süre: 4 Gece 5 Gün<br>
+                                            Kişi Bilgileri: 2 Yetişkin
+                                        </div>
+                                        <div class="reservation-date">
+                                            Tarih: 26 Kasım 2025 - 20 Aralık 2025
+                                        </div>
+                                    </div>
+
+                                    <div class="reservation-item">
+                                        <div class="reservation-title text-black">AMALFİ VE PUGLİA TURU Türk Hava
+                                            Yolları ile 4 gece</div>
+                                        <div class="reservation-details">
+                                            Süre: 4 Gece 5 Gün<br>
+                                            Kişi Bilgileri: 2 Yetişkin
+                                        </div>
+                                        <div class="reservation-date">
+                                            Tarih: 11 Ekim 2025 - 11 Ekim 2025
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                    aria-labelledby="nav-profile-tab" tabindex="0">
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+                                            <!-- Image Section -->
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <!-- Text Content Section -->
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            SELANİK - HALKİDİKİ - THASSOS TURU
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 3 Gece 4 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin, 1 Çocuk
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 28 Ağustos 2025 - 11 Eylül
+                                                        2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
+                                    aria-labelledby="nav-contact-tab" tabindex="0">
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+                                            <!-- Image Section -->
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <!-- Text Content Section -->
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            BERNİNA EKSPRESS ILE NOEL PAZARLARI TURU Pegasus Havayolları
+                                                            ile 4 gece
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 4 Gece 5 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 26 Kasım 2025 - 20 Aralık 2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card tour-single border-1 rounded-4 mb-4">
+                                        <div class="row g-0">
+                                            <!-- Image Section -->
+                                            <div class="col-md-4 position-relative">
+                                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                    class="img-fluid h-100 rounded-start-4 object-fit-cover"
+                                                    alt="Tour Image" />
+                                            </div>
+
+                                            <!-- Text Content Section -->
+                                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
+                                                <div
+                                                    class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+                                                    <h5 class="fw-bold mb-2 mb-md-0 ">
+                                                        <a href="#" class="text-decoration-none text-black">
+                                                            BERNİNA EKSPRESS ILE NOEL PAZARLARI TURU Pegasus Havayolları
+                                                            ile 4 gece
+                                                        </a>
+                                                    </h5>
+                                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
+                                                        1.699,00 € <br />
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-start">
+                                                    <p class="text-secondary mb-2">
+                                                        Süre: 4 Gece 5 Gün
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Kişi Bilgileri: 2 Yetişkin
+                                                    </p>
+                                                    <p class="text-secondary mb-2">Tarih: 26 Kasım 2025 - 20 Aralık 2025
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div id="purchases" class="mt-5">
-                <h2>Satın Aldığım Turlar</h2>
-                <div class="row">
-                    <!-- Purchased Tour 1 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="tour4.jpg" class="card-img-top" alt="Tour 4">
-                            <div class="card-body">
-                                <h5 class="card-title">İstanbul Turu</h5>
-                                <p class="card-text">İstanbul'un tarihi yerlerini keşfedin.</p>
-                                <a href="#" class="btn btn-secondary">Tur Detayları</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Purchased Tour 2 -->
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="tour5.jpg" class="card-img-top" alt="Tour 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Kapadokya Turu</h5>
-                                <p class="card-text">Kapadokya'nın büyüleyici manzarası.</p>
-                                <a href="#" class="btn btn-secondary">Tur Detayları</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="settings" class="mt-5">
-                <h2>Ayarlar</h2>
-                <p>Burada kullanıcı ayarlarını düzenleyebilirsiniz.</p>
             </div>
         </div>
     </section>
