@@ -37,32 +37,7 @@
 
     <!-- ! DATA AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .profile-card {
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
 
-        .dashboard-header {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        .empty-state {
-            font-size: 16px;
-            color: #888;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .arrow-icon {
-            font-size: 20px;
-            color: #007bff;
-        }
-    </style>
 </head>
 
 <body>
@@ -478,108 +453,216 @@
     </header>
     <!-- ! HEADER END-->
 
-    <section style="min-height: 70vh;">
-        <div class="container mt-5">
-            <div class="row my-5">
-                <!-- Sidebar -->
-                <div class="col-md-3 col-lg-3 sidebar">
-                    <div class="profile-card">
-                        <h5>Caner Aktaş</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-user"></i> Profilim
-                                </a>
-                            </li>
-                            <hr>
-                            <li class="nav-item">
-                                <a class="nav-link text-black" href="/pages/user-reservations.html">
-                                    <i class="fas fa-clipboard-list"></i> Rezervasyonlarım
-                                </a>
-                            </li>
+    <section class="user-dashboard">
+        <div class="container">
+            <div class="row">
+                <!-- Modern Sidebar -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="user-dashboard-sidebar">
+                        <div class="dashboard-profile-header">
+                            <div class="dashboard-user-avatar">
+                                CA
+                            </div>
+                            <div class="dashboard-user-name">Caner Aktaş</div>
+                            <div class="dashboard-user-status">caneraktas09@gmail.com</div>
+                        </div>
 
+                        <ul class="dashboard-nav-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profilim</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/pages/user-reservations.html">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>Rezervasyonlarım</span>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="/pages/user-favorited-tours.html">
-                                    <i class="bi bi-heart-fill"></i> Beğendiklerim
+                                    <i class="fas fa-heart"></i>
+                                    <span>Beğendiklerim</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-cogs"></i> Hesap Ayarları
+                                <a class="nav-link" href="/pages/user-coupons.html">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Kuponlarım</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-tags"></i> Kuponlarım
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Hesap Ayarları</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Çıkış Yap</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Main Content -->
-                <div class="col-md-9 col-lg-9 p-3">
-                    <h2 class="dashboard-header text-black">Beğendiklerim</h2>
-                    <div class="empty-state">
-                        <div class="d-flex justify-content-center">
-                            <div class="arrow-icon me-2">
-                                <i class="bi bi-arrow-right-circle"></i>
-                            </div>
-                            <span>Beğendiğiniz bir tur bulunmuyor.</span>
+                <!-- Modern Main Content -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="dashboard-main-content">
+                        <div class="dashboard-content-header">
+                            <h1 class="dashboard-content-title">Beğendiklerim</h1>
+                            <p class="dashboard-content-subtitle">Favori turlarınızı görüntüleyebilir ve
+                                yönetebilirsiniz</p>
                         </div>
-                        <p>Tur listesi sayfalarında "favori" butonuna tıklayarak beğendiğiniz turlara hızlıca
-                            ulaşmak için buraya kaydedebilirsiniz.</p>
 
-                        <div class="card tour-single border-1 rounded-4 mb-4">
-                            <div class="row g-0">
+                        <div class="p-4">
 
-                                <div class="col-md-4 position-relative">
-                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                        class="img-fluid h-100 rounded-start-4 object-fit-cover" alt="Tour Image" />
-                                    <a href="#" class="favorite-button"><i class="fa-solid fa-heart"
-                                            style="color: #bd1425;"></i></a>
-                                </div>
-
-                                <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
-                                    <div
-                                        class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-                                        <h5 class="fw-bold mb-2 mb-md-0 ">
-                                            <a href="#" class="text-decoration-none text-black">
-                                                MIAMI & ORLANDO TURU KIYI ROTALARI – TÜRK HAVA YOLLARI İLE 6 GECE
-                                            </a>
-                                        </h5>
-                                        <div class="text-danger fw-bold fs-5 text-nowrap text-end">
-                                            1.699,00 € <br />
-                                            <small class="text-muted fw-normal" style="font-size: 10px;">’dan başlayan
-                                                fiyatlar</small>
+                            <!-- Favorite Tours List -->
+                            <div class="dashboard-card">
+                                <div class="row g-0">
+                                    <div class="col-lg-4 col-md-5">
+                                        <div class="dashboard-card-image">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                alt="Avrupa Turu">
+                                            <button class="favorites-heart-button">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
                                         </div>
                                     </div>
+                                    <div class="col-lg-8 col-md-7">
+                                        <div class="dashboard-card-content">
+                                            <h3 class="dashboard-card-title">MIAMI & ORLANDO TURU KIYI ROTALARI </h3>
 
-                                    <p class="text-muted mt-2 mb-1">
-                                        <i class="bi bi-geo-alt-fill"></i> 14 Ağustos 2025 – İstanbul Havalimanı IST –
-                                        İstanbul Çıkışlı
-                                    </p>
-                                    <p class="text-secondary mb-2">Miami (3) & Orlando (3)</p>
+                                            <div class="dashboard-card-details">
+                                                <div class="detail-item">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>6 Gece 7 Gün</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-plane"></i>
+                                                    <span>Türk Hava Yolları</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    <span>14 Ağustos 2025</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>İstanbul Çıkışlı</span>
+                                                </div>
+                                            </div>
 
-                                    <div
-                                        class="d-flex flex-wrap gap-2 align-items-center border-top pt-3 justify-content-between">
-                                        <div class="d-flex gap-3 flex-wrap">
-                                            <span class="badge bg-light text-dark border">
-                                                <i class="bi bi-moon"></i> 6 Gece / 7 Gün
-                                            </span>
-                                            <span class="badge bg-light text-dark border">
-                                                <i class="bi bi-airplane"></i> Türk Hava Yolları ile
-                                            </span>
+                                            <div class="dashboard-price">1.699,00 €</div>
+
+                                            <div class="dashboard-card-actions">
+                                                <a href="#" class="btn-modern btn-primary-modern">
+                                                    <i class="fas fa-eye me-2"></i>Turu İncele
+                                                </a>
+                                                <a href="#" class="btn-modern btn-outline-modern">
+                                                    <i class="fas fa-heart-broken me-2"></i>Favoriden Çıkar
+                                                </a>
+                                            </div>
                                         </div>
-                                        <a href="#" class="btn btn-dark btn-sm">Turu İncele</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="row g-0">
+                                    <div class="col-lg-4 col-md-5">
+                                        <div class="dashboard-card-image">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                alt="Avrupa Turu">
+                                            <button class="favorites-heart-button">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7">
+                                        <div class="dashboard-card-content">
+                                            <h3 class="dashboard-card-title">AVRUPA BAŞKENTLERI TURU</h3>
+
+                                            <div class="dashboard-card-details">
+                                                <div class="detail-item">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>8 Gece 9 Gün</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-plane"></i>
+                                                    <span>Pegasus Hava Yolları</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    <span>15 Haziran 2025</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>İstanbul Çıkışlı</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="dashboard-price">2.299,00 €</div>
+
+                                            <div class="dashboard-card-actions">
+                                                <a href="#" class="btn-modern btn-primary-modern">
+                                                    <i class="fas fa-eye me-2"></i>Turu İncele
+                                                </a>
+                                                <a href="#" class="btn-modern btn-outline-modern">
+                                                    <i class="fas fa-heart-broken me-2"></i>Favoriden Çıkar
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-card">
+                                <div class="row g-0">
+                                    <div class="col-lg-4 col-md-5">
+                                        <div class="dashboard-card-image">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                alt="Japonya Turu">
+                                            <button class="favorites-heart-button">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-7">
+                                        <div class="dashboard-card-content">
+                                            <h3 class="dashboard-card-title">JAPONYA KİRAZ ÇİÇEKLERİ TURU</h3>
+
+                                            <div class="dashboard-card-details">
+                                                <div class="detail-item">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span>7 Gece 8 Gün</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-plane"></i>
+                                                    <span>Türk Hava Yolları</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                    <span>10 Nisan 2025</span>
+                                                </div>
+                                                <div class="detail-item">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>İstanbul Çıkışlı</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="dashboard-price">3.499,00 €</div>
+
+                                            <div class="dashboard-card-actions">
+                                                <a href="#" class="btn-modern btn-primary-modern">
+                                                    <i class="fas fa-eye me-2"></i>Turu İncele
+                                                </a>
+                                                <a href="#" class="btn-modern btn-outline-modern">
+                                                    <i class="fas fa-heart-broken me-2"></i>Favoriden Çıkar
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
