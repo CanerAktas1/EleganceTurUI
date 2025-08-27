@@ -1710,3 +1710,1029 @@ z .promo-title {
 }
 
 /* ! RESPONSIVE DASHBOARD STYLES END */
+
+/* ! USER COUPONS PAGE SPECIFIC STYLES START */
+
+/* Modern Coupon Card */
+.coupon-modern-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    min-height: 180px;
+}
+
+.coupon-modern-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.coupon-modern-card.coupon-expired {
+    opacity: 0.7;
+    background: #f8f9fa;
+}
+
+.coupon-modern-card.coupon-expired:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Section of Coupon Card */
+.coupon-modern-left {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.coupon-modern-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.coupon-modern-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.coupon-modern-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.coupon-modern-badge.coupon-active {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+}
+
+.coupon-modern-badge.coupon-expired-badge {
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+    color: white;
+}
+
+.coupon-modern-description {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.coupon-modern-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.coupon-detail-item {
+    display: flex;
+    align-items: center;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.coupon-detail-item i {
+    margin-right: 0.75rem;
+    color: #007bff;
+    width: 16px;
+    font-size: 0.9rem;
+}
+
+/* Right Section of Coupon Card */
+.coupon-modern-right {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-width: 280px;
+    position: relative;
+}
+
+.coupon-expired .coupon-modern-right {
+    background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
+}
+
+.coupon-modern-code {
+    margin-bottom: 1.5rem;
+}
+
+.coupon-code-label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.coupon-code-value {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: white;
+    font-family: 'Courier New', monospace;
+}
+
+.coupon-copy-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.coupon-copy-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.coupon-copy-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.coupon-modern-actions {
+    width: 100%;
+}
+
+.coupon-modern-actions .btn-modern {
+    width: 100%;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #667eea;
+    border: none;
+    font-weight: 600;
+}
+
+.coupon-modern-actions .btn-modern:hover:not([disabled]) {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+.coupon-modern-actions .btn-modern[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.5);
+    color: #718096;
+}
+
+.coupon-countdown {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.coupon-countdown i {
+    font-size: 0.9rem;
+}
+
+/* JavaScript functionality placeholder */
+.coupon-copy-success {
+    background: rgba(72, 187, 120, 0.3) !important;
+    border-color: rgba(72, 187, 120, 0.5) !important;
+    color: white !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4) !important;
+}
+
+/* ! COUPON PAGE RESPONSIVE STYLES START */
+
+@media (max-width: 991.98px) {
+    .coupon-modern-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .coupon-modern-right {
+        border-radius: 0 0 20px 20px;
+        min-width: auto;
+        padding: 1.5rem;
+    }
+    
+    .coupon-modern-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .coupon-modern-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .coupon-modern-left {
+        padding: 1.5rem;
+    }
+    
+    .coupon-modern-right {
+        padding: 1.5rem;
+    }
+    
+    .coupon-modern-title {
+        font-size: 1.1rem;
+    }
+    
+    .coupon-modern-description {
+        font-size: 0.9rem;
+    }
+    
+    .coupon-detail-item {
+        font-size: 0.85rem;
+    }
+    
+    .coupon-code-value {
+        font-size: 1rem;
+        padding: 0.75rem;
+        letter-spacing: 1px;
+    }
+    
+    .coupon-modern-details {
+        gap: 0.6rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .coupon-modern-card {
+        margin-bottom: 1rem;
+    }
+    
+    .coupon-modern-left {
+        padding: 1rem;
+    }
+    
+    .coupon-modern-right {
+        padding: 1rem;
+    }
+    
+    .coupon-modern-title {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    
+    .coupon-modern-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .coupon-code-value {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+    
+    .coupon-copy-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .coupon-countdown {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+}
+
+/* ! COUPON PAGE RESPONSIVE STYLES END */
+
+/* ! USER COUPONS PAGE SPECIFIC STYLES END */
+
+/* ! USER PROFILE PAGE SPECIFIC STYLES START */
+
+/* Profile Form Container */
+.profile-form-modern {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Profile Section */
+.profile-section-modern {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.profile-section-modern:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.profile-section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f7fafc;
+}
+
+.profile-section-title i {
+    color: #007bff;
+    font-size: 1.5rem;
+}
+
+/* Profile Input Wrapper */
+.profile-input-wrapper {
+    position: relative;
+    margin-bottom: 0;
+}
+
+/* Profile Input Styling */
+.profile-input-modern {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.profile-input-modern:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.profile-input-modern:hover {
+    border-color: #cbd5e0;
+}
+
+/* Profile Input Icons */
+.profile-input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.profile-input-wrapper:focus-within .profile-input-icon {
+    color: #007bff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Profile Label */
+.profile-label-modern {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+/* Profile Textarea */
+.profile-textarea-modern {
+    min-height: 100px;
+    resize: vertical;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Profile Actions */
+.profile-actions-modern {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 0 0 20px 20px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.profile-update-btn {
+    min-width: 200px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-update-btn:disabled {
+    background: #e2e8f0 !important;
+    color: #a0aec0 !important;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.profile-update-btn:disabled:hover {
+    background: #e2e8f0 !important;
+    color: #a0aec0 !important;
+    transform: none !important;
+}
+
+.profile-cancel-btn {
+    min-width: 180px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Input Change Animation */
+.profile-input-changed {
+    border-color: #f6ad55 !important;
+    background: #fffaf0 !important;
+    animation: inputHighlight 0.5s ease;
+}
+
+@keyframes inputHighlight {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Success Animation for Update Button */
+.profile-update-success {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ! PROFILE PAGE RESPONSIVE STYLES START */
+
+@media (max-width: 991.98px) {
+    .profile-section-modern {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-section-title {
+        font-size: 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .profile-actions-modern {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    
+    .profile-update-btn,
+    .profile-cancel-btn {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .profile-section-modern {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-section-title {
+        font-size: 1.1rem;
+    }
+    
+    .profile-input-modern {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .profile-input-icon {
+        left: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .profile-label-modern {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-actions-modern {
+        padding: 1.5rem;
+    }
+    
+    .profile-update-btn,
+    .profile-cancel-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .profile-section-modern {
+        padding: 0.75rem;
+        border-radius: 10px;
+    }
+    
+    .profile-section-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+    
+    .profile-input-modern {
+        padding: 0.6rem 0.6rem 0.6rem 2.2rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+    
+    .profile-input-icon {
+        left: 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .profile-label-modern {
+        font-size: 0.85rem;
+    }
+    
+    .profile-textarea-modern {
+        min-height: 80px;
+    }
+    
+    .profile-actions-modern {
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+    
+    .profile-update-btn,
+    .profile-cancel-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        min-width: auto;
+    }
+}
+
+/* ! PROFILE PAGE RESPONSIVE STYLES END */
+
+/* ! USER PROFILE PAGE SPECIFIC STYLES END */
+
+/* ! USER SETTINGS PAGE SPECIFIC STYLES START */
+
+.settings-content-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+}
+
+.settings-section-modern {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8ecef;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-section-modern:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.settings-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings-section-icon {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.settings-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    color: white;
+}
+
+.settings-options-list {
+    padding: 1.5rem 2rem;
+}
+
+.notification-save-actions {
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem 1rem;
+    border-top: 1px solid #e8ecef;
+    background: #f8f9fa;
+    margin: 0 -2rem -1.5rem;
+}
+
+.settings-option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e8ecef;
+    transition: all 0.3s ease;
+}
+
+.settings-option-item:last-child {
+    border-bottom: none;
+}
+
+.settings-option-item:hover {
+    background: #f8f9fa;
+    margin: 0 -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.settings-option-info {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.settings-option-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 0.5rem 0;
+}
+
+.settings-option-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.settings-toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.settings-toggle-modern {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.settings-toggle-modern input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.settings-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e0;
+    transition: 0.4s;
+    border-radius: 34px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.settings-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .settings-toggle-slider {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+input:focus + .settings-toggle-slider {
+    box-shadow: 0 0 1px #667eea, inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:checked + .settings-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.settings-password-form {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.password-form-modern {
+    max-width: 100%;
+}
+
+.settings-input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.settings-label-modern {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.settings-label-modern i {
+    font-size: 1rem;
+    color: #667eea;
+}
+
+.settings-input-modern {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    color: #2d3748;
+}
+
+.settings-input-modern:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: #ffffff;
+}
+
+.settings-input-modern::placeholder {
+    color: #9ca3af;
+}
+
+.settings-input-feedback {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    display: none;
+}
+
+.settings-password-strength {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: none;
+}
+
+.strength-weak {
+    color: #ef4444;
+}
+
+.strength-medium {
+    color: #f59e0b;
+}
+
+.strength-strong {
+    color: #10b981;
+}
+
+.settings-form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.settings-update-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.settings-update-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.settings-update-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.settings-update-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
+}
+
+.settings-cancel-btn {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 2px solid #e5e7eb;
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings-cancel-btn:hover {
+    background: #e5e7eb;
+    color: #4b5563;
+    border-color: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-content-modern {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .settings-section-header {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .settings-section-icon {
+        font-size: 1.25rem;
+    }
+    
+    .settings-section-title {
+        font-size: 1.1rem;
+    }
+    
+    .settings-options-list,
+    .settings-password-form {
+        padding: 1rem 1.5rem;
+    }
+    
+    .notification-save-actions {
+        padding: 1rem 1.5rem 0.75rem;
+        margin: 0 -1.5rem -1rem;
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+    
+    .notification-save-actions .settings-update-btn,
+    .notification-save-actions .settings-cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .settings-option-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .settings-option-item:hover {
+        margin: 0 -1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    .settings-toggle-wrapper {
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+    
+    .settings-form-actions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+    
+    .settings-update-btn,
+    .settings-cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .settings-section-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .settings-options-list,
+    .settings-password-form {
+        padding: 0.75rem 1rem;
+    }
+    
+    .notification-save-actions {
+        padding: 0.75rem 1rem 0.5rem;
+        margin: 0 -1rem -0.75rem;
+    }
+    
+    .settings-option-item:hover {
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .settings-input-modern {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .settings-update-btn,
+    .settings-cancel-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ! USER SETTINGS PAGE SPECIFIC STYLES END */

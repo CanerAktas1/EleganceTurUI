@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Elegance Tur | Hesap Ayarları</title>
     <!-- ! SITE CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -14,29 +14,12 @@
     <!-- ! FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- ! NICE SELECT -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
-        integrity="sha512-CNHBsG9yqXzZbG6b7Q1XW0Ov+uWcSx9YDGJ0fB0KFG1fSS2xd2vM8JQx1J+Peuyq+S3dxw9NsWa6zyxSFMojZA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- ! BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
     <!-- ! BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- ! OWL CAROUSEL -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- ! DATA AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -460,9 +443,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="user-dashboard-sidebar">
                         <div class="dashboard-profile-header">
-                            <div class="dashboard-user-avatar">
-                                CA
-                            </div>
+                            <div class="dashboard-user-avatar">CA</div>
                             <div class="dashboard-user-name">Caner Aktaş</div>
                             <div class="dashboard-user-status">caneraktas09@gmail.com</div>
                         </div>
@@ -475,7 +456,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="/pages/user-reservations.html">
+                                <a class="nav-link" href="/pages/user-reservations.html">
                                     <i class="fas fa-clipboard-list"></i>
                                     <span>Rezervasyonlarım</span>
                                 </a>
@@ -493,7 +474,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pages/user-settings.html">
+                                <a class="nav-link active" href="/pages/user-settings.html">
                                     <i class="fas fa-cog"></i>
                                     <span>Hesap Ayarları</span>
                                 </a>
@@ -512,316 +493,114 @@
                 <div class="col-lg-9 col-md-8">
                     <div class="dashboard-main-content">
                         <div class="dashboard-content-header">
-                            <h1 class="dashboard-content-title">Rezervasyonlarım</h1>
-                            <p class="dashboard-content-subtitle">Tüm rezervasyonlarınızı buradan görüntüleyebilir ve yönetebilirsiniz</p>
+                            <h1 class="dashboard-content-title">Hesap Ayarları</h1>
+                            <p class="dashboard-content-subtitle">Hesap tercihlerinizi ve güvenlik ayarlarınızı yönetebilirsiniz</p>
                         </div>
                         
-                            <!-- Modern Tabs -->
-                            <nav>
-                                <div class="nav nav-tabs reservations-modern-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                                        aria-selected="true">
-                                        <i class="fas fa-list me-2"></i>Tümü
-                                    </button>
-                                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-profile" type="button" role="tab"
-                                        aria-controls="nav-profile" aria-selected="false">
-                                        <i class="fas fa-check-circle me-2"></i>Aktif Rezervasyonlar
-                                    </button>
-                                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-contact" type="button" role="tab"
-                                        aria-controls="nav-contact" aria-selected="false">
-                                        <i class="fas fa-history me-2"></i>Geçmiş Rezervasyonlar
-                                    </button>
+                        <div class="settings-content-modern">
+                            <!-- Bildirim Ayarları -->
+                            <div class="settings-section-modern">
+                                <div class="settings-section-header">
+                                    <i class="fas fa-bell settings-section-icon"></i>
+                                    <h3 class="settings-section-title">Bildirim Tercihleri</h3>
                                 </div>
-                            </nav>
-                            <div class="tab-content" id="nav-tabContent">
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                                    aria-labelledby="nav-home-tab" tabindex="0">
+                                
+                                <div class="settings-options-list">
+                                    <div class="settings-option-item">
+                                        <div class="settings-option-info">
+                                            <h4 class="settings-option-title">Bülten Aboneliği</h4>
+                                            <p class="settings-option-description">Kampanyalar ve özel tekliflerden haberdar olmak için bülten alın</p>
+                                        </div>
+                                        <div class="settings-toggle-wrapper">
+                                            <label class="settings-toggle-modern">
+                                                <input type="checkbox" id="newsletterSubscription" checked>
+                                                <span class="settings-toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
                                     
-                                    <!-- Modern Reservation Card 1 -->
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Selanik Turu">
-                                                    <div class="reservation-status">Aktif</div>
+                                    <div class="settings-option-item">
+                                        <div class="settings-option-info">
+                                            <h4 class="settings-option-title">Reklam İletileri</h4>
+                                            <p class="settings-option-description">Kişiselleştirilmiş tur önerileri ve reklam içerikleri alın</p>
                                         </div>
-                                            </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">SELANİK - HALKİDİKİ - THASSOS TURU</h3>
-                                                    
-                                        <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>3 Gece 4 Gün</span>
-                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin, 1 Çocuk</span>
-                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>28 Ağu 2025 - 11 Eyl 2025</span>
-                                            </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-plane"></i>
-                                                            <span>Pegasus Hava Yolları</span>
-                                                    </div>
-                                                </div>
-
-                                                    <div class="dashboard-price">1.699,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-primary-modern">
-                                                            <i class="fas fa-eye me-2"></i>Detayları Görüntüle
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-download me-2"></i>Belgeleri İndir
-                                                        </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <!-- Modern Reservation Card 2 -->
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Bernina Ekspress Turu">
-                                                    <div class="reservation-status">Aktif</div>
-                                            </div>
-                                                    </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">BERNİNA EKSPRESS ILE NOEL PAZARLARI TURU</h3>
-                                                    
-                                                    <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>4 Gece 5 Gün</span>
-                                                </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin</span>
-                                            </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>26 Kas 2025 - 20 Ara 2025</span>
-                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-plane"></i>
-                                                            <span>Pegasus Hava Yolları</span>
-                                    </div>
-                                            </div>
-
-                                                    <div class="dashboard-price">1.699,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-primary-modern">
-                                                            <i class="fas fa-eye me-2"></i>Detayları Görüntüle
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-download me-2"></i>Belgeleri İndir
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <!-- Modern Reservation Card 3 -->
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Amalfi Turu">
-                                                    <div class="reservation-status">Tamamlandı</div>
-                                    </div>
-                                            </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">AMALFİ VE PUGLİA TURU</h3>
-
-                                        <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>4 Gece 5 Gün</span>
-                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>11 Eki 2025 - 11 Eki 2025</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-plane"></i>
-                                                            <span>Türk Hava Yolları</span>
-                                        </div>
-                                    </div>
-
-                                                    <div class="dashboard-price">1.899,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-primary-modern">
-                                                            <i class="fas fa-star me-2"></i>Değerlendir
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-download me-2"></i>Belgeleri İndir
-                                                        </a>
-                                        </div>
-                                        </div>
-                                            </div>
+                                        <div class="settings-toggle-wrapper">
+                                            <label class="settings-toggle-modern">
+                                                <input type="checkbox" id="marketingEmails">
+                                                <span class="settings-toggle-slider"></span>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                    aria-labelledby="nav-profile-tab" tabindex="0">
-                                    <!-- Active Reservations -->
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Selanik Turu">
-                                                    <div class="reservation-status">Aktif</div>
-                                            </div>
-                                            </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">SELANİK - HALKİDİKİ - THASSOS TURU</h3>
-                                                    
-                                                    <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>3 Gece 4 Gün</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin, 1 Çocuk</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>28 Ağu 2025 - 11 Eyl 2025</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-hourglass-half"></i>
-                                                            <span>Başlama: 45 gün kaldı</span>
-                                                    </div>
-                                                </div>
-
-                                                    <div class="dashboard-price">1.699,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-primary-modern">
-                                                            <i class="fas fa-edit me-2"></i>Düzenle
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-times me-2"></i>İptal Et
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                
+                                <!-- Bildirim Kaydet Butonu -->
+                                <div class="notification-save-actions" id="notificationSaveActions" style="display: none;">
+                                    <button type="button" id="cancelNotificationBtn" class="settings-cancel-btn">
+                                        <i class="fas fa-times me-2"></i>İptal
+                                    </button>
+                                    <button type="button" id="saveNotificationBtn" class="settings-update-btn">
+                                        <i class="fas fa-save me-2"></i>Tercihleri Kaydet
+                                    </button>
                                 </div>
-                                <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                    aria-labelledby="nav-contact-tab" tabindex="0">
-                                    <!-- Past Reservations -->
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Amalfi Turu">
-                                                    <div class="reservation-status" style="background: rgba(34, 197, 94, 0.9);">Tamamlandı</div>
-                                            </div>
-                                            </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">AMALFİ VE PUGLİA TURU</h3>
-                                                    
-                                                    <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>4 Gece 5 Gün</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>11 Eki 2025 - 11 Eki 2025</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-check-circle"></i>
-                                                            <span>Tur tamamlandı</span>
-                                                    </div>
-                                                </div>
-
-                                                    <div class="dashboard-price">1.899,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-primary-modern">
-                                                            <i class="fas fa-star me-2"></i>Değerlendir
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-redo me-2"></i>Tekrar Rezerve Et
-                                                        </a>
+                            </div>
+                            
+                            <!-- Güvenlik Ayarları -->
+                            <div class="settings-section-modern">
+                                <div class="settings-section-header">
+                                    <i class="fas fa-shield-alt settings-section-icon"></i>
+                                    <h3 class="settings-section-title">Güvenlik</h3>
+                                </div>
+                                
+                                <div class="settings-password-form">
+                                    <form id="passwordChangeForm" class="password-form-modern">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="settings-input-group">
+                                                    <label class="settings-label-modern" for="currentPassword">
+                                                        <i class="fas fa-lock"></i>
+                                                        Mevcut Şifre
+                                                    </label>
+                                                    <input type="password" id="currentPassword" class="settings-input-modern" 
+                                                           placeholder="Mevcut şifrenizi girin" required>
+                                                    <div class="settings-input-feedback" id="currentPasswordFeedback"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                            </div>
-
-                                    <div class="dashboard-card">
-                                        <div class="row g-0">
-                                            <div class="col-lg-4 col-md-5">
-                                                <div class="dashboard-card-image">
-                                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="İstanbul Turu">
-                                                    <div class="reservation-status" style="background: rgba(34, 197, 94, 0.9);">Tamamlandı</div>
-                                                    </div>
+                                            
+                                            <div class="col-md-6">
+                                                <div class="settings-input-group">
+                                                    <label class="settings-label-modern" for="newPassword">
+                                                        <i class="fas fa-key"></i>
+                                                        Yeni Şifre
+                                                    </label>
+                                                    <input type="password" id="newPassword" class="settings-input-modern" 
+                                                           placeholder="Yeni şifrenizi girin" required>
+                                                    <div class="settings-password-strength" id="passwordStrength"></div>
+                                                    <div class="settings-input-feedback" id="newPasswordFeedback"></div>
                                                 </div>
-                                            <div class="col-lg-8 col-md-7">
-                                                <div class="dashboard-card-content">
-                                                    <h3 class="dashboard-card-title">İSTANBUL ŞEHİR TURU</h3>
-                                                    
-                                                    <div class="dashboard-card-details">
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-clock"></i>
-                                                            <span>2 Gece 3 Gün</span>
-                                                </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-users"></i>
-                                                            <span>2 Yetişkin</span>
                                             </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-calendar-alt"></i>
-                                                            <span>15 Haz 2024 - 17 Haz 2024</span>
-                                                        </div>
-                                                        <div class="detail-item">
-                                                            <i class="fas fa-star"></i>
-                                                            <span>5/5 puanla değerlendirildi</span>
-                                        </div>
-                                    </div>
-
-                                                    <div class="dashboard-price">899,00 €</div>
-                                                    
-                                                    <div class="dashboard-card-actions">
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-download me-2"></i>Belgeleri İndir
-                                                        </a>
-                                                        <a href="#" class="btn-modern btn-outline-modern">
-                                                            <i class="fas fa-redo me-2"></i>Tekrar Rezerve Et
-                                                        </a>
-                                                    </div>
+                                            
+                                            <div class="col-md-6">
+                                                <div class="settings-input-group">
+                                                    <label class="settings-label-modern" for="confirmPassword">
+                                                        <i class="fas fa-check-circle"></i>
+                                                        Şifre Tekrarı
+                                                    </label>
+                                                    <input type="password" id="confirmPassword" class="settings-input-modern" 
+                                                           placeholder="Şifrenizi tekrar girin" required>
+                                                    <div class="settings-input-feedback" id="confirmPasswordFeedback"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                        
+                                        <div class="settings-form-actions">
+                                            <button type="button" id="cancelPasswordBtn" class="settings-cancel-btn" style="display: none;">
+                                                <i class="fas fa-times me-2"></i>İptal
+                                            </button>
+                                            <button type="submit" id="updatePasswordBtn" class="settings-update-btn" disabled>
+                                                <i class="fas fa-shield-alt me-2"></i>Şifreyi Güncelle
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -831,8 +610,8 @@
         </div>
     </section>
 
-    <!-- ! FOOTER START-->
-    <footer class="footer pt-5">
+     <!-- ! FOOTER START-->
+     <footer class="footer pt-5">
         <div class="container text-dark mt-5">
             <div class="row">
                 <div class="col-12 col-lg-3 col-md-6">
@@ -937,9 +716,6 @@
 
     <!-- ! FOOTER END-->
 
-
-
-
     <!-- ? BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
@@ -947,6 +723,217 @@
 
     <!-- ? SITE JS -->
     <script src="/javascript/script.js"></script>
+    
+    <!-- ? SETTINGS PAGE JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Settings page loaded');
+            
+            // Form elemanları
+            const passwordForm = document.getElementById('passwordChangeForm');
+            const currentPasswordInput = document.getElementById('currentPassword');
+            const newPasswordInput = document.getElementById('newPassword');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const updatePasswordBtn = document.getElementById('updatePasswordBtn');
+            const cancelPasswordBtn = document.getElementById('cancelPasswordBtn');
+            
+            // Toggle elemanları
+            const newsletterToggle = document.getElementById('newsletterSubscription');
+            const marketingToggle = document.getElementById('marketingEmails');
+            
+            // Bildirim kaydet butonları
+            const notificationSaveActions = document.getElementById('notificationSaveActions');
+            const saveNotificationBtn = document.getElementById('saveNotificationBtn');
+            const cancelNotificationBtn = document.getElementById('cancelNotificationBtn');
+            
+            // Orijinal toggle durumları
+            let originalNotificationSettings = {
+                newsletter: newsletterToggle.checked,
+                marketing: marketingToggle.checked
+            };
+            
+            // Feedback elemanları
+            const passwordStrength = document.getElementById('passwordStrength');
+            const newPasswordFeedback = document.getElementById('newPasswordFeedback');
+            const confirmPasswordFeedback = document.getElementById('confirmPasswordFeedback');
+            
+            // Şifre gücü kontrolü
+            function checkPasswordStrength(password) {
+                let strength = 0;
+                let feedback = '';
+                
+                if (password.length >= 8) strength++;
+                if (/[a-z]/.test(password)) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+                
+                switch (strength) {
+                    case 0:
+                    case 1:
+                        feedback = '<span class="strength-weak">Zayıf</span>';
+                        break;
+                    case 2:
+                    case 3:
+                        feedback = '<span class="strength-medium">Orta</span>';
+                        break;
+                    case 4:
+                    case 5:
+                        feedback = '<span class="strength-strong">Güçlü</span>';
+                        break;
+                }
+                
+                return { strength, feedback };
+            }
+            
+            // Form validasyonu
+            function validatePasswordForm() {
+                let isValid = true;
+                
+                // Mevcut şifre kontrolü
+                if (currentPasswordInput.value.length === 0) {
+                    isValid = false;
+                }
+                
+                // Yeni şifre kontrolü
+                const passwordCheck = checkPasswordStrength(newPasswordInput.value);
+                if (newPasswordInput.value.length < 6) {
+                    newPasswordFeedback.innerHTML = '<span class="text-danger">En az 6 karakter olmalı</span>';
+                    newPasswordFeedback.style.display = 'block';
+                    isValid = false;
+                } else {
+                    newPasswordFeedback.style.display = 'none';
+                }
+                
+                // Şifre eşleşme kontrolü
+                if (newPasswordInput.value !== confirmPasswordInput.value && confirmPasswordInput.value.length > 0) {
+                    confirmPasswordFeedback.innerHTML = '<span class="text-danger">Şifreler eşleşmiyor</span>';
+                    confirmPasswordFeedback.style.display = 'block';
+                    isValid = false;
+                } else if (confirmPasswordInput.value.length > 0) {
+                    confirmPasswordFeedback.innerHTML = '<span class="text-success">Şifreler eşleşiyor</span>';
+                    confirmPasswordFeedback.style.display = 'block';
+                }
+                
+                updatePasswordBtn.disabled = !isValid || newPasswordInput.value.length === 0;
+                cancelPasswordBtn.style.display = (currentPasswordInput.value || newPasswordInput.value || confirmPasswordInput.value) ? 'inline-block' : 'none';
+                
+                return isValid;
+            }
+            
+            // Event listener'lar
+            newPasswordInput.addEventListener('input', function() {
+                const passwordCheck = checkPasswordStrength(this.value);
+                passwordStrength.innerHTML = passwordCheck.feedback;
+                passwordStrength.style.display = this.value.length > 0 ? 'block' : 'none';
+                validatePasswordForm();
+            });
+            
+            [currentPasswordInput, newPasswordInput, confirmPasswordInput].forEach(input => {
+                input.addEventListener('input', validatePasswordForm);
+                input.addEventListener('keyup', validatePasswordForm);
+            });
+            
+            // Form submit
+            passwordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validatePasswordForm()) {
+                    updatePasswordBtn.innerHTML = '<i class="fas fa-check me-2"></i>Güncellendi!';
+                    updatePasswordBtn.classList.add('settings-update-success');
+                    updatePasswordBtn.disabled = true;
+                    
+                    // Form temizle
+                    setTimeout(() => {
+                        currentPasswordInput.value = '';
+                        newPasswordInput.value = '';
+                        confirmPasswordInput.value = '';
+                        passwordStrength.style.display = 'none';
+                        newPasswordFeedback.style.display = 'none';
+                        confirmPasswordFeedback.style.display = 'none';
+                        cancelPasswordBtn.style.display = 'none';
+                        
+                        updatePasswordBtn.innerHTML = '<i class="fas fa-shield-alt me-2"></i>Şifreyi Güncelle';
+                        updatePasswordBtn.classList.remove('settings-update-success');
+                        updatePasswordBtn.disabled = true;
+                    }, 3000);
+                }
+            });
+            
+            // İptal butonu
+            cancelPasswordBtn.addEventListener('click', function() {
+                currentPasswordInput.value = '';
+                newPasswordInput.value = '';
+                confirmPasswordInput.value = '';
+                passwordStrength.style.display = 'none';
+                newPasswordFeedback.style.display = 'none';
+                confirmPasswordFeedback.style.display = 'none';
+                this.style.display = 'none';
+                updatePasswordBtn.disabled = true;
+            });
+            
+            // Bildirim tercihlerinde değişiklik kontrolü
+            function checkNotificationChanges() {
+                const hasChanges = 
+                    newsletterToggle.checked !== originalNotificationSettings.newsletter ||
+                    marketingToggle.checked !== originalNotificationSettings.marketing;
+                
+                notificationSaveActions.style.display = hasChanges ? 'flex' : 'none';
+                
+                console.log('Bildirim değişiklikleri:', {
+                    newsletter: { original: originalNotificationSettings.newsletter, current: newsletterToggle.checked },
+                    marketing: { original: originalNotificationSettings.marketing, current: marketingToggle.checked },
+                    hasChanges: hasChanges
+                });
+            }
+            
+            // Toggle ayarları için event listener'lar
+            [newsletterToggle, marketingToggle].forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    console.log(`${this.id} değişti:`, this.checked);
+                    checkNotificationChanges();
+                });
+            });
+            
+            // Bildirim kaydet butonu
+            saveNotificationBtn.addEventListener('click', function() {
+                console.log('Bildirim tercihleri kaydediliyor...');
+                
+                // Başarı animasyonu
+                this.innerHTML = '<i class="fas fa-check me-2"></i>Kaydedildi!';
+                this.classList.add('settings-update-success');
+                this.disabled = true;
+                
+                // Orijinal ayarları güncelle
+                originalNotificationSettings = {
+                    newsletter: newsletterToggle.checked,
+                    marketing: marketingToggle.checked
+                };
+                
+                // Butonları gizle
+                setTimeout(() => {
+                    notificationSaveActions.style.display = 'none';
+                    this.innerHTML = '<i class="fas fa-save me-2"></i>Tercihleri Kaydet';
+                    this.classList.remove('settings-update-success');
+                    this.disabled = false;
+                }, 3000);
+            });
+            
+            // Bildirim iptal butonu
+            cancelNotificationBtn.addEventListener('click', function() {
+                console.log('Bildirim değişiklikleri iptal ediliyor...');
+                
+                // Orijinal durumları geri yükle
+                newsletterToggle.checked = originalNotificationSettings.newsletter;
+                marketingToggle.checked = originalNotificationSettings.marketing;
+                
+                // Butonları gizle
+                notificationSaveActions.style.display = 'none';
+            });
+            
+            console.log('Settings page JavaScript initialized');
+        });
+    </script>
 </body>
 
 </html>

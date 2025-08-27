@@ -37,150 +37,7 @@
 
     <!-- ! DATA AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        .profile-card {
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
 
-        .dashboard-header {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        .empty-state {
-            font-size: 16px;
-            color: #888;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .arrow-icon {
-            font-size: 20px;
-            color: #007bff;
-        }
-
-        .coupons-section {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .coupon-card {
-            background: #ffffff;
-            border-radius: 15px;
-            display: flex;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        /* Left Section */
-        .coupon-card-left {
-            flex: 1;
-            padding-right: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .coupon-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .coupon-details {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .coupon-dates,
-        .coupon-expiry {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 10px;
-        }
-
-        /* Right Section */
-        .coupon-card-right {
-            background: rgba(255, 255, 255, 0.36);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
-            border: 1px solid rgba(255, 255, 255, 0.41);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-        }
-
-        .coupon-code {
-            font-size: 20px;
-            font-weight: 700;
-            background-color: #ffffff;
-            color: #007bff;
-            padding: 12px 20px;
-            border-radius: 30px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .btn-view-hotels {
-            background-color: #ffffff;
-            color: #007bff;
-            border: 2px solid #007bff;
-            padding: 10px 25px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-bottom: 20px;
-        }
-
-        .btn-view-hotels:hover {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .expiry-time {
-            background-color: rgb(184, 11, 11);
-            padding: 10px 25px;
-            font-size: 14px;
-            font-weight: bold;
-            color: white;
-            border-radius: 25px;
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .coupon-card {
-                flex-direction: column;
-            }
-
-            .coupon-card-left {
-                padding-right: 0;
-                margin-bottom: 20px;
-            }
-
-            .coupon-card-right {
-                width: 100%;
-                margin-top: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -598,86 +455,199 @@
 
 
 
-    <section style="min-height: 70vh; ">
-        <div class="container mt-5">
-            <div class="row my-5">
-                <!-- Sidebar -->
-                <div class="col-md-3 col-lg-3 sidebar">
-                    <div class="profile-card">
-                        <h5>Caner Aktaş</h5>
-                        <ul class="nav flex-column">
+    <section class="user-dashboard">
+        <div class="container">
+            <div class="row">
+                <!-- Modern Sidebar -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="user-dashboard-sidebar">
+                        <div class="dashboard-profile-header">
+                            <div class="dashboard-user-avatar">
+                                CA
+                            </div>
+                            <div class="dashboard-user-name">Caner Aktaş</div>
+                            <div class="dashboard-user-status">caneraktas09@gmail.com</div>
+                        </div>
+                        
+                        <ul class="dashboard-nav-menu">
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-user"></i> Profilim
+                                <a class="nav-link" href="/pages/user-profile.html">
+                                    <i class="fas fa-user"></i>
+                                    <span>Profilim</span>
                                 </a>
                             </li>
-                            <hr>
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="/pages/user-reservations.html">
-                                    <i class="fas fa-clipboard-list"></i> Rezervasyonlarım
+                                <a class="nav-link" href="/pages/user-reservations.html">
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <span>Rezervasyonlarım</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="/pages/user-favorited-tours.html">
-                                    <i class="bi bi-heart-fill"></i> Beğendiklerim
+                                <a class="nav-link" href="/pages/user-favorited-tours.html">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Beğendiklerim</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-cogs"></i> Hesap Ayarları
+                                <a class="nav-link active" href="/pages/user-coupons.html">
+                                    <i class="fas fa-tags"></i>
+                                    <span>Kuponlarım</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link active " href="/pages/user-coupons.html">
-                                    <i class="fas fa-tags"></i> Kuponlarım
+                                <a class="nav-link" href="/pages/user-settings.html">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Hesap Ayarları</span>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="#">
-                                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Çıkış Yap</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Main Content -->
-                <div class="col-md-9 col-lg-9 p-3">
-                    <div class="empty-state">
-                        <div class="reservations-section">
-                            <h2 class="dashboard-header text-black text-start">Kuponlarım</h2>
-                            <hr>
-                            <div class="coupons-section">
-
-                                <div class="coupon-card d-flex">
-
-                                    <div class="coupon-card-left">
-                                        <h4 class="coupon-title">Yunanistan Turlarında 1000 TL İndirim!</h4>
-                                        <p class="coupon-details">
-                                            31 Ağustosa kadar rezervasyon yapın ve 1000 TL indirim kazanın!
-                                        </p>
-                                        <div class="coupon-dates">
-                                            <strong>Tarih Aralığı:</strong> 01.08.2025 - 31.10.2025
-                                        </div>
-                                        <div class="coupon-expiry">
-                                            <strong>Bitiş Tarihi:</strong> 31.08.2025
-                                        </div>
+                <!-- Modern Main Content -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="dashboard-main-content">
+                        <div class="dashboard-content-header">
+                            <h1 class="dashboard-content-title">Kuponlarım</h1>
+                            <p class="dashboard-content-subtitle">Mevcut kuponlarınızı buradan görüntüleyebilir ve kullanabilirsiniz</p>
+                        </div>
+                        
+                        <div class="tab-content p-4">
+                            <!-- Kupon Card 1 -->
+                            <div class="coupon-modern-card">
+                                <div class="coupon-modern-left">
+                                    <div class="coupon-modern-header">
+                                        <h3 class="coupon-modern-title">Yunanistan Turlarında 1000 TL İndirim!</h3>
+                                        <div class="coupon-modern-badge coupon-active">Aktif</div>
                                     </div>
-
-
-                                    <div class="coupon-card-right">
-                                        <div class="coupon-code">Elegance1000</div>
-                                        <a href="#" class="btn-view-hotels">Turları Gör</a>
-                                        <div class="expiry-time">
-                                            Kalan Süre: 6 Gün Saat
+                                    <p class="coupon-modern-description">
+                                        31 Ağustosa kadar rezervasyon yapın ve Yunanistan turlarında 1000 TL indirim kazanın!
+                                    </p>
+                                    <div class="coupon-modern-details">
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span>Geçerlilik: 01.08.2025 - 31.10.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Son Kullanma: 31.08.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Geçerli Tur: Yunanistan Turları</span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="coupon-modern-right">
+                                    <div class="coupon-modern-code">
+                                        <span class="coupon-code-label">Kupon Kodu</span>
+                                        <div class="coupon-code-value">ELEGANCE1000</div>
+                                        <button class="coupon-copy-btn" onclick="copyToClipboard('ELEGANCE1000', this)">
+                                            <i class="fas fa-copy"></i> Kopyala
+                                        </button>
+                                    </div>
+                                    <div class="coupon-modern-actions">
+                                        <a href="#" class="btn-modern btn-primary-modern">
+                                            <i class="fas fa-eye me-2"></i>Turları Görüntüle
+                                        </a>
+                                        <div class="coupon-countdown">
+                                            <i class="fas fa-hourglass-half"></i>
+                                            <span>Kalan Süre: 6 Gün</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Kupon Card 2 -->
+                            <div class="coupon-modern-card">
+                                <div class="coupon-modern-left">
+                                    <div class="coupon-modern-header">
+                                        <h3 class="coupon-modern-title">Tüm Yurt İçi Turlarda %15 İndirim</h3>
+                                        <div class="coupon-modern-badge coupon-active">Aktif</div>
+                                    </div>
+                                    <p class="coupon-modern-description">
+                                        Kapadokya, Karadeniz ve diğer tüm yurt içi turlarımızda %15 indirim fırsatı!
+                                    </p>
+                                    <div class="coupon-modern-details">
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span>Geçerlilik: 15.07.2025 - 31.12.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Son Kullanma: 31.12.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Geçerli Tur: Tüm Yurt İçi Turlar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="coupon-modern-right">
+                                    <div class="coupon-modern-code">
+                                        <span class="coupon-code-label">Kupon Kodu</span>
+                                        <div class="coupon-code-value">YURTICI15</div>
+                                        <button class="coupon-copy-btn" onclick="copyToClipboard('YURTICI15', this)">
+                                            <i class="fas fa-copy"></i> Kopyala
+                                        </button>
+                                    </div>
+                                    <div class="coupon-modern-actions">
+                                        <a href="#" class="btn-modern btn-primary-modern">
+                                            <i class="fas fa-eye me-2"></i>Turları Görüntüle
+                                        </a>
+                                        <div class="coupon-countdown">
+                                            <i class="fas fa-hourglass-half"></i>
+                                            <span>Kalan Süre: 127 Gün</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Kupon Card 3 - Expired -->
+                            <div class="coupon-modern-card coupon-expired">
+                                <div class="coupon-modern-left">
+                                    <div class="coupon-modern-header">
+                                        <h3 class="coupon-modern-title">Erken Rezervasyon Kampanyası</h3>
+                                        <div class="coupon-modern-badge coupon-expired-badge">Süresi Doldu</div>
+                                    </div>
+                                    <p class="coupon-modern-description">
+                                        3 ay önceden rezervasyon yapanlara özel 500 TL indirim kuponu.
+                                    </p>
+                                    <div class="coupon-modern-details">
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span>Geçerlilik: 01.06.2025 - 30.06.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span>Son Kullanma: 30.06.2025</span>
+                                        </div>
+                                        <div class="coupon-detail-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Geçerli Tur: Tüm Turlar</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="coupon-modern-right">
+                                    <div class="coupon-modern-code">
+                                        <span class="coupon-code-label">Kupon Kodu</span>
+                                        <div class="coupon-code-value">ERKEN500</div>
+                                        <button class="coupon-copy-btn" disabled>
+                                            <i class="fas fa-ban"></i> Süresi Doldu
+                                        </button>
+                                    </div>
+                                    <div class="coupon-modern-actions">
+                                        <a href="#" class="btn-modern btn-outline-modern" disabled>
+                                            <i class="fas fa-history me-2"></i>Süresi Dolmuş
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
