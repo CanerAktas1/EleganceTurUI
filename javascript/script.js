@@ -42,9 +42,9 @@ typeEffect();
 // ! COUPON PAGE FUNCTIONALITY START
 function copyToClipboard(text, button) {
     if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() {
+        navigator.clipboard.writeText(text).then(function () {
             showCopySuccess(button);
-        }).catch(function(err) {
+        }).catch(function (err) {
             console.error('Kopyalama başarısız oldu: ', err);
             fallbackCopyTextToClipboard(text, button);
         });
@@ -60,11 +60,11 @@ function fallbackCopyTextToClipboard(text, button) {
     textArea.style.left = "0";
     textArea.style.position = "fixed";
     textArea.style.opacity = "0";
-    
+
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-    
+
     try {
         const successful = document.execCommand('copy');
         if (successful) {
@@ -75,20 +75,20 @@ function fallbackCopyTextToClipboard(text, button) {
     } catch (err) {
         console.error('Kopyalama desteklenmiyor: ', err);
     }
-    
+
     document.body.removeChild(textArea);
 }
 
 function showCopySuccess(button) {
     const originalText = button.innerHTML;
     const originalClasses = button.className;
-    
+
     // Buton metnini ve ikonunu değiştir
     button.innerHTML = '<i class="fas fa-check"></i> Kopyalandı!';
     button.classList.add('coupon-copy-success');
-    
+
     // 3 saniye sonra eski haline dön
-    setTimeout(function() {
+    setTimeout(function () {
         button.innerHTML = originalText;
         button.className = originalClasses;
     }, 3000);
