@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Tour Packages</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tour-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .custom-tour-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .custom-tour-card img {
+            width: 100%;
+            height: 200px;
+            /* Fixed height for all images */
+            object-fit: cover;
+            /* This will make the images fill the area */
+        }
+
+        .custom-tour-card-body {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .custom-tour-card-body h5 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .custom-tour-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Responsive adjustment for small screens */
+        @media (max-width: 767px) {
+            .custom-tour-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="container tour-section">
+        <h2 class="text-center mb-5">Özel Dönemler</h2>
+        <div class="row">
+            <!-- Tour Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="custom-tour-card position-relative">
+                    <img src="/img/Riddarfjarden-Stockholm.webp" alt="Tour Image">
+                    <div class="custom-tour-card-body">
+                        <h5>29 Ekim Cumhuriyet Bayramı Haftası Turları</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="custom-tour-card position-relative">
+                    <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Tour Image">
+                    <div class="custom-tour-card-body">
+                        <h5>OCAK'26 Sömestre Tatili</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="custom-tour-card position-relative">
+                    <img src="/img/Riddarfjarden-Stockholm.webp" alt="Tour Image">
+                    <div class="custom-tour-card-body">
+                        <h5>Ara Tatil Turları</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Card 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="custom-tour-card position-relative">
+                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Tour Image">
+                    <div class="custom-tour-card-body">
+                        <h5>Noel Pazarları Turları</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Card 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="custom-tour-card position-relative">
+                    <img src="/img/1.jpg" alt="Tour Image">
+                    <div class="custom-tour-card-body">
+                        <h5>Ramazan Bayramı Turları</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
