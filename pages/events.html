@@ -7,100 +7,6 @@
     <title>Elegance Tur | Yurtiçi ve Yurtdışı Turlar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(to right, #f0f2f5, #ffffff);
-            overflow-x: hidden;
-        }
-
-        .hero-section {
-            height: 70vh;
-            background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
-
-        .hero-text {
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-            transition: all 0.3s ease-in-out;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.2);
-        }
-
-        .glass-card img {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .glass-card .card-body {
-            padding: 20px;
-        }
-
-        .section-title {
-            font-weight: 700;
-            text-align: center;
-            margin: 60px 0 30px;
-            font-size: 2.5rem;
-            color: #222;
-        }
-
-        .btn-custom {
-            border: none;
-            padding: 10px 20px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-    </style>
 
     <!-- ! SITE CSS -->
     <link rel="stylesheet" href="/css/style.css">
@@ -140,13 +46,27 @@
     <!-- ! HEADER START-->
 
     <div class="main-header">
-        <div class="header-top ">
-            <div class="container d-flex justify-content-between ">
-                <p class="text-white mt-3">+90 212 452 52 52</p>
-                <!-- <a href="#" class="login-register-buttons">Giriş Yap</a> -->
-                <div class="mt-3">
-                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Giriş Yap</a>
-                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
+        <div class="header-top py-2 px-5">
+            <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                <!-- Left: Contact Info -->
+                <div class="contact-wrapper position-relative overflow-hidden">
+                    <div id="contactInfo" class="contact-text fw-bold">
+                        +90 212 452 52 52
+                    </div>
+                </div>
+
+                <!-- Middle: Animated Message -->
+                <div class="header-message text-center my-2 my-md-0">
+                    <span class="fade-message" id="rotatingMessage">Size Özel İndirimlerden Faydalanmak İçin Sitemize
+                        Üye Olmayı Unutmayın</span>
+                </div>
+
+                <!-- Right: Auth Links -->
+                <div class="auth-links d-flex pe-4">
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Giriş
+                        Yap</a>
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
                 </div>
             </div>
         </div>
@@ -553,75 +473,314 @@
     </header>
     <!-- ! HEADER END-->
 
-    <section class="hero-section">
-        <div class="hero-text">
-            <h1>Mevsimsel Promosyonlar ve Tur Etkinlikleri</h1>
-            <p>Dünya çapındaki kutlamalar sırasında özel turları ve indirimleri keşfedin</p>
-            <a href="#events" class="btn btn-light btn-lg rounded-pill mt-3">Etkinlikleri Keşfet</a>
-        </div>
-    </section>
-
-    <section class="container tour-section">
-        <h2 class="text-center mb-5">Özel Dönemler</h2>
-        <div class="row">
-
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <div class="custom-tour-card position-relative">
-                        <img src="/img/Riddarfjarden-Stockholm.webp" alt="Tour Image">
-                        <div class="custom-tour-card-body">
-                            <h5>Yılbaşı Turları</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <div class="custom-tour-card position-relative">
-                        <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Tour Image">
-                        <div class="custom-tour-card-body">
-                            <h5>Sömestir Tatili</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <div class="custom-tour-card position-relative">
-                        <img src="/img/Riddarfjarden-Stockholm.webp" alt="Tour Image">
-                        <div class="custom-tour-card-body">
-                            <h5>Ara Tatil Turları</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <div class="custom-tour-card position-relative">
-                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Tour Image">
-                        <div class="custom-tour-card-body">
-                            <h5>Noel Pazarları Turları</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <a href="#">
-                    <div class="custom-tour-card position-relative">
-                        <img src="/img/1.jpg" alt="Tour Image">
-                        <div class="custom-tour-card-body">
-                            <h5>Ramazan Bayramı Turları</h5>
-                        </div>
-                    </div>
-                </a>
+    <!-- ! HERO SECTION START -->
+    <!-- <section class="special-events-hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="hero-title" data-aos="fade-up">Özel Dönemler</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        Yılbaşı, sömestir tatili, kasım ara tatili gibi özel dönemlerde unutulmaz anılar biriktirin
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
+    </section> -->
+    <!-- ! HERO SECTION END -->
 
+    <!-- ! SPECIAL EVENTS SECTION START -->
+    <section class="special-events-section section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-header" data-aos="fade-up">Özel Dönemler</h2>
+                    <p class="section-description" data-aos="fade-up" data-aos-delay="200">
+                        Özel tatil dönemlerinizi unutulmaz kılacak turlarımızı keşfedin
+                    </p>
+                </div>
+            </div>
+
+            <!-- Special Events Grid -->
+            <div class="row g-4">
+                <!-- 29 Ekim Cumhuriyet Bayramı -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="special-event-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/1.jpg" alt="29 Ekim Cumhuriyet Bayramı Turları" class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-flag"></i>
+                                    <span>Özel Dönem</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">29 Ekim Cumhuriyet Bayramı Turları</h3>
+                            <p class="card-description">
+                                Cumhuriyet Bayramı'nın coşkusunu yaşayabileceğiniz özel tur programları
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    29 Ekim
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    3-5 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Grup Turu
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ocak 26 Sömestre Tatili -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="special-event-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                alt="Ocak 26 Sömestre Tatili" class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    <span>Sömestre</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">OCAK 26 Sömestre Tatili</h3>
+                            <p class="card-description">
+                                Öğrenciler için özel hazırlanmış sömestre tatili tur programları
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    26 Ocak
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    7-10 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Öğrenci Grubu
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ara Tatil Turları -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="special-event-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Ara Tatil Turları"
+                                class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Ara Tatil</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Ara Tatil Turları</h3>
+                            <p class="card-description">
+                                Kasım ayı ara tatilinde keyifli ve dinlendirici tur deneyimleri
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    Kasım
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    4-7 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Aile Turu
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noel Pazarları Turları -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="special-event-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/Riddarfjarden-Stockholm.webp" alt="Noel Pazarları Turları" class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-tree"></i>
+                                    <span>Noel</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Noel Pazarları Turları</h3>
+                            <p class="card-description">
+                                Avrupa'nın büyülü Noel pazarlarını keşfedin ve tatil ruhunu yaşayın
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    Aralık
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    5-8 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Romantik Tur
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ramazan Bayramı Turları -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="special-event-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Ramazan Bayramı Turları"
+                                class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-mosque"></i>
+                                    <span>Bayram</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Ramazan Bayramı Turları</h3>
+                            <p class="card-description">
+                                Ramazan Bayramı'nın huzurunu yaşayabileceğiniz özel tur programları
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    Nisan/Mayıs
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    4-9 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Aile Turu
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yılbaşı Özel Turları -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="special-event-card featured-card">
+                        <div class="card-image-wrapper">
+                            <img src="/img/1.jpg" alt="Yılbaşı Özel Turları" class="card-img">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <i class="fas fa-fireworks"></i>
+                                    <span>Yılbaşı</span>
+                                </div>
+                            </div>
+                            <div class="featured-badge">
+                                <i class="fas fa-star"></i>
+                                <span>Öne Çıkan</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Yılbaşı Özel Turları</h3>
+                            <p class="card-description">
+                                2025'e muhteşem bir giriş yapın! Yılbaşı kutlamalarının en güzel örnekleri
+                            </p>
+                            <div class="card-features">
+                                <span class="feature-item">
+                                    <i class="fas fa-calendar"></i>
+                                    31 Aralık - 2 Ocak
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-clock"></i>
+                                    3-7 Gün
+                                </span>
+                                <span class="feature-item">
+                                    <i class="fas fa-users"></i>
+                                    Premium Tur
+                                </span>
+                            </div>
+                            <div class="card-actions">
+                                <a href="/pages/tours.html" class="btn-explore featured-btn">
+                                    <span>Keşfet</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="cta-section" data-aos="fade-up">
+                        <h3 class="cta-title">Özel Dönem Turlarında Yerinizi Ayırtın</h3>
+                        <p class="cta-description">
+                            Sınırlı sayıdaki özel dönem turlarımız için hemen rezervasyon yapın
+                        </p>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn-cta-primary">
+                                <i class="fas fa-phone"></i>
+                                <span>Hemen Ara</span>
+                            </a>
+                            <a href="#" class="btn-cta-secondary">
+                                <i class="fas fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ! SPECIAL EVENTS SECTION END -->
 
     <!-- ! FOOTER START-->
     <footer class="footer pt-5">
@@ -730,6 +889,62 @@
     <!-- ! FOOTER END-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ! AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    </script>
+    <!-- ! HEADER TOP -->
+    <script>
+
+        const contactInfo = document.getElementById("contactInfo");
+        const contactList = ["+90 212 452 52 52", "info@elegancetur.com", "operation@elegancetur.com"];
+        let contactIndex = 0;
+
+        function rotateContact() {
+            contactInfo.style.animation = "slideUp 0.5s ease forwards";
+
+            setTimeout(() => {
+                contactIndex = (contactIndex + 1) % contactList.length;
+                contactInfo.textContent = contactList[contactIndex];
+                contactInfo.style.animation = "slideDown 0.5s ease forwards";
+            }, 500);
+        }
+
+        setInterval(rotateContact, 4000);
+
+
+        const messageEl = document.getElementById("rotatingMessage");
+        const messages = [
+            "Size Özel İndirimlerden Faydalanmak İçin Sitemize Üye Olmayı Unutmayın",
+            "Balkan Turlarında %15 indirim 🔥🥳",
+
+        ];
+        let messageIndex = 0;
+
+        function rotateMessage() {
+            messageEl.classList.remove("show");
+
+            setTimeout(() => {
+                messageIndex = (messageIndex + 1) % messages.length;
+                messageEl.textContent = messages[messageIndex];
+                messageEl.classList.add("show");
+            }, 1000);
+        }
+
+
+        setTimeout(() => {
+            messageEl.classList.add("show");
+        }, 500);
+
+        setInterval(rotateMessage, 5000);
+    </script>
 </body>
 
 </html>
