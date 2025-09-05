@@ -41,97 +41,6 @@
     <!-- ! DATA AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fff;
-
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin-bottom: 80px;
-        }
-
-        .blog-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            color: #fff;
-            height: 100%;
-        }
-
-        .blog-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .blog-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .blog-overlay {
-            position: absolute;
-            bottom: 0;
-            padding: 24px;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
-            width: 100%;
-        }
-
-        .blog-category {
-            background-color: #e63946;
-            color: white;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            border-radius: 12px;
-            display: inline-block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .blog-category.dunya {
-            background-color: #4361ee;
-        }
-
-        .blog-category.turkiye {
-            background-color: #f77f00;
-        }
-
-        .blog-category.ege {
-            background-color: #2a9d8f;
-        }
-
-        .blog-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .blog-meta {
-            font-size: 0.8rem;
-            margin-top: 10px;
-            display: flex;
-            gap: 12px;
-            align-items: center;
-            flex-wrap: wrap;
-            color: #ddd;
-        }
-
-        .blog-meta i {
-            margin-right: 4px;
-        }
-
-
-        @media (max-width: 576px) {
-            .blog-title {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -566,174 +475,58 @@
     </header>
     <!-- ! HEADER END-->
 
-    <!-- Main Content -->
-    <section class="section">
-        <h2 class="section-header">En Popüler Bloglarımız</h2>
-        <div class="container mt-4">
-            <div class="blog-grid">
-                <!-- Card 1 -->
-                <div class="blog-card">
-                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Marmaris"
-                        style="width: 100%; height: 100%;">
-                    <div class="blog-overlay">
-                        <div class="blog-category ege">Ege</div>
-                        <div class="blog-title">Marmaris’te Görülmesi Gereken Noktalar: Yeşille Mavinin Kucaklaştığı
-                            Cennet</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>01.07.2025</span>
-                            <span><i class="bi bi-clock"></i>16dk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="blog-card">
-                    <img src="/img/1.jpg" alt="Urla" style="width: 100%; height: 100%;">
-                    <div class="blog-overlay">
-                        <div class="blog-category ege">Ege</div>
-                        <div class="blog-title">Urla’da Gezilecek Rotalar ve Lezzet Durakları: Ege'nin Huzurlu Sahil
-                            Kasabası</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>21.06.2025</span>
-                            <span><i class="bi bi-clock"></i>15dk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="blog-card">
-                    <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Barcelona"
-                        style="width: 100%; height: 100%;">
-                    <div class="blog-overlay">
-                        <div class="blog-category dunya">Dünya</div>
-                        <div class="blog-title">Barselona’da Mutlaka Görülmesi Gereken 10 Yer</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>05.06.2025</span>
-                            <span><i class="bi bi-clock"></i>8dk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="blog-card">
-                    <img src="/img/Riddarfjarden-Stockholm.webp" alt="Heybeliada">
-                    <div class="blog-overlay">
-                        <div class="blog-category turkiye">Türkiye</div>
-                        <div class="blog-title">Heybeliada’da Gezilecek Yerler</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>25.05.2025</span>
-                            <span><i class="bi bi-clock"></i>12dk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="blog-card">
-                    <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Kıbrıs"
-                        style="width: 100%; height: 100%;">
-                    <div class="blog-overlay">
-                        <div class="blog-category dunya">Dünya</div>
-                        <div class="blog-title">Kuzey Kıbrıs’ta Keşfedilecek Yerler</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                            <span><i class="bi bi-clock"></i>10dk</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="blog-card">
-                    <img src="/img/Riddarfjarden-Stockholm.webp" alt="Mısır" style="width: 100%; height: 100%;">
-                    <div class="blog-overlay">
-                        <div class="blog-category dunya">Dünya</div>
-                        <div class="blog-title">Sharm El Sheikh Planınızda Atlanmaması Gereken Noktalar</div>
-                        <div class="blog-meta">
-                            <span><i class="bi bi-person-fill"></i>Caner</span>
-                            <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                            <span><i class="bi bi-clock"></i>10dk</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <h2 class="section-header">Yurt Dışı</h2>
+    <!-- Modern Blog Hero Section -->
+    <section class="modern-blog-hero">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://mediaim.expedia.com/destination/1/944d610146b9f28ad3ed349ad09f2fd1.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Dünya</div>
-                            <div class="blog-title">Sharm El Sheikh Planınızda Atlanmaması Gereken Noktalar</div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>10dk</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://blog.jollytur.com/wp-content/uploads/2025/08/BELGRAD-shutterstock_2488618231-799x650.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Dünya</div>
-                            <div class="blog-title">Doğu Avrupa’nın Kalbi Belgrad’da Gezilecek Yerler</div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>14dk</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="modern-blog-hero-content text-center">
+                <h1 class="modern-blog-hero-title">Seyahat Rehberi</h1>
+                <p class="modern-blog-hero-subtitle">Keşfetmeye değer destinasyonlar, yerel lezzetler ve unutulmaz seyahat deneyimleri için rehberiniz.</p>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-header">Yurt İçi</h2>
+    <!-- Featured Blog Post -->
+    <section class="modern-blog-featured">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://blog.jollytur.com/wp-content/uploads/2025/08/SAKIZ-ADASI-aegean-sea-coast-with-blue-transparent-water-greenery-around-rocks-bushes-trees-view-from-drone-greece-600x670.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Türkiye</div>
-                            <div class="blog-title">Ağva’da Huzurlu Bir Tatil: Nehir Kenarı Keyfi ve Doğal Güzellikler
-                            </div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>10dk</span>
+            <div class="modern-blog-featured-post">
+                <div class="row g-0">
+                    <div class="col-lg-6">
+                        <div class="modern-blog-featured-image">
+                            <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Öne Çıkan Blog">
+                            <div class="modern-blog-featured-badge">
+                                <i class="fas fa-star"></i>
+                                Öne Çıkan
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://blog.jollytur.com/wp-content/uploads/2025/08/BOZCAADA-shutterstock_2501017955-1150x645.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Türkiye</div>
-                            <div class="blog-title">Bozcaada Gezi Rehberi: Ege’nin En Güzel Adasında Keşfedilecek Her
-                                Şey</div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>14dk</span>
+                    <div class="col-lg-6">
+                        <div class="modern-blog-featured-content">
+                            <div class="modern-blog-featured-category">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Yurt Dışı
                             </div>
+                            <h2 class="modern-blog-featured-title">İtalya'nın Gizli Cenneti: Cinque Terre'de Unutulmaz Anlar</h2>
+                            <p class="modern-blog-featured-excerpt">Akdeniz'in muhteşem kıyılarında yer alan beş renkli köy, doğal güzellikleri ve benzersiz mimarisiyle ziyaretçilerini büyülüyor. Her köşesinde farklı bir hikaye barındıran bu eşsiz destinasyonda yaşayacağınız deneyimler...</p>
+                            <div class="modern-blog-featured-meta">
+                                <div class="modern-blog-author">
+                                    <div class="modern-blog-author-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="modern-blog-author-info">
+                                        <span class="modern-blog-author-name">Elif Yılmaz</span>
+                                        <span class="modern-blog-author-title">Seyahat Uzmanı</span>
+                                    </div>
+                                </div>
+                                <div class="modern-blog-post-stats">
+                                    <span><i class="fas fa-calendar"></i> 15 Ocak 2025</span>
+                                    <span><i class="fas fa-clock"></i> 12 dk okuma</span>
+                                    <span><i class="fas fa-eye"></i> 2.5K görüntülenme</span>
+                                </div>
+                            </div>
+                            <a href="#" class="modern-blog-read-more-btn">
+                                Devamını Oku
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -741,64 +534,296 @@
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-header">En Son Bloglar</h2>
+    <!-- Blog Categories Filter -->
+    <section class="modern-blog-filter">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://blog.jollytur.com/wp-content/uploads/2025/08/SAKIZ-ADASI-aegean-sea-coast-with-blue-transparent-water-greenery-around-rocks-bushes-trees-view-from-drone-greece-600x670.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Türkiye</div>
-                            <div class="blog-title">Ağva’da Huzurlu Bir Tatil: Nehir Kenarı Keyfi ve Doğal Güzellikler
-                            </div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>10dk</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="blog-card">
-                        <img src="https://blog.jollytur.com/wp-content/uploads/2025/08/BOZCAADA-shutterstock_2501017955-1150x645.jpg"
-                            alt="Mısır" style="width: 100%; height: 100%;">
-                        <div class="blog-overlay">
-                            <div class="blog-category dunya">Türkiye</div>
-                            <div class="blog-title">Bozcaada Gezi Rehberi: Ege’nin En Güzel Adasında Keşfedilecek Her
-                                Şey</div>
-                            <div class="blog-meta">
-                                <span><i class="bi bi-person-fill"></i>Caner</span>
-                                <span><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span><i class="bi bi-clock"></i>14dk</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="modern-blog-filter-wrapper">
+                <h3 class="modern-blog-filter-title">Kategoriler</h3>
+                <div class="modern-blog-filter-buttons">
+                    <button class="modern-blog-filter-btn active" data-filter="all">
+                        <i class="fas fa-globe"></i>
+                        Tümü
+                    </button>
+                    <button class="modern-blog-filter-btn" data-filter="turkiye">
+                        <i class="fas fa-flag"></i>
+                        Türkiye
+                    </button>
+                    <button class="modern-blog-filter-btn" data-filter="yurtdisi">
+                        <i class="fas fa-plane"></i>
+                        Yurt Dışı
+                    </button>
+                    <button class="modern-blog-filter-btn" data-filter="kultur">
+                        <i class="fas fa-university"></i>
+                        Kültür
+                    </button>
+                    <button class="modern-blog-filter-btn" data-filter="gastronomi">
+                        <i class="fas fa-utensils"></i>
+                        Gastronomi
+                    </button>
+                    <button class="modern-blog-filter-btn" data-filter="macera">
+                        <i class="fas fa-mountain"></i>
+                        Macera
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="section-header">Yunanistan</h2>
-        <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, iusto?</p>
+    <!-- Main Blog Grid -->
+    <section class="modern-blog-main">
         <div class="container">
-            <div class="row">
-
-                <div class="col-md-6">
-                    <div class="row special-shadow rounded-4 p-0">
-                        <div class="col-md-4 p-0">
-                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" class="rounded"
-                                style="width: 100%; height: 100%;" alt="">
+            <div class="modern-blog-grid">
+                
+                <!-- Blog Card 1 -->
+                <article class="modern-blog-card" data-category="turkiye">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Kapadokya">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <div class="col-md-8 p-3">
-                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam alias
-                                rem ipsam molestiae molestias iste possimus?</div>
-                            <div class="blog-meta">
-                                <span class="text-white bg-info badge" style="font-size: 14px;"><i class="bi bi-calendar-event"></i>18.05.2025</span>
-                                <span class="text-white badge" style="font-size: 14px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);"><i class="bi bi-clock"></i>10dk</span>
+                        <div class="modern-blog-card-category turkiye">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Türkiye
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">Kapadokya'nın Büyülü Dünyası: Peri Bacaları ve Sıcak Hava Balonları</h3>
+                        <p class="modern-blog-card-excerpt">Dünya mirası listesindeki bu eşsiz coğrafyada yaşayacağınız unutulmaz anlar ve keşfedilmesi gereken gizli köşeler...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Mehmet Kaya</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 10 Ocak</span>
+                                <span><i class="fas fa-clock"></i> 8 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="modern-blog-card" data-category="yurtdisi">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Paris">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="modern-blog-card-category yurtdisi">
+                            <i class="fas fa-plane"></i>
+                            Yurt Dışı
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">Paris'in Romantik Sokakları: Aşk Şehrinde 3 Gün</h3>
+                        <p class="modern-blog-card-excerpt">Işık şehrinin en romantik köşelerini keşfedin. Eyfel Kulesi'nden Seine nehrine kadar unutulmaz bir yolculuk...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Ayşe Demir</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 8 Ocak</span>
+                                <span><i class="fas fa-clock"></i> 15 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="modern-blog-card" data-category="gastronomi">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/1.jpg" alt="İstanbul">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="modern-blog-card-category gastronomi">
+                            <i class="fas fa-utensils"></i>
+                            Gastronomi
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">İstanbul'un Lezzet Haritası: Sokak Lezzetlerinden Fine Dining'e</h3>
+                        <p class="modern-blog-card-excerpt">İki kıtayı birleştiren şehrin eşsiz mutfak kültürü. Balık ekmekten kebaba, baklava'dan Türk kahvesine...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Chef Özkan</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 5 Ocak</span>
+                                <span><i class="fas fa-clock"></i> 20 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="modern-blog-card" data-category="macera">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/Riddarfjarden-Stockholm.webp" alt="Antalya">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="modern-blog-card-category macera">
+                            <i class="fas fa-mountain"></i>
+                            Macera
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">Antalya'da Adrenalin Dolu Aktiviteler: Dağdan Denize Macera</h3>
+                        <p class="modern-blog-card-excerpt">Türk Rivierası'nın cennet köşesinde yaşayabileceğiniz heyecan verici aktiviteler ve doğa sporları...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Serkan Öztürk</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 3 Ocak</span>
+                                <span><i class="fas fa-clock"></i> 12 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="modern-blog-card" data-category="kultur">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Efes">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="modern-blog-card-category kultur">
+                            <i class="fas fa-university"></i>
+                            Kültür
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">Antik Çağlardan Günümüze: Efes'in Büyülü Tarihi</h3>
+                        <p class="modern-blog-card-excerpt">Antik dünyanın en önemli şehirlerinden birinde zaman yolculuğu. Roma döneminden kalma eserler ve hikayeler...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Dr. Fatma Yıldız</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 1 Ocak</span>
+                                <span><i class="fas fa-clock"></i> 18 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article class="modern-blog-card" data-category="yurtdisi">
+                    <div class="modern-blog-card-image">
+                        <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Japonya">
+                        <div class="modern-blog-card-overlay">
+                            <a href="#" class="modern-blog-card-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="modern-blog-card-category yurtdisi">
+                            <i class="fas fa-plane"></i>
+                            Yurt Dışı
+                        </div>
+                    </div>
+                    <div class="modern-blog-card-content">
+                        <h3 class="modern-blog-card-title">Japonya'nın Büyülü Dünyası: Gelenekten Modernliğe</h3>
+                        <p class="modern-blog-card-excerpt">Doğu kültürünün en etkileyici örneklerinden biri olan Japonya'da yaşayacağınız kültürel deneyimler...</p>
+                        <div class="modern-blog-card-meta">
+                            <div class="modern-blog-card-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Kenji Tanaka</span>
+                            </div>
+                            <div class="modern-blog-card-stats">
+                                <span><i class="fas fa-calendar"></i> 28 Aralık</span>
+                                <span><i class="fas fa-clock"></i> 25 dk</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="modern-blog-load-more">
+                <button class="modern-blog-load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    Daha Fazla Yükle
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations Section -->
+    <section class="modern-blog-destinations">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-header">Popüler Destinasyonlar</h2>
+                <p class="section-description">En çok okunan destinasyon rehberlerimizi keşfedin</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="modern-destination-card">
+                        <div class="modern-destination-image">
+                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="İstanbul">
+                            <div class="modern-destination-overlay">
+                                <div class="modern-destination-content">
+                                    <div class="modern-destination-category">Türkiye</div>
+                                    <h3 class="modern-destination-title">İstanbul'un Büyülü Tarihi: Boğaz'dan Ayasofya'ya</h3>
+                                    <div class="modern-destination-meta">
+                                        <span><i class="fas fa-user"></i> Mehmet Kaya</span>
+                                        <span><i class="fas fa-calendar"></i> 12.01.2025</span>
+                                        <span><i class="fas fa-clock"></i> 15dk</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="modern-destination-card">
+                        <div class="modern-destination-image">
+                            <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Antalya">
+                            <div class="modern-destination-overlay">
+                                <div class="modern-destination-content">
+                                    <div class="modern-destination-category">Türkiye</div>
+                                    <h3 class="modern-destination-title">Antalya'nın Gizli Cennetleri: Kemer'den Kaş'a</h3>
+                                    <div class="modern-destination-meta">
+                                        <span><i class="fas fa-user"></i> Ayşe Demir</span>
+                                        <span><i class="fas fa-calendar"></i> 10.01.2025</span>
+                                        <span><i class="fas fa-clock"></i> 12dk</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="modern-destination-card">
+                        <div class="modern-destination-image">
+                            <img src="/img/Riddarfjarden-Stockholm.webp" alt="Cappadocia">
+                            <div class="modern-destination-overlay">
+                                <div class="modern-destination-content">
+                                    <div class="modern-destination-category">Türkiye</div>
+                                    <h3 class="modern-destination-title">Kapadokya'da Balon Turu: Gökyüzünden Peri Masalı</h3>
+                                    <div class="modern-destination-meta">
+                                        <span><i class="fas fa-user"></i> Serkan Öztürk</span>
+                                        <span><i class="fas fa-calendar"></i> 08.01.2025</span>
+                                        <span><i class="fas fa-clock"></i> 18dk</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -806,6 +831,272 @@
             </div>
         </div>
     </section>
+
+    <!-- Travel Tips Section -->
+    <section class="modern-blog-tips">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-header">Seyahat İpuçları</h2>
+                <p class="section-description">Deneyimli gezginlerden pratik tavsiyeler</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="modern-tip-card">
+                        <div class="modern-tip-icon">
+                            <i class="fas fa-suitcase-rolling"></i>
+                        </div>
+                        <div class="modern-tip-content">
+                            <h4 class="modern-tip-title">Akıllı Bavul Hazırlama</h4>
+                            <p class="modern-tip-text">Seyahatinizde ihtiyacınız olan her şeyi nasıl kompakt bir şekilde paketleyeceğinizi öğrenin. Deneyimli gezginlerin püf noktaları.</p>
+                            <a href="#" class="modern-tip-link">Detayları Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modern-tip-card">
+                        <div class="modern-tip-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="modern-tip-content">
+                            <h4 class="modern-tip-title">Bütçe Dostu Seyahat</h4>
+                            <p class="modern-tip-text">Az bütçeyle çok gezmenin sırları. Konaklama, ulaşım ve yemek masraflarınızı nasıl minimize edeceğiniz hakkında ipuçları.</p>
+                            <a href="#" class="modern-tip-link">Detayları Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modern-tip-card">
+                        <div class="modern-tip-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div class="modern-tip-content">
+                            <h4 class="modern-tip-title">Seyahat Fotoğrafçılığı</h4>
+                            <p class="modern-tip-text">Profesyonel fotoğrafçı olmadan da muhteşem seyahat fotoğrafları çekmenin yolları. Işık, kompozisyon ve anı yakalama teknikleri.</p>
+                            <a href="#" class="modern-tip-link">Detayları Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modern-tip-card">
+                        <div class="modern-tip-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="modern-tip-content">
+                            <h4 class="modern-tip-title">Yerel Lezzetler</h4>
+                            <p class="modern-tip-text">Gittiğiniz yerlerde yerel mutfağı keşfetmenin en iyi yolları. Güvenli ve lezzetli yemek deneyimleri için rehber.</p>
+                            <a href="#" class="modern-tip-link">Detayları Oku <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Stories Section with Image Cards -->
+    <section class="modern-blog-stories">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-header">En Son Hikayeler</h2>
+                <p class="section-description">Seyahat tutkunlarının gerçek deneyimleri</p>
+            </div>
+            <div class="modern-stories-grid">
+                <!-- Story Card 1 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Marmaris">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category ege">Ege</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Marmaris'te Görülmesi Gereken Noktalar: Yeşille Mavinin Kucaklaştığı Cennet</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 01.07.2025</span>
+                                    <span><i class="fas fa-clock"></i> 16dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story Card 2 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/1.jpg" alt="Urla">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category ege">Ege</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Urla'da Gezilecek Rotalar ve Lezzet Durakları: Ege'nin Huzurlu Sahil Kasabası</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 21.06.2025</span>
+                                    <span><i class="fas fa-clock"></i> 15dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story Card 3 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/mavi yolculuk slider çalışması (1).png" alt="Barcelona">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category dunya">Dünya</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Barselona'da Mutlaka Görülmesi Gereken 10 Yer</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 05.06.2025</span>
+                                    <span><i class="fas fa-clock"></i> 8dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story Card 4 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/Riddarfjarden-Stockholm.webp" alt="Heybeliada">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category turkiye">Türkiye</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Heybeliada'da Gezilecek Yerler</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 25.05.2025</span>
+                                    <span><i class="fas fa-clock"></i> 12dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story Card 5 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Kıbrıs">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category dunya">Dünya</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Kuzey Kıbrıs'ta Keşfedilecek Yerler</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 18.05.2025</span>
+                                    <span><i class="fas fa-clock"></i> 10dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Story Card 6 -->
+                <article class="modern-story-card">
+                    <div class="modern-story-image">
+                        <img src="/img/Riddarfjarden-Stockholm.webp" alt="Mısır">
+                        <div class="modern-story-overlay">
+                            <div class="modern-story-category dunya">Dünya</div>
+                            <div class="modern-story-content">
+                                <h3 class="modern-story-title">Sharm El Sheikh Planınızda Atlanmaması Gereken Noktalar</h3>
+                                <div class="modern-story-meta">
+                                    <span><i class="fas fa-user"></i> Caner</span>
+                                    <span><i class="fas fa-calendar"></i> 18.05.2025</span>
+                                    <span><i class="fas fa-clock"></i> 10dk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Guides Section -->
+    <section class="modern-blog-regional">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-header">Bölgesel Rehberler</h2>
+                <p class="section-description">Türkiye'nin her köşesinden detaylı gezi rehberleri</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="modern-regional-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="modern-regional-image">
+                                    <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" alt="Ege Bölgesi">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="modern-regional-content">
+                                    <div class="modern-regional-category">Ege Bölgesi</div>
+                                    <h4 class="modern-regional-title">Ege'nin İncileri: İzmir'den Muğla'ya</h4>
+                                    <p class="modern-regional-text">Antik kentlerden modern sahillere, termal kaynaklardan üzüm bağlarına kadar Ege'nin tüm güzelliklerini keşfedin.</p>
+                                    <div class="modern-regional-meta">
+                                        <span class="badge bg-info"><i class="fas fa-calendar"></i> 18.05.2025</span>
+                                        <span class="badge bg-primary"><i class="fas fa-clock"></i> 25dk</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="modern-regional-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="modern-regional-image">
+                                    <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="Karadeniz">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="modern-regional-content">
+                                    <div class="modern-regional-category">Karadeniz</div>
+                                    <h4 class="modern-regional-title">Karadeniz'in Yeşil Cenneti: Trabzon ve Rize</h4>
+                                    <p class="modern-regional-text">Yemyeşil dağlardan maviye uzanan sahillere, çay bahçelerinden tarihi manastırlara Karadeniz'in büyüsü.</p>
+                                    <div class="modern-regional-meta">
+                                        <span class="badge bg-info"><i class="fas fa-calendar"></i> 15.05.2025</span>
+                                        <span class="badge bg-primary"><i class="fas fa-clock"></i> 20dk</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <!-- <section class="modern-blog-newsletter">
+        <div class="container">
+            <div class="modern-blog-newsletter-wrapper">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="modern-blog-newsletter-content">
+                            <h3 class="modern-blog-newsletter-title">Seyahat Hikayeleri Bültenimize Abone Olun</h3>
+                            <p class="modern-blog-newsletter-text">En yeni blog yazılarımız, seyahat ipuçları ve özel fırsatlardan ilk siz haberdar olun.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="modern-blog-newsletter-form">
+                            <form class="modern-blog-newsletter-form-wrapper">
+                                <div class="modern-blog-newsletter-input-group">
+                                    <input type="email" class="modern-blog-newsletter-input" placeholder="E-posta adresinizi girin">
+                                    <button type="submit" class="modern-blog-newsletter-btn">
+                                        <i class="fas fa-paper-plane"></i>
+                                        Abone Ol
+                                    </button>
+                                </div>
+                                <small class="modern-blog-newsletter-privacy">Gizliliğinize saygı duyuyoruz. İstediğiniz zaman abonelikten çıkabilirsiniz.</small>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
 
     <!-- ! FOOTER START-->
     <footer class="footer pt-5">
@@ -969,6 +1260,99 @@
         }, 500);
 
         setInterval(rotateMessage, 5000);
+    </script>
+
+    <!-- ! MODERN BLOG JAVASCRIPT -->
+    <script>
+        // Blog Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.modern-blog-filter-btn');
+            const blogCards = document.querySelectorAll('.modern-blog-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Load More Functionality
+            const loadMoreBtn = document.querySelector('.modern-blog-load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Simulate loading more content
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yükleniyor...';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-plus"></i> Daha Fazla Yükle';
+                        // Here you would typically load more blog posts via AJAX
+                    }, 2000);
+                });
+            }
+
+            // Newsletter Form
+            const newsletterForm = document.querySelector('.modern-blog-newsletter-form-wrapper');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const btn = this.querySelector('.modern-blog-newsletter-btn');
+                    const input = this.querySelector('.modern-blog-newsletter-input');
+                    
+                    if (input.value.trim() === '') {
+                        input.focus();
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-check"></i> Başarılı!';
+                        btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
+                        input.value = '';
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = '<i class="fas fa-paper-plane"></i> Abone Ol';
+                            btn.style.background = 'linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%)';
+                        }, 3000);
+                    }, 1500);
+                });
+            }
+        });
+
+        // Add CSS animation for fade in effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 

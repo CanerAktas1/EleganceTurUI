@@ -3861,3 +3861,1236 @@ input:checked+.settings-toggle-slider:before {
 }
 
 /* ! SPECIAL EVENTS PAGE END */
+
+/* ================================================================================================ */
+/* ! MODERN BLOG SECTION START */
+/* ================================================================================================ */
+
+/* Modern Blog Hero Section */
+.modern-blog-hero {
+    background: transparent;
+    padding: 60px 0;
+    color: #2d3748;
+    position: relative;
+}
+
+.modern-blog-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.modern-blog-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #2d3748;
+}
+
+.modern-blog-hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Featured Blog Post */
+.modern-blog-featured {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.modern-blog-featured-post {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.modern-blog-featured-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+}
+
+.modern-blog-featured-image {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.modern-blog-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.modern-blog-featured-post:hover .modern-blog-featured-image img {
+    transform: scale(1.05);
+}
+
+.modern-blog-featured-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #2d3748;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    animation: pulse-featured 2s infinite;
+}
+
+@keyframes pulse-featured {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.modern-blog-featured-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+}
+
+.modern-blog-featured-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+
+.modern-blog-featured-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.modern-blog-featured-excerpt {
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.modern-blog-featured-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.modern-blog-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modern-blog-author-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.modern-blog-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-blog-author-name {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.modern-blog-author-title {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.modern-blog-post-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modern-blog-post-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.modern-blog-post-stats i {
+    color: #4da8ff;
+}
+
+.modern-blog-read-more-btn {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.modern-blog-read-more-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(77, 168, 255, 0.4);
+}
+
+.modern-blog-read-more-btn i {
+    transition: all 0.3s ease;
+}
+
+.modern-blog-read-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Blog Categories Filter */
+.modern-blog-filter {
+    padding: 60px 0;
+    background: white;
+}
+
+.modern-blog-filter-wrapper {
+    text-align: center;
+}
+
+.modern-blog-filter-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 2rem;
+}
+
+.modern-blog-filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modern-blog-filter-btn {
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.modern-blog-filter-btn:hover {
+    background: #4da8ff;
+    border-color: #4da8ff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.modern-blog-filter-btn.active {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    border-color: #4da8ff;
+    color: white;
+    box-shadow: 0 5px 15px rgba(77, 168, 255, 0.3);
+}
+
+/* Main Blog Grid */
+.modern-blog-main {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.modern-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.modern-blog-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-blog-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modern-blog-card-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.modern-blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.modern-blog-card:hover .modern-blog-card-image img {
+    transform: scale(1.1);
+}
+
+.modern-blog-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(77, 168, 255, 0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modern-blog-card:hover .modern-blog-card-overlay {
+    opacity: 1;
+}
+
+.modern-blog-card-link {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.modern-blog-card-link:hover {
+    color: white;
+    transform: scale(1.2);
+}
+
+.modern-blog-card-category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+}
+
+.modern-blog-card-category.turkiye {
+    background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+}
+
+.modern-blog-card-category.yurtdisi {
+    background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+}
+
+.modern-blog-card-category.kultur {
+    background: linear-gradient(135deg, #805ad5 0%, #6b46c1 100%);
+}
+
+.modern-blog-card-category.gastronomi {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.modern-blog-card-category.macera {
+    background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%);
+}
+
+.modern-blog-card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-blog-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+.modern-blog-card:hover .modern-blog-card-title {
+    color: #4da8ff;
+}
+
+.modern-blog-card-excerpt {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.modern-blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.modern-blog-card-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.modern-blog-card-author i {
+    color: #4da8ff;
+    font-size: 1.1rem;
+}
+
+.modern-blog-card-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modern-blog-card-stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.modern-blog-card-stats i {
+    color: #4da8ff;
+}
+
+/* Load More Button */
+.modern-blog-load-more {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.modern-blog-load-more-btn {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.modern-blog-load-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(77, 168, 255, 0.4);
+}
+
+/* Newsletter Section */
+.modern-blog-newsletter {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    color: white;
+}
+
+.modern-blog-newsletter-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modern-blog-newsletter-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.modern-blog-newsletter-text {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.modern-blog-newsletter-form-wrapper {
+    width: 100%;
+}
+
+.modern-blog-newsletter-input-group {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1rem;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modern-blog-newsletter-input {
+    flex: 1;
+    padding: 18px 25px;
+    border: none;
+    font-size: 1rem;
+    background: white;
+    color: #2d3748;
+}
+
+.modern-blog-newsletter-input:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #4da8ff;
+}
+
+.modern-blog-newsletter-btn {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.modern-blog-newsletter-btn:hover {
+    background: linear-gradient(135deg, #3d96ff 0%, #2240e6 100%);
+}
+
+.modern-blog-newsletter-privacy {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-align: center;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+    .modern-blog-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .modern-blog-featured-title {
+        font-size: 1.8rem;
+    }
+    
+    .modern-blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 991.98px) {
+    .modern-blog-hero {
+        padding: 50px 0;
+    }
+    
+    .modern-blog-hero-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .modern-blog-hero-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .modern-blog-featured-content {
+        height: auto;
+        padding: 2rem;
+    }
+    
+    .modern-blog-featured-title {
+        font-size: 1.6rem;
+    }
+    
+    .modern-blog-featured-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .modern-blog-filter-buttons {
+        gap: 0.75rem;
+    }
+    
+    .modern-blog-filter-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .modern-blog-hero {
+        padding: 40px 0;
+    }
+    
+    .modern-blog-hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .modern-blog-hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .modern-blog-featured {
+        padding: 60px 0;
+    }
+    
+    .modern-blog-featured-image {
+        height: 300px;
+    }
+    
+    .modern-blog-featured-content {
+        height: auto;
+        padding: 1.5rem;
+    }
+    
+    .modern-blog-featured-title {
+        font-size: 1.4rem;
+    }
+    
+    .modern-blog-featured-excerpt {
+        font-size: 1rem;
+    }
+    
+    .modern-blog-filter {
+        padding: 40px 0;
+    }
+    
+    .modern-blog-filter-title {
+        font-size: 1.5rem;
+    }
+    
+    .modern-blog-filter-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .modern-blog-filter-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .modern-blog-main {
+        padding: 60px 0;
+    }
+    
+    .modern-blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .modern-blog-card-image {
+        height: 200px;
+    }
+    
+    .modern-blog-card-content {
+        padding: 1.5rem;
+    }
+    
+    .modern-blog-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .modern-blog-card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .modern-blog-newsletter {
+        padding: 60px 0;
+    }
+    
+    .modern-blog-newsletter-wrapper {
+        padding: 2rem;
+    }
+    
+    .modern-blog-newsletter-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .modern-blog-newsletter-text {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .modern-blog-newsletter-input-group {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+    
+    .modern-blog-newsletter-input {
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .modern-blog-newsletter-btn {
+        border-radius: 0 0 15px 15px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .modern-blog-hero {
+        padding: 30px 0;
+    }
+    
+    .modern-blog-hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .modern-blog-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .modern-blog-featured-title {
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+    
+    .modern-blog-featured-excerpt {
+        font-size: 0.9rem;
+    }
+    
+    .modern-blog-card-title {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .modern-blog-card-excerpt {
+        font-size: 0.9rem;
+    }
+    
+    .modern-blog-newsletter-title {
+        font-size: 1.5rem;
+    }
+    
+    .modern-blog-newsletter-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+/* Popular Destinations Section */
+.modern-blog-destinations {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.modern-destination-card {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.modern-destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.modern-destination-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-destination-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.modern-destination-card:hover .modern-destination-image img {
+    transform: scale(1.1);
+}
+
+.modern-destination-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.modern-destination-content {
+    color: white;
+    width: 100%;
+}
+
+.modern-destination-category {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.modern-destination-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.modern-destination-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.modern-destination-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.modern-destination-meta i {
+    color: #4da8ff;
+}
+
+/* Travel Tips Section */
+.modern-blog-tips {
+    padding: 80px 0;
+    background: white;
+}
+
+.modern-tip-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.modern-tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.modern-tip-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.modern-tip-content {
+    flex: 1;
+}
+
+.modern-tip-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.modern-tip-text {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.modern-tip-link {
+    color: #4da8ff;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.modern-tip-link:hover {
+    color: #2a50fc;
+    transform: translateX(5px);
+}
+
+/* Latest Stories Section */
+.modern-blog-stories {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.modern-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.modern-story-card {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.modern-story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.modern-story-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease;
+}
+
+.modern-story-card:hover .modern-story-image img {
+    transform: scale(1.05);
+}
+
+.modern-story-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.modern-story-category {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+}
+
+.modern-story-category.ege {
+    background: linear-gradient(135deg, #2a9d8f 0%, #21867a 100%);
+}
+
+.modern-story-category.dunya {
+    background: linear-gradient(135deg, #4361ee 0%, #3730a3 100%);
+}
+
+.modern-story-category.turkiye {
+    background: linear-gradient(135deg, #f77f00 0%, #d67700 100%);
+}
+
+.modern-story-content {
+    color: white;
+}
+
+.modern-story-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.modern-story-meta {
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    opacity: 0.9;
+}
+
+.modern-story-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.modern-story-meta i {
+    color: #4da8ff;
+}
+
+/* Regional Guides Section */
+.modern-blog-regional {
+    padding: 80px 0;
+    background: white;
+}
+
+.modern-regional-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    height: 100%;
+}
+
+.modern-regional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.modern-regional-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.modern-regional-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.modern-regional-card:hover .modern-regional-image img {
+    transform: scale(1.05);
+}
+
+.modern-regional-content {
+    padding: 1.5rem;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modern-regional-category {
+    background: linear-gradient(135deg, #4da8ff 0%, #2a50fc 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.modern-regional-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.modern-regional-text {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.modern-regional-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.modern-regional-meta .badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 991.98px) {
+    .modern-blog-destinations,
+    .modern-blog-tips,
+    .modern-blog-stories,
+    .modern-blog-regional {
+        padding: 60px 0;
+    }
+    
+    .modern-destination-card {
+        height: 350px;
+    }
+    
+    .modern-tip-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .modern-tip-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .modern-blog-destinations,
+    .modern-blog-tips,
+    .modern-blog-stories,
+    .modern-blog-regional {
+        padding: 50px 0;
+    }
+    
+    .modern-destination-card {
+        height: 300px;
+    }
+    
+    .modern-destination-overlay {
+        padding: 1.5rem;
+    }
+    
+    .modern-destination-title {
+        font-size: 1.1rem;
+    }
+    
+    .modern-stories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modern-story-card {
+        height: 250px;
+    }
+    
+    .modern-regional-content {
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .modern-regional-image {
+        height: 150px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .modern-destination-card {
+        height: 250px;
+    }
+    
+    .modern-destination-overlay {
+        padding: 1rem;
+    }
+    
+    .modern-destination-title {
+        font-size: 1rem;
+    }
+    
+    .modern-story-card {
+        height: 220px;
+    }
+    
+    .modern-story-overlay {
+        padding: 1rem;
+    }
+    
+    .modern-story-title {
+        font-size: 1rem;
+    }
+    
+    .modern-tip-card {
+        padding: 1.5rem;
+    }
+    
+    .modern-tip-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* ================================================================================================ */
+/* ! MODERN BLOG SECTION END */
+/* ================================================================================================ */
