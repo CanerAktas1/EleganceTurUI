@@ -3,18 +3,18 @@ public class GenerateTask{
     private readonly Context _context;
     private readonly _client;
 
-  public GenerateTask(context context, IHttpClientFactory client){
-    _context = context;
-    _client = client; 
-  }
+    public GenerateTask(context context, IHttpClientFactory client){
+      _context = context;
+      _client = client; 
+    }
 
-  public IActionResult Privacy(){
-    return View();
-  }
+    public IActionResult Privacy(){
+      return View();
+    }
 
-    public string UserName {get;set;}
-    public DateTime BirthDate {get;set;}
-    public Tour FavoritedTours {get;set;}
+    public string UserName { get; set; }
+    public DateTime BirthDate { get; set; }
+    public Tour FavoritedTours { get; set; }
 }
 
 public class HomeController:Controller{
@@ -28,6 +28,7 @@ public class HomeController:Controller{
     _client = client;
     _mapper = mapper;
     _memoryCache = memorycache;
+  }
 }
 
 public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
@@ -58,7 +59,7 @@ public async Task<IActionResult> Index( TourReceiverDto tourReceiverDto){
 
       await _context.SaveChangesAsync();
   }
-}
+
 
 
 public class TourReceiverDto{
