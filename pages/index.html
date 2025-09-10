@@ -493,24 +493,37 @@
             <!-- <div class="title-icon">
                 <i class="bi bi-search mx-auto">Tur ara</i>
             </div> -->
-            <div class="search-pills-wrapper d-flex justify-content-center">
-                <nav class="nav column-gap-2">
-                    <a class="nav-link text-black active shadow-lg" aria-current="page" href="#"><i
-                            class="fa-solid fa-earth-americas"></i> Yurt Dışı Turu</a>
-                    <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-suitcase-rolling"></i> Yurt
-                        İçi Turu</a>
-                    <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-anchor"></i> Gemi Turu</a>
-                    <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-plane"></i> Vizesiz
-                        Turlar</a>
+            <div class="search-pills-wrapper d-flex justify-content-center mb-4">
+                <nav class="nav search-nav-pills flex-wrap justify-content-center">
+                    <a class="nav-link search-pill active" aria-current="page" href="#" data-type="yurtdisi">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <span>Yurt Dışı</span>
+                    </a>
+                    <a class="nav-link search-pill" href="#" data-type="yurtici">
+                        <i class="fa-solid fa-suitcase-rolling"></i>
+                        <span>Yurt İçi</span>
+                    </a>
+                    <a class="nav-link search-pill" href="#" data-type="gemi">
+                        <i class="fa-solid fa-anchor"></i>
+                        <span>Gemi Turu</span>
+                    </a>
+                    <a class="nav-link search-pill" href="#" data-type="vizesiz">
+                        <i class="fa-solid fa-plane"></i>
+                        <span>Vizesiz</span>
+                    </a>
                 </nav>
             </div>
 
-            <div class="row mt-2">
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="" id="search-input">
+            <div class="row g-3 search-form-row">
+                <div class="col-12 col-md-5">
+                    <div class="search-input-wrapper">
+                        <input type="text" class="form-control search-input" placeholder="Nereye gitmek istiyorsunuz?"
+                            id="search-input">
+                        <i class="fa-solid fa-magnifying-glass search-input-icon"></i>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <select class="form-select" id="search-select">
+                <div class="col-12 col-md-5">
+                    <select class="form-select search-select" id="search-select">
                         <option selected disabled>Ne zaman gideceksiniz?</option>
                         <option value="">Ağustos 2025</option>
                         <option value="">Eylül 2025</option>
@@ -521,8 +534,11 @@
                         <option value="">Şubat 2026</option>
                     </select>
                 </div>
-                <div class="col-md-2">
-                    <button class="btn btn-dark w-100">Tur Ara</button>
+                <div class="col-12 col-md-2 align-content-center">
+                    <button class="btn btn-search w-100">
+                        <i class="fa-solid fa-magnifying-glass me-2"></i>
+                        <span>Tur Ara</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1678,6 +1694,45 @@
             }
         })
     </script> -->
+
+    <!-- ! SEARCH PILLS FUNCTIONALITY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchPills = document.querySelectorAll('.search-pill');
+            const searchInput = document.getElementById('search-input');
+
+            searchPills.forEach(pill => {
+                pill.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Remove active class from all pills
+                    searchPills.forEach(p => p.classList.remove('active'));
+
+                    // Add active class to clicked pill
+                    this.classList.add('active');
+
+                    // Update placeholder based on selected type
+                    const type = this.getAttribute('data-type');
+                    switch (type) {
+                        case 'yurtdisi':
+                            searchInput.placeholder = 'Hangi ülkeye gitmek istiyorsunuz?';
+                            break;
+                        case 'yurtici':
+                            searchInput.placeholder = 'Türkiye\'de nereye gitmek istiyorsunuz?';
+                            break;
+                        case 'gemi':
+                            searchInput.placeholder = 'Hangi gemi turunu arıyorsunuz?';
+                            break;
+                        case 'vizesiz':
+                            searchInput.placeholder = 'Vizesiz hangi ülkeye gitmek istiyorsunuz?';
+                            break;
+                        default:
+                            searchInput.placeholder = 'Nereye gitmek istiyorsunuz?';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
