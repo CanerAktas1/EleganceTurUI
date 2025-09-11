@@ -96,33 +96,35 @@
 <body>
 
     <div class="main-header">
-        <div class="header-top py-2">
-            <div class="container-fluid px-5">
-                <div class="row align-items-center">
-                    <!-- Left Side: Contact Info -->
-                    <div class="col-md-6 col-12 text-center text-md-start">
-                        <p class="mb-0 contact-info ">
-                            <i class="fas fa-phone-alt me-2 text-white"></i>+90 212 452 52 52
-                            <span class="mx-2">/</span>
-                            <i class="fas fa-envelope me-2 text-white"></i>operation@elegancetur.com
-                        </p>
+        <div class="header-top py-2 px-5">
+            <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                <!-- Left: Contact Info -->
+                <div class="contact-wrapper position-relative overflow-hidden">
+                    <div id="contactInfo" class="contact-text fw-bold">
+                        +90 212 452 52 52
                     </div>
-                    <!-- Right Side: Login/Register -->
-                    <div class="col-md-6 col-12 text-center text-md-end mt-2 mt-md-0">
-                        <a href="#" class="login-register-buttons me-3">Giriş Yap</a>
-                        <a href="#" class="login-register-buttons">Kayıt Ol</a>
-                    </div>
+                </div>
+
+                <!-- Middle: Animated Message -->
+                <div class="header-message text-center my-2 my-md-0">
+                    <span class="fade-message" id="rotatingMessage">Size Özel İndirimlerden Faydalanmak İçin Sitemize
+                        Üye Olmayı Unutmayın</span>
+                </div>
+
+                <!-- Right: Auth Links -->
+                <div class="auth-links d-flex pe-4">
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Giriş
+                        Yap</a>
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
                 </div>
             </div>
         </div>
     </div>
-
     <header class="header-bot">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-0 pe-5">
+        <nav class="navbar float navbar-expand-lg navbar-light bg-white shadow-sm py-0 pe-5">
             <div class="container-fluid px-5 responsive-logo">
-                <!-- Logo -->
-
 
                 <a class="navbar-brand d-flex align-items-center" href="#">
                     <img src="/img/logo.png" style="width: 300px; height: 80px;" alt="EleganceTur Logo">
@@ -161,8 +163,12 @@
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
-                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
-                                                class="img-fluid" alt="Tour Image">
+                                            <img src="/img/1.jpg" class="img-fluid w-100 rounded" style="height: 200px;"
+                                                alt="Tour Image">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                class="img-fluid w-100 rounded" style="height: 200px;" alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -177,7 +183,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <h3 class="fw-bold">Yurt Dışı Turları</h3>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -190,7 +196,7 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -203,8 +209,7 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
-
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -217,9 +222,9 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
-                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
-                                                class="img-fluid" alt="Tour Image">
+                                        <div class="col-md-6">
+                                            <img src="/img/Riddarfjarden-Stockholm.webp" class="img-fluid rounded w-100"
+                                                style="height: 200px;" alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +237,7 @@
                             </a>
                             <div class="dropdown-mega">
                                 <div class="container">
-                                    <h3 class="fw-bold">Popüler</h3>
+                                    <h3 class="fw-bold">Yurt İçi Turları</h3>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <ul class="list-unstyled">
@@ -263,7 +268,8 @@
 
                                         <div class="col-md-4">
                                             <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                                class="img-fluid" style="width: 300px; height: 300px;" alt="Tour Image">
+                                                class="img-fluid rounded" style="width: 100%; height: 200px;"
+                                                alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -457,6 +463,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <ul class="list-unstyled m-0">
                     <li>
                         <button
@@ -514,7 +521,6 @@
                 </ul>
             </div>
         </div>
-
     </header>
 
 
