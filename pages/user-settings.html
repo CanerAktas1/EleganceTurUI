@@ -27,13 +27,27 @@
     <!-- ! HEADER START-->
 
     <div class="main-header">
-        <div class="header-top ">
-            <div class="container d-flex justify-content-between ">
-                <p class="text-white mt-3">+90 212 452 52 52</p>
-                <!-- <a href="#" class="login-register-buttons">Giriş Yap</a> -->
-                <div class="mt-3">
-                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Giriş Yap</a>
-                    <a href="#" class="text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
+        <div class="header-top py-2 px-5">
+            <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                <!-- Left: Contact Info -->
+                <div class="contact-wrapper position-relative overflow-hidden">
+                    <div id="contactInfo" class="contact-text fw-bold">
+                        +90 212 452 52 52
+                    </div>
+                </div>
+
+                <!-- Middle: Animated Message -->
+                <div class="header-message text-center my-2 my-md-0">
+                    <span class="fade-message" id="rotatingMessage">Size Özel İndirimlerden Faydalanmak İçin Sitemize
+                        Üye Olmayı Unutmayın</span>
+                </div>
+
+                <!-- Right: Auth Links -->
+                <div class="auth-links d-flex pe-4">
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Giriş
+                        Yap</a>
+                    <a href="#" class="fw-bold text-white text-decoration-none ms-3 login-register-buttons">Kayıt Ol</a>
                 </div>
             </div>
         </div>
@@ -80,8 +94,12 @@
                                             </ul>
                                         </div>
                                         <div class="col-md-3">
-                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
-                                                class="img-fluid" alt="Tour Image">
+                                            <img src="/img/1.jpg" class="img-fluid w-100 rounded" style="height: 200px;"
+                                                alt="Tour Image">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                class="img-fluid w-100 rounded" style="height: 200px;" alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +114,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <h3 class="fw-bold">Yurt Dışı Turları</h3>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -109,7 +127,7 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -122,7 +140,7 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-md-2">
                                             <ul class="list-unstyled">
                                                 <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
                                                             class="fa-solid fa-angle-right"></i> Ramazan
@@ -135,9 +153,9 @@
                                                         Turları</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-3">
-                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
-                                                class="img-fluid" alt="Tour Image">
+                                        <div class="col-md-6">
+                                            <img src="/img/Riddarfjarden-Stockholm.webp" class="img-fluid rounded w-100"
+                                                style="height: 200px;" alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +168,7 @@
                             </a>
                             <div class="dropdown-mega">
                                 <div class="container">
-                                    <h3 class="fw-bold">Popüler</h3>
+                                    <h3 class="fw-bold">Yurt İçi Turları</h3>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <ul class="list-unstyled">
@@ -181,7 +199,8 @@
 
                                         <div class="col-md-4">
                                             <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                                class="img-fluid" style="width: 300px; height: 300px;" alt="Tour Image">
+                                                class="img-fluid rounded" style="width: 100%; height: 200px;"
+                                                alt="Tour Image">
                                         </div>
                                     </div>
                                 </div>
@@ -447,7 +466,7 @@
                             <div class="dashboard-user-name">Caner Aktaş</div>
                             <div class="dashboard-user-status">caneraktas09@gmail.com</div>
                         </div>
-                        
+
                         <ul class="dashboard-nav-menu">
                             <li class="nav-item">
                                 <a class="nav-link" href="/pages/user-profile.html">
@@ -494,9 +513,10 @@
                     <div class="dashboard-main-content">
                         <div class="dashboard-content-header">
                             <h1 class="dashboard-content-title">Hesap Ayarları</h1>
-                            <p class="dashboard-content-subtitle">Hesap tercihlerinizi ve güvenlik ayarlarınızı yönetebilirsiniz</p>
+                            <p class="dashboard-content-subtitle">Hesap tercihlerinizi ve güvenlik ayarlarınızı
+                                yönetebilirsiniz</p>
                         </div>
-                        
+
                         <div class="settings-content-modern">
                             <!-- Bildirim Ayarları -->
                             <div class="settings-section-modern">
@@ -504,12 +524,13 @@
                                     <i class="fas fa-bell settings-section-icon"></i>
                                     <h3 class="settings-section-title">Bildirim Tercihleri</h3>
                                 </div>
-                                
+
                                 <div class="settings-options-list">
                                     <div class="settings-option-item">
                                         <div class="settings-option-info">
                                             <h4 class="settings-option-title">Bülten Aboneliği</h4>
-                                            <p class="settings-option-description">Kampanyalar ve özel tekliflerden haberdar olmak için bülten alın</p>
+                                            <p class="settings-option-description">Kampanyalar ve özel tekliflerden
+                                                haberdar olmak için bülten alın</p>
                                         </div>
                                         <div class="settings-toggle-wrapper">
                                             <label class="settings-toggle-modern">
@@ -518,11 +539,12 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="settings-option-item">
                                         <div class="settings-option-info">
                                             <h4 class="settings-option-title">Reklam İletileri</h4>
-                                            <p class="settings-option-description">Kişiselleştirilmiş tur önerileri ve reklam içerikleri alın</p>
+                                            <p class="settings-option-description">Kişiselleştirilmiş tur önerileri ve
+                                                reklam içerikleri alın</p>
                                         </div>
                                         <div class="settings-toggle-wrapper">
                                             <label class="settings-toggle-modern">
@@ -532,9 +554,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Bildirim Kaydet Butonu -->
-                                <div class="notification-save-actions" id="notificationSaveActions" style="display: none;">
+                                <div class="notification-save-actions" id="notificationSaveActions"
+                                    style="display: none;">
                                     <button type="button" id="cancelNotificationBtn" class="settings-cancel-btn">
                                         <i class="fas fa-times me-2"></i>İptal
                                     </button>
@@ -543,14 +566,14 @@
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <!-- Güvenlik Ayarları -->
                             <div class="settings-section-modern">
                                 <div class="settings-section-header">
                                     <i class="fas fa-shield-alt settings-section-icon"></i>
                                     <h3 class="settings-section-title">Güvenlik</h3>
                                 </div>
-                                
+
                                 <div class="settings-password-form">
                                     <form id="passwordChangeForm" class="password-form-modern">
                                         <div class="row">
@@ -560,43 +583,50 @@
                                                         <i class="fas fa-lock"></i>
                                                         Mevcut Şifre
                                                     </label>
-                                                    <input type="password" id="currentPassword" class="settings-input-modern" 
-                                                           placeholder="Mevcut şifrenizi girin" required>
-                                                    <div class="settings-input-feedback" id="currentPasswordFeedback"></div>
+                                                    <input type="password" id="currentPassword"
+                                                        class="settings-input-modern"
+                                                        placeholder="Mevcut şifrenizi girin" required>
+                                                    <div class="settings-input-feedback" id="currentPasswordFeedback">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="settings-input-group">
                                                     <label class="settings-label-modern" for="newPassword">
                                                         <i class="fas fa-key"></i>
                                                         Yeni Şifre
                                                     </label>
-                                                    <input type="password" id="newPassword" class="settings-input-modern" 
-                                                           placeholder="Yeni şifrenizi girin" required>
+                                                    <input type="password" id="newPassword"
+                                                        class="settings-input-modern" placeholder="Yeni şifrenizi girin"
+                                                        required>
                                                     <div class="settings-password-strength" id="passwordStrength"></div>
                                                     <div class="settings-input-feedback" id="newPasswordFeedback"></div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="col-md-6">
                                                 <div class="settings-input-group">
                                                     <label class="settings-label-modern" for="confirmPassword">
                                                         <i class="fas fa-check-circle"></i>
                                                         Şifre Tekrarı
                                                     </label>
-                                                    <input type="password" id="confirmPassword" class="settings-input-modern" 
-                                                           placeholder="Şifrenizi tekrar girin" required>
-                                                    <div class="settings-input-feedback" id="confirmPasswordFeedback"></div>
+                                                    <input type="password" id="confirmPassword"
+                                                        class="settings-input-modern"
+                                                        placeholder="Şifrenizi tekrar girin" required>
+                                                    <div class="settings-input-feedback" id="confirmPasswordFeedback">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="settings-form-actions">
-                                            <button type="button" id="cancelPasswordBtn" class="settings-cancel-btn" style="display: none;">
+                                            <button type="button" id="cancelPasswordBtn" class="settings-cancel-btn"
+                                                style="display: none;">
                                                 <i class="fas fa-times me-2"></i>İptal
                                             </button>
-                                            <button type="submit" id="updatePasswordBtn" class="settings-update-btn" disabled>
+                                            <button type="submit" id="updatePasswordBtn" class="settings-update-btn"
+                                                disabled>
                                                 <i class="fas fa-shield-alt me-2"></i>Şifreyi Güncelle
                                             </button>
                                         </div>
@@ -610,8 +640,8 @@
         </div>
     </section>
 
-     <!-- ! FOOTER START-->
-     <footer class="footer pt-5">
+    <!-- ! FOOTER START-->
+    <footer class="footer pt-5">
         <div class="container text-dark mt-5">
             <div class="row">
                 <div class="col-12 col-lg-3 col-md-6">
@@ -723,12 +753,12 @@
 
     <!-- ? SITE JS -->
     <script src="/javascript/script.js"></script>
-    
+
     <!-- ? SETTINGS PAGE JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             console.log('Settings page loaded');
-            
+
             // Form elemanları
             const passwordForm = document.getElementById('passwordChangeForm');
             const currentPasswordInput = document.getElementById('currentPassword');
@@ -736,38 +766,38 @@
             const confirmPasswordInput = document.getElementById('confirmPassword');
             const updatePasswordBtn = document.getElementById('updatePasswordBtn');
             const cancelPasswordBtn = document.getElementById('cancelPasswordBtn');
-            
+
             // Toggle elemanları
             const newsletterToggle = document.getElementById('newsletterSubscription');
             const marketingToggle = document.getElementById('marketingEmails');
-            
+
             // Bildirim kaydet butonları
             const notificationSaveActions = document.getElementById('notificationSaveActions');
             const saveNotificationBtn = document.getElementById('saveNotificationBtn');
             const cancelNotificationBtn = document.getElementById('cancelNotificationBtn');
-            
+
             // Orijinal toggle durumları
             let originalNotificationSettings = {
                 newsletter: newsletterToggle.checked,
                 marketing: marketingToggle.checked
             };
-            
+
             // Feedback elemanları
             const passwordStrength = document.getElementById('passwordStrength');
             const newPasswordFeedback = document.getElementById('newPasswordFeedback');
             const confirmPasswordFeedback = document.getElementById('confirmPasswordFeedback');
-            
+
             // Şifre gücü kontrolü
             function checkPasswordStrength(password) {
                 let strength = 0;
                 let feedback = '';
-                
+
                 if (password.length >= 8) strength++;
                 if (/[a-z]/.test(password)) strength++;
                 if (/[A-Z]/.test(password)) strength++;
                 if (/[0-9]/.test(password)) strength++;
                 if (/[^A-Za-z0-9]/.test(password)) strength++;
-                
+
                 switch (strength) {
                     case 0:
                     case 1:
@@ -782,19 +812,19 @@
                         feedback = '<span class="strength-strong">Güçlü</span>';
                         break;
                 }
-                
+
                 return { strength, feedback };
             }
-            
+
             // Form validasyonu
             function validatePasswordForm() {
                 let isValid = true;
-                
+
                 // Mevcut şifre kontrolü
                 if (currentPasswordInput.value.length === 0) {
                     isValid = false;
                 }
-                
+
                 // Yeni şifre kontrolü
                 const passwordCheck = checkPasswordStrength(newPasswordInput.value);
                 if (newPasswordInput.value.length < 6) {
@@ -804,7 +834,7 @@
                 } else {
                     newPasswordFeedback.style.display = 'none';
                 }
-                
+
                 // Şifre eşleşme kontrolü
                 if (newPasswordInput.value !== confirmPasswordInput.value && confirmPasswordInput.value.length > 0) {
                     confirmPasswordFeedback.innerHTML = '<span class="text-danger">Şifreler eşleşmiyor</span>';
@@ -814,35 +844,35 @@
                     confirmPasswordFeedback.innerHTML = '<span class="text-success">Şifreler eşleşiyor</span>';
                     confirmPasswordFeedback.style.display = 'block';
                 }
-                
+
                 updatePasswordBtn.disabled = !isValid || newPasswordInput.value.length === 0;
                 cancelPasswordBtn.style.display = (currentPasswordInput.value || newPasswordInput.value || confirmPasswordInput.value) ? 'inline-block' : 'none';
-                
+
                 return isValid;
             }
-            
+
             // Event listener'lar
-            newPasswordInput.addEventListener('input', function() {
+            newPasswordInput.addEventListener('input', function () {
                 const passwordCheck = checkPasswordStrength(this.value);
                 passwordStrength.innerHTML = passwordCheck.feedback;
                 passwordStrength.style.display = this.value.length > 0 ? 'block' : 'none';
                 validatePasswordForm();
             });
-            
+
             [currentPasswordInput, newPasswordInput, confirmPasswordInput].forEach(input => {
                 input.addEventListener('input', validatePasswordForm);
                 input.addEventListener('keyup', validatePasswordForm);
             });
-            
+
             // Form submit
-            passwordForm.addEventListener('submit', function(e) {
+            passwordForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 if (validatePasswordForm()) {
                     updatePasswordBtn.innerHTML = '<i class="fas fa-check me-2"></i>Güncellendi!';
                     updatePasswordBtn.classList.add('settings-update-success');
                     updatePasswordBtn.disabled = true;
-                    
+
                     // Form temizle
                     setTimeout(() => {
                         currentPasswordInput.value = '';
@@ -852,16 +882,16 @@
                         newPasswordFeedback.style.display = 'none';
                         confirmPasswordFeedback.style.display = 'none';
                         cancelPasswordBtn.style.display = 'none';
-                        
+
                         updatePasswordBtn.innerHTML = '<i class="fas fa-shield-alt me-2"></i>Şifreyi Güncelle';
                         updatePasswordBtn.classList.remove('settings-update-success');
                         updatePasswordBtn.disabled = true;
                     }, 3000);
                 }
             });
-            
+
             // İptal butonu
-            cancelPasswordBtn.addEventListener('click', function() {
+            cancelPasswordBtn.addEventListener('click', function () {
                 currentPasswordInput.value = '';
                 newPasswordInput.value = '';
                 confirmPasswordInput.value = '';
@@ -871,45 +901,45 @@
                 this.style.display = 'none';
                 updatePasswordBtn.disabled = true;
             });
-            
+
             // Bildirim tercihlerinde değişiklik kontrolü
             function checkNotificationChanges() {
-                const hasChanges = 
+                const hasChanges =
                     newsletterToggle.checked !== originalNotificationSettings.newsletter ||
                     marketingToggle.checked !== originalNotificationSettings.marketing;
-                
+
                 notificationSaveActions.style.display = hasChanges ? 'flex' : 'none';
-                
+
                 console.log('Bildirim değişiklikleri:', {
                     newsletter: { original: originalNotificationSettings.newsletter, current: newsletterToggle.checked },
                     marketing: { original: originalNotificationSettings.marketing, current: marketingToggle.checked },
                     hasChanges: hasChanges
                 });
             }
-            
+
             // Toggle ayarları için event listener'lar
             [newsletterToggle, marketingToggle].forEach(toggle => {
-                toggle.addEventListener('change', function() {
+                toggle.addEventListener('change', function () {
                     console.log(`${this.id} değişti:`, this.checked);
                     checkNotificationChanges();
                 });
             });
-            
+
             // Bildirim kaydet butonu
-            saveNotificationBtn.addEventListener('click', function() {
+            saveNotificationBtn.addEventListener('click', function () {
                 console.log('Bildirim tercihleri kaydediliyor...');
-                
+
                 // Başarı animasyonu
                 this.innerHTML = '<i class="fas fa-check me-2"></i>Kaydedildi!';
                 this.classList.add('settings-update-success');
                 this.disabled = true;
-                
+
                 // Orijinal ayarları güncelle
                 originalNotificationSettings = {
                     newsletter: newsletterToggle.checked,
                     marketing: marketingToggle.checked
                 };
-                
+
                 // Butonları gizle
                 setTimeout(() => {
                     notificationSaveActions.style.display = 'none';
@@ -918,19 +948,19 @@
                     this.disabled = false;
                 }, 3000);
             });
-            
+
             // Bildirim iptal butonu
-            cancelNotificationBtn.addEventListener('click', function() {
+            cancelNotificationBtn.addEventListener('click', function () {
                 console.log('Bildirim değişiklikleri iptal ediliyor...');
-                
+
                 // Orijinal durumları geri yükle
                 newsletterToggle.checked = originalNotificationSettings.newsletter;
                 marketingToggle.checked = originalNotificationSettings.marketing;
-                
+
                 // Butonları gizle
                 notificationSaveActions.style.display = 'none';
             });
-            
+
             console.log('Settings page JavaScript initialized');
         });
     </script>
