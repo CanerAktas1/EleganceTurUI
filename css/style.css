@@ -1896,6 +1896,281 @@ z .promo-title {
     }
 }
 
+/* ! RESERVATION CARD CUSTOM START */
+.reservation-card-custom {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: visible;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.reservation-header-custom {
+    background: #2d3748;
+    color: white;
+    padding: 20px 24px;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.reservation-body-custom {
+    background: #f8f9fa;
+    padding: 24px;
+    border-radius: 0 0 20px 20px;
+}
+
+.reservation-details-custom {
+    margin-bottom: 24px;
+}
+
+.detail-row-custom {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 16px;
+}
+
+.detail-row-custom:last-child {
+    margin-bottom: 0;
+}
+
+.detail-icon-custom {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.detail-icon-custom i {
+    font-size: 16px;
+    color: #4da8ff;
+}
+
+.detail-content-custom {
+    flex: 1;
+}
+
+.detail-label-custom {
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.detail-value-custom {
+    font-size: 0.95rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.reservation-divider-custom {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 24px 0;
+}
+
+.reservation-price-custom {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.price-main-custom {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #10b981;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.price-sub-custom {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.installment-link-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #4da8ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(77, 168, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.installment-link-custom:hover {
+    color: white;
+    background: #4da8ff;
+    text-decoration: none;
+}
+
+.reservation-button-custom {
+    margin-bottom: 0;
+}
+
+.btn-purchase-custom {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-purchase-custom:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-purchase-custom:active {
+    transform: translateY(0);
+}
+
+.reservation-tail-custom {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #2d3748;
+    z-index: 10;
+}
+
+/* ! RESERVATION CARD CUSTOM RESPONSIVE */
+@media (max-width: 991.98px) {
+    .reservation-card-custom {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .reservation-header-custom {
+        padding: 18px 20px;
+        font-size: 1rem;
+    }
+    
+    .reservation-body-custom {
+        padding: 20px;
+    }
+    
+    .price-main-custom {
+        font-size: 2.2rem;
+    }
+    
+    .reservation-tail-custom {
+        top: 58px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .reservation-header-custom {
+        padding: 16px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .reservation-body-custom {
+        padding: 18px;
+    }
+    
+    .detail-row-custom {
+        margin-bottom: 16px;
+        gap: 12px;
+    }
+    
+    .detail-icon-custom {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .detail-icon-custom i {
+        font-size: 14px;
+    }
+    
+    .detail-label-custom {
+        font-size: 0.85rem;
+    }
+    
+    .detail-value-custom {
+        font-size: 0.9rem;
+    }
+    
+    .price-main-custom {
+        font-size: 2rem;
+    }
+    
+    .btn-purchase-custom {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .reservation-tail-custom {
+        top: 54px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .reservation-card-custom {
+        border-radius: 16px;
+        margin-bottom: 2.5rem;
+    }
+    
+    .reservation-header-custom {
+        padding: 14px 16px;
+        border-radius: 16px 16px 0 0;
+    }
+    
+    .reservation-body-custom {
+        padding: 16px;
+        border-radius: 0 0 16px 16px;
+    }
+    
+    .detail-row-custom {
+        margin-bottom: 14px;
+        gap: 10px;
+    }
+    
+    .price-main-custom {
+        font-size: 1.8rem;
+    }
+    
+    .btn-purchase-custom {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        border-radius: 20px;
+    }
+    
+    .reservation-tail-custom {
+        top: 52px;
+        border-left-width: 12px;
+        border-right-width: 12px;
+        border-top-width: 12px;
+    }
+}
+
+/* ! RESERVATION CARD CUSTOM END */
+
 /* ! TOUR DETAIL END */
 
 

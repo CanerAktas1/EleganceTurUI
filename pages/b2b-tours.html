@@ -1,579 +1,833 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-    <meta charset="utf-8" />
-    <title>TravelCo B2B Portal</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- ! SITE CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elegance Tour B2B Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Reset and base */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #222;
+            min-height: 100vh;
+        }
 
-    <!-- ! GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        /* Navbar */
+        .navbar-custom {
+            background: white;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 0.05);
+            font-size: 14px;
+        }
 
-    <!-- ! FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .navbar-custom .nav-link {
+            color: #3a3a3a;
+            font-weight: 500;
+            margin-right: 1rem;
+            white-space: nowrap;
+        }
 
-    <!-- ! JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        .navbar-custom .nav-link:hover {
+            color: #0066cc;
+        }
 
-    <!-- ! NICE SELECT -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
-        integrity="sha512-uHuCigcmv3ByTqBQQEwngXWk7E/NaPYP+CFglpkXPnRQbSubJmEENgh+itRDYbWV0fUZmUz7fD/+JDdeQFD5+A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .navbar-custom .navbar-brand img {
+            height: 32px;
+            margin-right: 10px;
+        }
 
-    <!-- ! BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        .navbar-custom .navbar-brand {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #0072c6;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-    <!-- ! BOOTSTRAP ICONS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+        /* Sidebar */
+        #sidebar {
+            background: white;
+            border-right: 1px solid #e6e6e6;
+            min-height: calc(100vh - 56px);
+            padding: 1rem 1.25rem;
+            font-size: 14px;
+            color: #444;
+        }
 
+        #sidebar h5 {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 1rem;
+        }
 
-    <style type="text/tailwindcss">
-        :root {
-        --tw-font-sans: 'Plus Jakarta Sans', sans-serif;
-      }
-      body {
-        font-family: var(--tw-font-sans);
-      }
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
+        #sidebar label {
+            user-select: none;
+            cursor: pointer;
+        }
+
+        #sidebar input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        #sidebar .filter-group {
+            margin-bottom: 1.4rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        #sidebar .filter-group:last-child {
+            border-bottom: none;
+        }
+
+        #sidebar .filter-group .section-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: #222;
+        }
+
+        #sidebar .price-range {
+            display: flex;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        #sidebar .price-range input {
+            width: 50%;
+            padding: 5px 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        #sidebar .btn-apply {
+            font-size: 13px;
+            padding: 5px 10px;
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.25s;
+        }
+
+        #sidebar .btn-apply:hover {
+            background-color: #1c7a1c;
+        }
+
+        #sidebar .scrollable-filters {
+            max-height: 270px;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        /* Main content */
+        #main-content {
+            padding: 1.25rem 1rem 1.5rem 1rem;
+        }
+
+        /* Tour cards */
+        .tour-card {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+            margin-bottom: 1.5rem;
+            padding: 15px 20px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .tour-card img {
+            width: 150px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
+        }
+
+        .tour-details {
+            flex-grow: 1;
+            font-size: 14px;
+        }
+
+        .tour-title {
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        .tour-subtitle {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 7px;
+        }
+
+        .tour-info {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 13px;
+            color: #666;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .tour-info .badge {
+            background: #f0f5f0;
+            color: #2a7c2a;
+            border-radius: 3px;
+            padding: 3px 8px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .tour-info .badge i {
+            font-style: normal;
+            font-weight: 900;
+        }
+
+        .btn-blue {
+            background-color: #0092ff;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-blue:hover {
+            background-color: #006fbf;
+        }
+
+        .price-green {
+            color: #289c1b;
+            font-weight: 700;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        /* Right content panel */
+        #right-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 2px 14px rgb(0 0 0 / 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            min-width: 320px;
+            max-width: 480px;
+        }
+
+        /* Image slider */
+        .slider-container {
+            position: relative;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .slider-container img {
+            height: 120px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            width: 120px;
+            object-fit: cover;
+            box-shadow: 0 1px 6px rgb(0 0 0 / 0.12);
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .slider-container img:hover {
+            box-shadow: 0 4px 10px rgb(0 0 0 / 0.25);
+        }
+
+        /* Slider arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background: #007bffcc;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .slider-arrow:hover {
+            background: #0056b3cc;
+        }
+
+        .slider-arrow.left {
+            left: 2px;
+        }
+
+        .slider-arrow.right {
+            right: 2px;
+        }
+
+        /* Tour main title & price on right panel */
+        #right-panel h4 {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 6px;
+            color: #222;
+        }
+
+        #right-panel .price-box {
+            background: #5cab36;
+            color: white;
+            padding: 10px 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 18px;
+            text-align: center;
+            white-space: nowrap;
+            cursor: default;
+            user-select: none;
+        }
+
+        #right-panel .price-box small {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        /* Tags on right panel */
+        .tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .tag-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background-color: #e1e7f1;
+            border-radius: 4px;
+            color: #444;
+            font-weight: 600;
+            cursor: default;
+            user-select: none;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+
+        .tag-btn i {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .tag-yellow {
+            background-color: #fff1b0;
+            color: #a7840a;
+        }
+
+        .tag-red {
+            background-color: #f5cccc;
+            color: #aa3f3f;
+        }
+
+        .tag-blue {
+            background-color: #b5d6fa;
+            color: #2f67bb;
+        }
+
+        /* Form selectors on right panel */
+        .right-panel-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .right-panel-row>div {
+            flex-grow: 1;
+            min-width: 140px;
+        }
+
+        .form-select,
+        .form-control {
+            border-radius: 6px;
+            font-size: 14px;
+            padding: 8px 12px;
+            border: 1.5px solid #ced4da;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-select:focus,
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 4px #007bff88;
+            outline: none;
+        }
+
+        .btn-calc {
+            border: 1.5px solid #007bff;
+            background-color: transparent;
+            color: #007bff;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .btn-calc:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Offers & Info tabs */
+        .info-tabs {
+            display: flex;
+            font-size: 14px;
+            margin-bottom: 0.5rem;
+            border-radius: 0;
+            user-select: none;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.07);
+        }
+
+        .info-tabs button {
+            flex-grow: 1;
+            border: none;
+            padding: 10px 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .info-tabs button:first-child {
+            background-color: #222;
+            color: white;
+        }
+
+        .info-tabs button:last-child {
+            background-color: #e30613;
+            color: white;
+        }
+
+        /* Offer detail box */
+        .offer-detail {
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 1rem;
+            font-size: 14px;
+            color: #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: inset 0 0 8px rgb(0 0 0 / 0.03);
+        }
+
+        .offer-detail small {
+            color: #777;
+            font-size: 12px;
+            user-select: none;
+        }
+
+        /* Price & reservation */
+        .price-reservation {
+            background: white;
+            border-radius: 6px;
+            padding: 16px 20px;
+            box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 700;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .price-reservation .price {
+            font-size: 20px;
+            font-weight: 900;
+            color: #222;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .btn-reserve {
+            background-color: #228B22;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background-color 0.25s ease;
+        }
+
+        .btn-reserve:hover {
+            background-color: #1a6f1a;
+        }
+
+        /* Installment link */
+        .installment-link {
+            font-size: 12px;
+            color: #4477dd;
+            text-decoration: underline;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Scrollbar for sidebar filters */
+        #sidebar .scrollable-filters::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #sidebar .scrollable-filters::-webkit-scrollbar-thumb {
+            background-color: #c0c0c0;
+            border-radius: 3px;
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 1199px) {
+            #right-panel {
+                max-width: 100%;
+                min-width: auto;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .tour-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tour-card img {
+                width: 100%;
+                height: 180px;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            #main-content {
+                padding: 1rem 0.75rem;
+            }
+
+            #sidebar {
+                min-height: auto;
+                border-right: none;
+                padding-bottom: 1rem;
+                padding-top: 0.6rem;
+            }
+
+            #sidebar .scrollable-filters {
+                max-height: 140px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-custom .nav-link {
+                font-size: 13px;
+                margin-right: 0.5rem;
+            }
+
+            .navbar-custom .navbar-brand {
+                font-size: 16px;
+            }
+
+            #right-panel {
+                padding: 1rem 1rem 1rem 1rem;
+            }
+
+            .right-panel-row {
+                flex-direction: column;
+            }
+
+            .right-panel-row>div {
+                min-width: 100%;
+            }
+
+            .btn-calc {
+                width: 100%;
+                text-align: center;
+            }
+
+            .price-reservation {
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom px-3">
+        <a class="navbar-brand" href="#">
+            <img src="/img/logo.png" alt="Elegance Tour Logo" />
 
-    <header class="header-bot">
-
-        <nav class="navbar float navbar-expand-lg navbar-light bg-white shadow-sm py-0 pe-5">
-            <div class="container-fluid px-5 responsive-logo">
-
-                <a class="navbar-brand d-flex align-items-center" href="#">
-                    <img src="/img/logo.png" style="width: 300px; height: 80px;" alt="EleganceTur Logo">
-                </a>
-
-                <!-- Mobile toggler -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                    <i class="fa-solid fa-bars border-0"></i>
-                </button>
-
-                <!-- Desktop Menu -->
-                <div class="" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto mb-2 column-gap-4 mb-lg-0">
-
-                        <!-- Mega Menu Example -->
-
-                        <li class="nav-item  position-static">
-                            <a class="nav-link  fw-bolder text-black navbar-item" href="#" style="font-size: 14px;">
-                                Ana Sayfa
-                            </a>
-                        </li>
-                        <li class="nav-item  position-static">
-                            <a class="nav-link  fw-bolder text-black navbar-item" href="#" style="font-size: 14px;">
-                                Turlar
-                            </a>
-                        </li>
-                        <li class="nav-item  position-static">
-                            <a class="nav-link  fw-bolder text-black navbar-item" href="#" style="font-size: 14px;">
-                                Rezervasyon Listesi
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Mobile Offcanvas -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
-            <div class="offcanvas-header d-flex justify-content-between align-items-center mb-5">
-                <a href="/pages/index.html" class="" style="height: 30px;"><img src="/img/logo.png" alt=""></a>
-                <!-- <h5 class="offcanvas-title text-info">Elegance Tur</h5>  -->
-                <!-- <img src="/img/mavi yolculuk slider çalışması (1).png"  alt=""> -->
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <div class="offcanvas-body p-0">
-                <ul class="list-unstyled m-0">
-                    <li>
-                        <button
-                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
-                            data-bs-toggle="collapse" data-bs-target="#bayramCollapse">
-                            Bayram Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
-                        </button>
-                        <div class="collapse" id="bayramCollapse">
-                            <ul class="list-unstyled ps-4">
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Ramazan
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kurban
-                                        Turları</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-
-                <ul class="list-unstyled m-0">
-                    <li>
-                        <button
-                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
-                            data-bs-toggle="collapse" data-bs-target="#yurtDisiCollapse">
-                            Yurt Dışı Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
-                        </button>
-                        <div class="collapse" id="yurtDisiCollapse">
-                            <ul class="list-unstyled ps-4">
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Ekspresi
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                        ve
-                                        Termal Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                        Sonu
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Kapadokya
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Günübirlik
-                                        Turlar</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Safranbolu
-                                        Amasra Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Karadeniz
-                                        Turları</a></li>
-                                <li><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Anadolu Turları</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="list-unstyled m-0">
-                    <li>
-                        <button
-                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
-                            data-bs-toggle="collapse" data-bs-target="#yurtIciCollapse">
-                            Yurt İçi Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
-                        </button>
-                        <div class="collapse" id="yurtIciCollapse">
-                            <ul class="list-unstyled ps-4">
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Ekspresi
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                        ve
-                                        Termal Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                        Sonu
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Kapadokya
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Günübirlik
-                                        Turlar</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Safranbolu
-                                        Amasra Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Karadeniz
-                                        Turları</a></li>
-                                <li><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Anadolu Turları</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-
-                <ul class="list-unstyled m-0">
-                    <li>
-                        <button
-                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
-                            data-bs-toggle="collapse" data-bs-target="#gemiCollapse">
-                            Gemi Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
-                        </button>
-                        <div class="collapse" id="gemiCollapse">
-                            <ul class="list-unstyled ps-4">
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Ekspresi
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                        ve
-                                        Termal Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                        Sonu
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Kapadokya
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Günübirlik
-                                        Turlar</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Safranbolu
-                                        Amasra Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                        Turları</a></li>
-                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                        Karadeniz
-                                        Turları</a></li>
-                                <li><a href="#" class="text-decoration-none text-dark"><i
-                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                        Anadolu Turları</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-                <ul class="list-unstyled ">
-                    <li>
-                        <div class="dropdown-header px-3 py-2 fw-bold text-black " id="">
-                            <a href="#" class="text-black text-decoration-none "> Vizesiz Turlar</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item"><a class="nav-link active" href="#">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Tur</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Muhasebe</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Talepler</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Rezervasyon Listesi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Ayarlar</a></li>
+            </ul>
         </div>
-    </header>
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-link p-0 text-secondary" title="Search" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11 6a5 5 0 1 1-9.996.224A5 5 0 0 1 11 6zm-1.707 6.707a6 6 0 1 0-1.414-1.414l3.853 3.853 1.414-1.414-3.853-3.853z" />
+                </svg>
+            </button>
+            <button class="btn btn-outline-primary btn-sm">Çıkış Yap</button>
+        </div>
+    </nav>
 
+    <!-- Main container -->
+    <div class="container-fluid mt-3">
+        <div class="row gx-3">
+            <!-- Sidebar Filters -->
+            <aside id="sidebar" class="col-xl-3 col-lg-4 col-md-5 order-2 order-md-1">
+                <h5>Filtreler</h5>
+                <div class="scrollable-filters">
+                    <div class="filter-group">
+                        <span class="section-label">Turlar</span>
+                        <label><input type="checkbox" /> Tarih Bazlı Turlar</label><br />
+                        <label><input type="checkbox" /> Gezi Bazlı Turlar</label><br />
+                        <label><input type="checkbox" /> Havalimanı Transferi</label><br />
+                        <label><input type="checkbox" /> Vize Hizmetleri</label><br />
+                        <label><input type="checkbox" /> Uçak Bileti</label><br />
+                        <label><input type="checkbox" /> Konaklama</label><br />
+                    </div>
+                    <div class="filter-group">
+                        <span class="section-label">Kategori</span>
+                        <label><input type="checkbox" /> Ekonomik</label><br />
+                        <label><input type="checkbox" /> Standart</label><br />
+                        <label><input type="checkbox" /> Premium</label><br />
+                    </div>
+                    <div class="filter-group">
+                        <span class="section-label">Fiyat Aralığı (TL)</span>
+                        <div class="price-range">
+                            <input type="number" placeholder="Min" min="0" />
+                            <input type="number" placeholder="Max" min="0" />
+                        </div>
+                        <button class="btn-apply w-100">Uygula</button>
+                    </div>
+                    <div class="filter-group">
+                        <span class="section-label">Tur Süresi</span>
+                        <label><input type="checkbox" /> 1-3 Gün</label><br />
+                        <label><input type="checkbox" /> 4-7 Gün</label><br />
+                        <label><input type="checkbox" /> 8+ Gün</label><br />
+                    </div>
+                </div>
+            </aside>
 
-    <div class="flex min-h-screen">
+            <!-- Main Content -->
+            <section id="main-content" class="col-xl-6 col-lg-8 col-md-7 order-1 order-md-2">
+                <!-- Tour Card -->
+                <article class="tour-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=150&q=80"
+                        alt="Tour Image" />
+                    <div class="tour-details">
+                        <div class="tour-title">Antalya & Side Turları</div>
+                        <div class="tour-subtitle">29 Haziran - 06 Temmuz 2024</div>
+                        <div class="tour-info">
+                            <span class="badge">Otel: Beach Resort</span>
+                            <span class="badge">Transfer Dahil</span>
+                            <span class="badge">4 Gece 5 Gün</span>
+                        </div>
+                        <button class="btn-blue">Detaylar</button>
+                    </div>
+                    <div class="price-green">6.250 TL</div>
+                </article>
 
-        <aside class="w-80 bg-white border-r border-gray-200 p-6 flex flex-col justify-between">
-            <div>
-                <h2 class="text-xl font-bold mb-6">Filters</h2>
-                <div class="space-y-6">
+                <article class="tour-card">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=150&q=80"
+                        alt="Tour Image" />
+                    <div class="tour-details">
+                        <div class="tour-title">Kapadokya Doğa Turu</div>
+                        <div class="tour-subtitle">15 Ağustos - 20 Ağustos 2024</div>
+                        <div class="tour-info">
+                            <span class="badge">Balon Turu</span>
+                            <span class="badge">4 Gece 5 Gün</span>
+                            <span class="badge">Yarım Pansiyon</span>
+                        </div>
+                        <button class="btn-blue">Detaylar</button>
+                    </div>
+                    <div class="price-green">4.800 TL</div>
+                </article>
+
+                <!-- Add more tour cards as needed -->
+            </section>
+
+            <!-- Right Panel -->
+            <aside id="right-panel" class="col-xl-3 d-none d-xl-flex flex-column order-3">
+                <h4>Antalya & Side Turları</h4>
+                <div class="slider-container" id="image-slider">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=120&q=80"
+                        alt="Image 1" />
+                    <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=120&q=80"
+                        alt="Image 2" />
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=120&q=80"
+                        alt="Image 3" />
+                    <img src="https://images.unsplash.com/photo-1465156799762-5c75a355d2a0?auto=format&fit=crop&w=120&q=80"
+                        alt="Image 4" />
+                </div>
+
+                <div class="price-box">
+                    6.250 TL
+                    <small>Kişi Başı Fiyat</small>
+                </div>
+
+                <div class="tags-row">
+                    <div class="tag-btn tag-yellow">Özel İndirim <i>+</i></div>
+                    <div class="tag-btn tag-red">Sınırlı Kontenjan <i>!</i></div>
+                    <div class="tag-btn tag-blue">Erken Rezervasyon <i>★</i></div>
+                </div>
+
+                <div class="right-panel-row">
                     <div>
-                        <label class="text-sm font-semibold text-gray-700" for="tour-category">Tour Category</label>
-                        <select
-                            class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                            id="tour-category">
-                            <option>All Categories</option>
-                            <option>Adventure</option>
-                            <option>Cultural</option>
-                            <option>Luxury</option>
-                            <option>Family</option>
+                        <label for="adults">Yetişkin</label>
+                        <select id="adults" class="form-select" aria-label="Yetişkin sayısı">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
                         </select>
                     </div>
                     <div>
-                        <label class="text-sm font-semibold text-gray-700" for="price-range">Price Range</label>
-                        <div class="mt-2">
-                            <input
-                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
-                                max="5000" min="100" type="range" value="2000" />
-                            <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                <span>$100</span>
-                                <span>$5000</span>
-                            </div>
-                        </div>
+                        <label for="children">Çocuk</label>
+                        <select id="children" class="form-select" aria-label="Çocuk sayısı">
+                            <option selected>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
                     </div>
                     <div>
-                        <label class="text-sm font-semibold text-gray-700" for="duration">Duration (Days)</label>
-                        <input
-                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-2"
-                            max="30" min="1" type="range" value="7" />
-                        <div class="text-center text-xs text-gray-500 mt-1">
-                            <span>7 days</span>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="text-sm font-semibold text-gray-700" for="departure">Departure Month</label>
-                        <input
-                            class="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
-                            id="departure" type="month" />
-                    </div>
-                    <div class="space-y-2 pt-2">
-                        <label class="flex items-center">
-                            <input class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                                type="checkbox" />
-                            <span class="ml-2 text-sm text-gray-700">Visa Required</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input checked="" class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                                type="checkbox" />
-                            <span class="ml-2 text-sm text-gray-700">Special Offers</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <button
-                class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors">Apply
-                Filters</button>
-        </aside>
-        <div class="flex-1">
-
-            <main class="p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-3xl font-bold text-gray-900">Available Tours</h2>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-sm text-gray-600">Sort by:</span>
-                        <select
-                            class="rounded-md border-gray-300 text-sm shadow-sm focus:border-blue-500 focus:ring-blue-500">
-                            <option>Popularity</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
-                            <option>Duration</option>
+                        <label for="room-type">Oda Tipi</label>
+                        <select id="room-type" class="form-select" aria-label="Oda tipi">
+                            <option selected>Standart</option>
+                            <option>Suit</option>
+                            <option>Villa</option>
                         </select>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                        <div class="relative">
-                            <img alt="Eastern Wonders Tour" class="w-full h-48 object-cover"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRA84yODWpVPKUCDbtJ2pOyMS6XWkXOOuQckOzah8zdRGrw4v5ic15OBP4m5LdVZEm5jY0qPfNvZoVCabtx3R7gIJkHtXDq_-mR-J6SojPSBuGUjeku7uR4WeMoL4e0IttbxfE7LwsDle1pF24APxIbJSSUvBwJ0E6jXm3en2XgXRBhEKX4bGtLb8EdNx2YifsGhdEhyyGc53bi4x6bmWNIsOQiKuJv5SJYeWvqS0PMcDyq3oKe7Nedo09ITAydYvPHB4QPp3UF_g" />
-                            <div
-                                class="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">
-                                SPECIAL OFFER</div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-bold text-gray-900">Explore the Wonders of the East</h3>
-                            <p class="text-sm text-gray-600 mt-1">Embark on a cultural journey through the East,
-                                exploring ancient temples and vibrant cities.</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <div>
-                                    <span class="text-sm text-gray-500">From</span>
-                                    <p class="text-xl font-bold text-gray-900">$1,250</p>
-                                </div>
-                                <button
-                                    class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm">Inquire
-                                    Now</button>
-                            </div>
-                        </div>
+
+                <button class="btn-calc">Hesapla</button>
+
+                <div class="info-tabs" role="tablist">
+                    <button role="tab" aria-selected="true" aria-controls="offers" id="offers-tab">Kampanyalar</button>
+                    <button role="tab" aria-selected="false" aria-controls="info" id="info-tab">Tur Bilgileri</button>
+                </div>
+
+                <div id="offers" role="tabpanel" aria-labelledby="offers-tab">
+                    <div class="offer-detail">
+                        <div>Erken Rezervasyon İndirimi</div>
+                        <small>%10 İndirim</small>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img alt="Western Beauty Tour" class="w-full h-48 object-cover"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiYV42ZVsmEP0lgPQ8zj2GCmt0mpbMNOMKA-3sGNNaTv5xXfw27KKrF_5iPbI5YO1iyvGY8mkB6dwdv65EU4rvRDEeHaVZF73XgCpunBBLscqAmAfBHOICKSDCgUOpwMb6kMTci_eZxllQSG5ucwFn6BrUXiQ6iLlcOkAMbTa9lz9h31Uin7eQnmUsJHt5bd8zALKmSxdVwtYTJw3UcuwCOGXOibYmzjZRstwUtwAIABxVpY40ZR9Oq8kqthCNVVw_5Ubja7DXMEE" />
-                        <div class="p-4">
-                            <h3 class="text-lg font-bold text-gray-900">Discover the Beauty of the West</h3>
-                            <p class="text-sm text-gray-600 mt-1">Experience the breathtaking landscapes and diverse
-                                cultures of the West.</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <div>
-                                    <span class="text-sm text-gray-500">From</span>
-                                    <p class="text-xl font-bold text-gray-900">$1,800</p>
-                                </div>
-                                <button
-                                    class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm">Inquire
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                        <img alt="Southern Heart Tour" class="w-full h-48 object-cover"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHPk79OdVzHUFEVuiA_Jh9T8pp9m4Wn8e8mlO3iNHWPRZpDHB3IsA0iuurxhS7YwkaJ5hodnFVOOWqVbF6CD__6ONZGj2LSpc4MgZVimZQAXJ2l0hTGgqZWdIANMfS6JY5nKau_Bc_lWcyofKZKrdbw8Z9QezNMLXPWT1EabRX8tnSDkz0PGISQeEhN3ix05-Zrlc18TyW47rkm6Kg8LlJSMIuYt8bHMGTslLk1I7Q0gJPS6zyLy4XEZZSY4x7PuhPllyRa3J195w" />
-                        <div class="p-4">
-                            <h3 class="text-lg font-bold text-gray-900">Journey Through the Heart of the South</h3>
-                            <p class="text-sm text-gray-600 mt-1">Delve into the rich history and natural wonders of the
-                                South.</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <div>
-                                    <span class="text-sm text-gray-500">From</span>
-                                    <p class="text-xl font-bold text-gray-900">$980</p>
-                                </div>
-                                <button
-                                    class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm">Inquire
-                                    Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                        <div class="relative">
-                            <img alt="Northern Mysteries Tour" class="w-full h-48 object-cover"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN-DNMSNNq2COOoX4QH1q31v1E4-KWZC9SDvTYENKzChhZqsmO6ZgDNa7VpLQq4wVxKXK9s66PjOX_u_eF3f75eRPFTzTpPUNyzbpN3Z9u4wwG21-llyYufmNkl916gYNixSS0hjzyTqJlrdOMKKRt-Q_v2aF7UzWKBpfPIsHNhGlJo2MUA4LCemtUrH88pY_uaR2dMFzXjP1tjxPB5He1rKkEKg98lcv5h9ktpKt4jTYcqsjCyqhmKwEV9Mbtjjf4KvJs5abpeac" />
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-bold text-gray-900">Uncover the Mysteries of the North</h3>
-                            <p class="text-sm text-gray-600 mt-1">Venture into the untouched wilderness and unique
-                                traditions of the North.</p>
-                            <div class="flex items-center justify-between mt-4">
-                                <div>
-                                    <span class="text-sm text-gray-500">From</span>
-                                    <p class="text-xl font-bold text-gray-900">$2,100</p>
-                                </div>
-                                <button
-                                    class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-sm">Inquire
-                                    Now</button>
-                            </div>
-                        </div>
+                    <div class="offer-detail">
+                        <div>Grup İndirimi</div>
+                        <small>%15 İndirim</small>
                     </div>
                 </div>
-                <div class="mt-8 flex justify-center items-center space-x-2">
-                    <a class="p-2 rounded-full hover:bg-gray-200" href="#">
-                        <span class="material-symbols-outlined text-gray-600">chevron_left</span>
-                    </a>
-                    <a class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md" href="#">1</a>
-                    <a class="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md hover:bg-gray-100"
-                        href="#">2</a>
-                    <a class="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md hover:bg-gray-100"
-                        href="#">3</a>
-                    <span class="text-gray-500">...</span>
-                    <a class="px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md hover:bg-gray-100"
-                        href="#">10</a>
-                    <a class="p-2 rounded-full hover:bg-gray-200" href="#">
-                        <span class="material-symbols-outlined text-gray-600">chevron_right</span>
-                    </a>
+
+                <div id="info" role="tabpanel" aria-labelledby="info-tab" hidden>
+                    <div class="offer-detail">
+                        <div>Tur Süresi</div>
+                        <small>4 Gece 5 Gün</small>
+                    </div>
+                    <div class="offer-detail">
+                        <div>Kapsam</div>
+                        <small>Ulaşım, Konaklama, Rehberlik</small>
+                    </div>
                 </div>
-            </main>
+
+                <div class="price-reservation">
+                    <div class="price">6.250 TL</div>
+                    <button class="btn-reserve">Rezervasyon Yap</button>
+                </div>
+
+                <div class="installment-link" tabindex="0">Taksitli ödeme seçenekleri</div>
+            </aside>
         </div>
     </div>
-    <!-- ! FOOTER START-->
-    <footer class="footer pt-5">
-        <div class="container text-dark mt-5">
-            <div class="row">
-                <div class="col-12 col-lg-3 col-md-6">
-                    <h5 class="fw-bold">Kurumsal</h5>
 
-                    <ul class="list-unstyled ms-3 mt-4 footer-list">
-                        <a href="#">
-                            <li class="mt-2">Hakkımızda</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">İletişim</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Kullanım Koşulları</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">İade Koşulları</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">KVKK Aydınlatma Metni</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Gizlilik Politikası</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-3 col-md-6">
-                    <h5 class="fw-bold">İletişim</h5>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tab switching logic for offers and info
+        const offersTab = document.getElementById('offers-tab');
+        const infoTab = document.getElementById('info-tab');
+        const offersPanel = document.getElementById('offers');
+        const infoPanel = document.getElementById('info');
 
-                    <ul class="list-unstyled ms-3 mt-4 footer-list">
-                        <a href="#">
-                            <li><i class="fa-solid fa-location-dot"></i> Turgut Özel Millet Caddesi No:73 Daire:8
-                                Findikzade-Fatih / İSTANBUL</li>
-                        </a>
-                        <a href="#">
-                            <li><i class="fa-solid fa-envelope"></i> operation@elegancetur.com</li>
-                        </a>
-                        <a href="#">
-                            <li><i class="fa-solid fa-phone"></i> +90 212 588 00 30 </li>
-                        </a>
-                        <a href="#">
-                            <li><i class="fa-brands fa-whatsapp"></i> +90 537 363 40 65 </li>
-                        </a>
-                        <a href="#">
-                            <li><i class="fa-solid fa-fax"></i> 0 212 588 00 61 (Fax)</li>
-                        </a>
-                    </ul>
-                    <a href="https://www.tursab.org.tr/tr/ddsv" target="_blank">
-                        <img src="/img/tursab-dds-8879.webp" alt="">
-                    </a>
-                </div>
-                <div class="col-12 col-lg-3 col-md-6">
-                    <h5 class="fw-bold">Hızlı Linkler</h5>
+        offersTab.addEventListener('click', () => {
+            offersTab.setAttribute('aria-selected', 'true');
+            infoTab.setAttribute('aria-selected', 'false');
+            offersPanel.hidden = false;
+            infoPanel.hidden = true;
+            offersTab.style.backgroundColor = '#222';
+            offersTab.style.color = 'white';
+            infoTab.style.backgroundColor = '#e30613';
+            infoTab.style.color = 'white';
+        });
 
-                    <ul class="list-unstyled ms-3 mt-4 footer-list">
-                        <a href="#">
-                            <li class="mt-2">Yurt İçi Turlar</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Yurt Dışı Turlar</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Gemi Turları</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Vizesiz Turlar</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-2">Bayram Turları</li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-3 col-md-6">
-                    <h5 class="fw-bold">Sosyal Medya</h5>
-
-                    <ul class="list-unstyled ms-3 mt-4 footer-list">
-                        <a href="#">
-                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-1"><i class="fa-brands fa-instagram"></i> Instagram</li>
-                        </a>
-                        <a href="#">
-                            <li class="mt-1"><i class="fa-brands fa-linkedin"></i> Linkedin</li>
-                        </a>
-                    </ul>
-
-                    <h5 class="fw-bold">Bültene Abone Olun</h5>
-                    <p>Kampanyalarımızdan haberdar olmak için bültenimize abone olun</p>
-                    <form class="mt-3 z-2">
-                        <input type="email" class="form-control mb-2" placeholder="E-posta adresiniz">
-                        <button type="submit" class="btn btn-dark">Abone Ol</button>
-                    </form>
-                </div>
-            </div>
-            <div>
-                <p class="d-flex justify-content-center footer-rights-deserved">2025 © Copyright Elegance Tur. Tüm
-                    Hakları Saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ! FOOTER END-->
-
-    <!-- ? BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
-
-    <!-- ? SITE JS -->
-    <script src="/javascript/script.js"></script>
+        infoTab.addEventListener('click', () => {
+            offersTab.setAttribute('aria-selected', 'false');
+            infoTab.setAttribute('aria-selected', 'true');
+            offersPanel.hidden = true;
+            infoPanel.hidden = false;
+            offersTab.style.backgroundColor = '#e30613';
+            offersTab.style.color = 'white';
+            infoTab.style.backgroundColor = '#222';
+            infoTab.style.color = 'white';
+        });
+    </script>
 </body>
 
 </html>
