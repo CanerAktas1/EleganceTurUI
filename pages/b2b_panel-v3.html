@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--
+  Basit ve modern bir B2B tur paneli ana sayfası.  
+  Bu dosya, seyahat acentelerinin turları yönetmesi için bir yönetim paneli şablonu sağlar.  
+  Tamamen Türkçe içerik sunar ve Bootstrap 5 ile FontAwesome simgeleri kullanır.  
+  Sidebar beyaz renkte tasarlanmış ve simgelerle desteklenmiştir.  
+  Ana sayfada tur arama formu, duyurular, öne çıkan turlar ve tur kategorileri bölümleri bulunur.  
+-->
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B2B Tur Paneli</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Genel stil ayarları */
+    body {
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        "Noto Sans", sans-serif;
+      background-color: #f8f9fa;
+    } 
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background: #ffffff;
+      border-right: 1px solid #e5e5e5;
+      transition: width 0.25s ease-in-out;
+      position: relative;
+    }
+
+    .sidebar.collapsed {
+      width: 70px;
+    }
+
+    .sidebar .toggle-btn {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    .sidebar .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      padding: 1rem 1rem 0;
+      color: #212529;
+    }
+
+    .sidebar.collapsed .logo span {
+      display: none;
+    }
+
+    .sidebar .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.5rem;
+      color: #495057;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0.1rem 0.75rem;
+      text-decoration: none;
+      transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    }
+
+    /* Simgelerin arka planı: hafif gri kutular */
+    .sidebar .nav-link .icon-container {
+      width: 34px;
+      height: 34px;
+      border-radius: 0.4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.75rem;
+      background-color: #f3f4f6;
+      color: #6c757d;
+      flex-shrink: 0;
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    /* Aktif menü öğesi: açık gri zemin ve sol şerit */
+    .sidebar .nav-link.active {
+      background-color: #f2f3f5;
+      color: #212529;
+      border-left: 4px solid #212529;
+      padding-left: calc(1.25rem - 4px);
+    }
+
+    .sidebar .nav-link.active .icon-container {
+      background-color: #212529;
+      color: #ffffff;
+    }
+
+    .sidebar.collapsed .nav-link {
+      justify-content: center;
+      padding-left: 0;
+      border-left: none;
+    }
+
+    .sidebar.collapsed .nav-link .link-text {
+      display: none;
+    }
+
+    /* Aktif menüde sol çizgi olmadığında (collapsed) kaldır */
+    .sidebar.collapsed .nav-link.active {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    /* Collapsed modunda simgelerin sağ boşluğunu kaldırın */
+    .sidebar.collapsed .nav-link .icon-container {
+      margin-right: 0;
+    }
+
+    /* İçerik alanı */
+    .content {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+
+    /* Arama alanı */
+    .search-area {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    /* Buton özelleştirme (siyah buton) */
+    .btn-ana {
+      background-color: #212529;
+      border-color: #212529;
+    }
+
+    .btn-ana:hover {
+      background-color: #000000;
+      border-color: #000000;
+    }
+
+    /* Duyuru kartları */
+    .announcement {
+      display: flex;
+      align-items: flex-start;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin-bottom: 0.8rem;
+    }
+
+    .announcement .icon {
+      font-size: 1.5rem;
+      margin-right: 0.75rem;
+      color: #0d6efd;
+    }
+
+    /* Öne çıkan turlar ve kategoriler */
+    .featured-tours .card,
+    .categories .card {
+      border: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
+    }
+
+    .featured-tours .card img,
+    .categories .card img {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .categories .card-title {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .categories .card-body {
+      padding: 0.75rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="toggle-btn" id="toggleBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="logo">
+      <img src="/img/logo.png" class="w-100" alt="">
+    </div>
+    <nav class="nav flex-column mt-3">
+      <a href="#" class="nav-link active">
+        <span class="icon-container"><i class="fas fa-home"></i></span>
+        <span class="link-text">Ana Sayfa</span>
+      </a>
+      <a href="#" class="nav-link">
+        <span class="icon-container"><i class="fas fa-map-signs"></i></span>
+        <span class="link-text">Turlar</span>
+      </a>
+      <a href="#" class="nav-link">
+        <span class="icon-container"><i class="fas fa-file-invoice-dollar"></i></span>
+        <span class="link-text">Muhasebe</span>
+      </a>
+      <a href="#" class="nav-link">
+        <span class="icon-container"><i class="fas fa-inbox"></i></span>
+        <span class="link-text">Talepler</span>
+      </a>
+      <a href="#" class="nav-link">
+        <span class="icon-container"><i class="fas fa-list-ul"></i></span>
+        <span class="link-text">Rezervasyon Listesi</span>
+      </a>
+    </nav>
+  </aside>
+  <!-- İçerik -->
+  <main class="content">
+    <!-- Üst başlık ve yeni talep butonu -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+      <h3 class="mb-3 mb-md-0">Ana Sayfa</h3>
+      <button class="btn btn-outline-dark">Yeni Talep Oluştur</button>
+    </div>
+    <!-- Arama Alanı -->
+    <section class="search-area">
+      <h5 class="mb-3">Tur Ara</h5>
+      <form class="row g-3">
+        <div class="col-lg-4 col-md-6">
+          <label class="form-label">Tur Başlığı</label>
+          <input type="text" class="form-control" placeholder="Örneğin: İstanbul Turu" />
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <label class="form-label">Başlangıç Tarihi</label>
+          <input type="date" class="form-control" />
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <label class="form-label">Bitiş Tarihi</label>
+          <input type="date" class="form-control" />
+        </div>
+        <div class="col-lg-2 col-md-6 d-flex align-items-end">
+          <button type="submit" class="btn btn-dark w-100">Ara</button>
+        </div>
+      </form>
+    </section>
+    <!-- Duyurular Bölümü -->
+    <section class="announcements mb-5">
+      <h5 class="mb-3">Duyurular</h5>
+      <!-- Duyuru 1 -->
+      <div class="announcement">
+        <div class="icon"><i class="fas fa-bullhorn"></i></div>
+        <div>
+          <h6 class="mb-1">KASIM’da seçili turlarda çocuklara ücretsiz Dubai vizesi</h6>
+          <p class="mb-0 small text-muted">
+            0–12 yaş çocuklar için geçerli Dubai vize kampanyası. Detaylar için tıklayın.
+          </p>
+        </div>
+      </div>
+      <!-- Duyuru 2 -->
+      <div class="announcement">
+        <div class="icon"><i class="fas fa-credit-card"></i></div>
+        <div>
+          <h6 class="mb-1">Peşin fiyatına 6 taksit imkanı başladı</h6>
+          <p class="mb-0 small text-muted">
+            Tüm kredi kartlarında geçerli kampanya 1 Ekim’de sona eriyor.
+          </p>
+        </div>
+      </div>
+      <!-- Duyuru 3 -->
+      <div class="announcement">
+        <div class="icon"><i class="fas fa-plane"></i></div>
+        <div>
+          <h6 class="mb-1">Yeni İspanya ve Endülüs turları yayında</h6>
+          <p class="mb-0 small text-muted">
+            699 €’dan başlayan fiyatlarla sınırlı kontenjan. Erken rezervasyon avantajları için tıklayın.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Öne Çıkan Turlar -->
+    <section class="featured-tours mb-5">
+      <h5 class="mb-3">Öne Çıkan Turlar</h5>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebc?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="Dubai manzarası" />
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">Dubai Macera Turu</h6>
+              <p class="card-text">3 gece – 299 €’dan başlayan fiyatlarla</p>
+              <a href="#" class="btn btn-ana mt-auto text-white">Rezervasyon Yap</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1473001883760-cf9cf8815fda?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="İtalya manzarası" />
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">Klasik İtalya Turu</h6>
+              <p class="card-text">7 gece – 599 €’dan başlayan fiyatlarla</p>
+              <a href="#" class="btn btn-ana mt-auto text-white">Rezervasyon Yap</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
+              class="card-img-top" alt="İspanya kıyıları" />
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title">İspanya ve Endülüs</h6>
+              <p class="card-text">6 gece – 699 €’dan başlayan fiyatlarla</p>
+              <a href="#" class="btn btn-ana mt-auto text-white">Rezervasyon Yap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tur Kategorileri -->
+    <section class="categories mb-3">
+      <h5 class="mb-3">Tur Kategorileri</h5>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1533055640609-24b498cdfa4b?auto=format&fit=crop&w=400&q=60"
+              alt="Kültür gezisi" />
+            <div class="card-body">
+              <p class="card-title">Kültür</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=60"
+              alt="Deniz tatili" />
+            <div class="card-body">
+              <p class="card-title">Deniz &amp; Tatil</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1526772623046-b1d8af5986f6?auto=format&fit=crop&w=400&q=60"
+              alt="Macera turu" />
+            <div class="card-body">
+              <p class="card-title">Macera</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=400&q=60"
+              alt="Şehir turu" />
+            <div class="card-body">
+              <p class="card-title">Şehir</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Bootstrap JS ve basit sidebar collapse scripti -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("toggleBtn");
+    toggleBtn.addEventListener("click", function () {
+      sidebar.classList.toggle("collapsed");
+    });
+  </script>
+</body>
+
+</html>
