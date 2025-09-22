@@ -121,25 +121,47 @@
             border-radius: 12px;
             border: 1px solid var(--kenar)
         }
+
+        .logo-img {
+            height: 60px;
+            width: 250px;
+
+        }
+
+        @media(max-width:575.98px) {
+            .logo-img {
+                height: 70px;
+                width: 250px;
+                margin-left: 2rem !important;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header class="bg-white border-bottom sticky-top">
         <div class="container-fluid py-2 d-flex align-items-center gap-2">
-            <button class="btn btn-outline-dark d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offSidebar"><i
-                    class="bi bi-list"></i></button>
-            <!-- <div class="fw-bold">B2B Tur Paneli</div> -->
-            <img src="/img/logo.png" alt="">
-            <button class="btn btn-ana btn-sm ms-auto"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
-            <div class="dropdown">
-                <button class="btn btn-outline-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="bi bi-person-circle me-1"></i> Hesap</button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Profil</a></li>
-                    <li><a class="dropdown-item" href="#">Çıkış</a></li>
-                </ul>
+            <button class="btn btn-outline-dark d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offSidebar"
+                aria-label="Menü"><i class="bi bi-list"></i></button>
+            <a href="b2b-tours.html">
+                <img src="/img/logo.png" alt="Elegance Tur" class="ms-1 logo-img">
+            </a>
+
+            <!-- Large screens: actions on right -->
+            <div class="ms-auto d-none d-lg-flex align-items-center gap-2">
+                <button class="btn btn-dark btn-sm"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i
+                            class="bi bi-person-circle me-1"></i> Hesap</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- Small screens: keep space tidy (actions moved into offcanvas) -->
+            <div class="ms-auto d-lg-none"></div>
         </div>
     </header>
 
@@ -150,7 +172,7 @@
                 <nav class="nav flex-column gap-1 w-100">
                     <a class="nav-link active" href="#anasayfa"><span class="ico"><i class="bi bi-house"></i></span> Ana
                         Sayfa</a>
-                    <a class="nav-link" href="#turlar"><span class="ico"><i class="bi bi-briefcase"></i></span>
+                    <a class="nav-link " href="#turlar"><span class="ico"><i class="bi bi-briefcase"></i></span>
                         Turlar</a>
                     <a class="nav-link" href="#muhasebe"><span class="ico"><i class="bi bi-cash-stack"></i></span>
                         Muhasebe</a>
@@ -161,24 +183,37 @@
                 </nav>
             </aside>
 
-            <!-- Offcanvas Sidebar (mobil) -->
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offSidebar">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title">Menü</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            <!-- OFFCANVAS (mobile) -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offSidebar" aria-labelledby="offSidebarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offSidebarLabel">Menü</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Kapat"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body d-flex flex-column">
+                    <!-- Actions moved here on mobile -->
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn btn-ana"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark w-100 dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="bi bi-person-circle me-1"></i> Hesap</button>
+                            <ul class="dropdown-menu w-100">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <nav class="nav flex-column gap-1">
-                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#anasayfa"><span class="ico"><i
-                                    class="bi bi-house"></i></span> Ana Sayfa</a>
-                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#turlar"><span class="ico"><i
-                                    class="bi bi-briefcase"></i></span> Turlar</a>
-                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#muhasebe"><span class="ico"><i
-                                    class="bi bi-cash-stack"></i></span> Muhasebe</a>
-                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#talepler"><span class="ico"><i
-                                    class="bi bi-chat-left-text"></i></span> Talepler</a>
-                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#rezervasyonlar"><span class="ico"><i
-                                    class="bi bi-calendar2-check"></i></span> Rezervasyon Listesi</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#anasayfa"><i
+                                class="bi bi-house me-2"></i> Ana Sayfa</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#turlar"><i
+                                class="bi bi-briefcase me-2"></i> Turlar</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#muhasebe"><i
+                                class="bi bi-cash-stack me-2"></i> Muhasebe</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#talepler"><i
+                                class="bi bi-chat-left-text me-2"></i> Talepler</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#rezervasyonlar"><i
+                                class="bi bi-calendar2-check me-2"></i> Rezervasyon Listesi</a>
                     </nav>
                 </div>
             </div>

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rezervasyon Detayı | Elegance Tur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --ana: #000;
+            --kenar: #e5e7eb;
+            --bg: #f6f7fb
+        }
+
+        body {
+            background: var(--bg)
+        }
+
+        .btn-ana {
+            --bs-btn-bg: var(--ana);
+            --bs-btn-border-color: var(--ana);
+            --bs-btn-hover-bg: #333;
+            --bs-btn-hover-border-color: #333;
+            color: #fff
+        }
+
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid var(--kenar);
+            background: linear-gradient(180deg, #ffffff, #f8fafc)
+        }
+
+        .sidebar .nav-link {
+            border-radius: 12px;
+            color: #111;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-weight: 600
+        }
+
+        .sidebar .nav-link .ico {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1118270d
+        }
+
+        .sidebar .nav-link:hover {
+            background: #1118270d
+        }
+
+        .sidebar .nav-link.active {
+            background: #222;
+            color: #fff
+        }
+
+        .card-soft {
+            background: #fff;
+            border: 1px solid var(--kenar);
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .05)
+        }
+
+        .logo-img {
+            height: 60px;
+            width: 250px;
+
+        }
+
+        @media(max-width:575.98px) {
+            .logo-img {
+                height: 70px;
+                width: 250px;
+                margin-left: 2rem !important;
+            }
+        }
+
+        .muted {
+            color: #6b7280
+        }
+
+        .tag {
+            display: inline-block;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            font-size: .75rem;
+            border: 1px solid var(--kenar);
+            background: #f8fafc
+        }
+
+        .badge-soft {
+            padding: .35rem .55rem;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        /* Tables */
+        .table-responsive {
+            border: 1px solid var(--kenar);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff
+        }
+
+        .table thead th {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1
+        }
+
+        /* Right summary */
+        .summary {
+            position: sticky;
+            top: 82px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="bg-white border-bottom sticky-top">
+        <div class="container-fluid py-2 d-flex align-items-center gap-2">
+            <button class="btn btn-outline-dark d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offSidebar"
+                aria-label="Menü"><i class="bi bi-list"></i></button>
+            <a href="b2b-tours.html">
+                <img src="/img/logo.png" alt="Elegance Tur" class="ms-1 logo-img">
+            </a>
+            <div class="ms-auto d-none d-lg-flex gap-2">
+                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i> Geri</a>
+                <button class="btn btn-ana btn-sm"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i
+                            class="bi bi-person-circle me-1"></i> Hesap</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (lg+) -->
+            <aside class="col-lg-2 d-none d-lg-flex sidebar p-3">
+                <nav class="nav flex-column gap-1 w-100">
+                    <a class="nav-link" href="#anasayfa"><span class="ico"><i class="bi bi-house"></i></span> Ana
+                        Sayfa</a>
+                    <a class="nav-link" href="#turlar"><span class="ico"><i class="bi bi-briefcase"></i></span>
+                        Turlar</a>
+                    <a class="nav-link " href="#muhasebe"><span class="ico"><i class="bi bi-cash-stack"></i></span>
+                        Muhasebe</a>
+                    <a class="nav-link " href="#talepler"><span class="ico"><i class="bi bi-chat-left-text"></i></span>
+                        Talepler</a>
+                    <a class="nav-link active" href="#rezervasyonlar"><span class="ico"><i
+                                class="bi bi-calendar2-check"></i></span> Rezervasyon Listesi</a>
+                </nav>
+            </aside>
+
+            <!-- Offcanvas (mobile) -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offSidebar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menü</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <div class="d-grid gap-2 mb-3">
+                        <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Geri</a>
+                        <button class="btn btn-ana"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark w-100 dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="bi bi-person-circle me-1"></i> Hesap</button>
+                            <ul class="dropdown-menu w-100">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="nav flex-column gap-1">
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#anasayfa"><i
+                                class="bi bi-house me-2"></i> Ana Sayfa</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#turlar"><i
+                                class="bi bi-briefcase me-2"></i> Turlar</a>
+                        <a class="nav-link active" data-bs-dismiss="offcanvas" href="#muhasebe"><i
+                                class="bi bi-cash-stack me-2"></i> Muhasebe</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#talepler"><i
+                                class="bi bi-chat-left-text me-2"></i> Talepler</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#rezervasyonlar"><i
+                                class="bi bi-calendar2-check me-2"></i> Rezervasyon Listesi</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <main class="col-12 col-lg-10 p-3 p-lg-4">
+                <div class="row g-3">
+                    <!-- Left: details -->
+                    <div class="col-lg-8">
+                        <!-- Header -->
+                        <div class="card-soft p-3 mb-3">
+                            <div class="d-flex flex-wrap align-items-start gap-3">
+                                <div>
+                                    <div class="h6 mb-1"><a href="#" class="text-decoration-none">6596681574</a>
+                                        Numaralı Rezervasyon Detay Bilgileri</div>
+                                    <div class="fw-semibold">İZMİR'DEN DUBAİ TURU <span class="muted">SunExpress
+                                            Havayolları ile 4 gece</span></div>
+                                    <div class="small text-muted">DXB_IZMABIXQXDBXDB4N-251110-21:10-ADB</div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row g-3 small">
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="muted">Otel Adı & Otel Kategorisi</div>
+                                    <div>3*Sup. VOGO Grand Hotel Dubai vb. – 3* Superior Oteller</div>
+                                    <span class="tag mt-1">Oda + Kahvaltı</span>
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="muted">Tur Başlangıç Tarihi</div>
+                                    <div><i class="bi bi-calendar-event me-1"></i> 10/11/2025</div>
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="muted">Tur Bitiş Tarihi</div>
+                                    <div><i class="bi bi-calendar-event me-1"></i> 16/11/2025</div>
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="muted">Rezervasyon Tarihi</div>
+                                    <div><i class="bi bi-calendar-event me-1"></i> 19/09/2025 11:39:55</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cari Bilgileri -->
+                        <div class="card-soft p-0 mb-3">
+                            <div class="p-3 border-bottom fw-semibold">Cari Bilgileri</div>
+                            <div class="table-responsive">
+                                <table class="table mb-0 align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Referans No</th>
+                                            <th>Acenta Fatura</th>
+                                            <th>Acenta Adı</th>
+                                            <th>Ödeme Şartı</th>
+                                            <th>Net Tutar Öde</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>R-1</td>
+                                            <td>Acenta Faturası</td>
+                                            <td>ELEGANCE TUR SAĞLIK TURİZM VE DANIŞM. HİZM.SAN.VE TİC. LTD. ŞTİ.</td>
+                                            <td>Peşin</td>
+                                            <td>€ 1.862,08</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Yolcu Bilgileri -->
+                        <div class="card-soft p-0 mb-3">
+                            <div
+                                class="p-3 border-bottom fw-semibold d-flex justify-content-between align-items-center">
+                                <span>Yolcu Bilgileri</span>
+                                <span class="small text-muted">(Yatak Tipi: 1 geniş çift kişilik yatak)</span>
+                            </div>
+                            <div class="px-3 pt-3 small">
+                                <div class="mb-2"><strong>1. Oda</strong> (<span class="text-primary">2 Yetişkin 1
+                                        Çocuk</span>) – 1. odada toplam 3 kişi bulunmaktadır.</div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table mb-0 align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Ünvan</th>
+                                            <th>Tip</th>
+                                            <th>Adı</th>
+                                            <th>Soyadı</th>
+                                            <th>Doğum Tarihi</th>
+                                            <th>T.C. Kimlik No.</th>
+                                            <th>Fiyat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-light">
+                                            <td><span class="badge rounded-pill text-bg-danger">Bayan</span></td>
+                                            <td><span class="badge rounded-pill text-bg-primary">1.Yetişkin</span></td>
+                                            <td>AYŞEGÜL</td>
+                                            <td>ÇETİNEL</td>
+                                            <td>20/10/1978</td>
+                                            <td>26881227398</td>
+                                            <td>549.00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7" class="small">
+                                                Pasaport No: <strong>U32218990</strong> — Pasaportun Alındığı Ülke:
+                                                <strong>Türkiye</strong> — Pasaport Bitiş Tarihi:
+                                                <strong>25/08/2033</strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-light">
+                                            <td><span class="badge rounded-pill text-bg-primary">Bay</span></td>
+                                            <td><span class="badge rounded-pill text-bg-primary">2.Yetişkin</span></td>
+                                            <td>UMİT</td>
+                                            <td>ÇETİNEL</td>
+                                            <td>07/05/1976</td>
+                                            <td>46297825834</td>
+                                            <td>549.00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7" class="small">
+                                                Pasaport No: <strong>U32219139</strong> — Pasaportun Alındığı Ülke:
+                                                <strong>Türkiye</strong> — Pasaport Bitiş Tarihi:
+                                                <strong>25/08/2033</strong>
+                                            </td>
+                                        </tr>
+                                        <tr class="table-light">
+                                            <td><span class="badge rounded-pill text-bg-danger">Bayan</span></td>
+                                            <td><span class="badge rounded-pill text-bg-warning">1.Çocuk</span></td>
+                                            <td>LİNA</td>
+                                            <td>ÇETİNEL</td>
+                                            <td>21/04/2020</td>
+                                            <td>18601503790</td>
+                                            <td>499.00 €</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7" class="small">
+                                                Pasaport No: <strong>U32217823</strong> — Pasaportun Alındığı Ülke:
+                                                <strong>Türkiye</strong> — Pasaport Bitiş Tarihi:
+                                                <strong>25/08/2028</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- İrtibat Bilgileri -->
+                        <div class="card-soft p-0 mb-3">
+                            <div class="p-3 border-bottom fw-semibold">İrtibat Bilgileri</div>
+                            <div class="table-responsive">
+                                <table class="table mb-0 align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Ünvan</th>
+                                            <th>Adı</th>
+                                            <th>Soyadı</th>
+                                            <th>Telefon Numarası</th>
+                                            <th>E‑Mail Adresi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge rounded-pill text-bg-danger">Erkek</span></td>
+                                            <td>Ümit</td>
+                                            <td>ÇETİNEL</td>
+                                            <td>+90 537 363 4065</td>
+                                            <td>operation@elegancetur.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Voucher & Proforma -->
+                        <div class="card-soft p-0 mb-3">
+                            <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                                <div class="fw-semibold">Voucher & Proforma (2)</div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-sm"><i class="bi bi-file-earmark-text me-1"></i>
+                                        Voucher Oluştur</button>
+                                    <button class="btn btn-success btn-sm"><i class="bi bi-file-earmark-plus me-1"></i>
+                                        Proforma Oluştur</button>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table mb-0 align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Tip</th>
+                                            <th>Dosya</th>
+                                            <th>Dosya Boyutu</th>
+                                            <th>Dosya Oluşturma Tarihi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="badge rounded-pill text-bg-warning">Voucher</span>
+                                                <div class="small text-muted">Müşteriye Kes</div>
+                                            </td>
+                                            <td><a href="#">voucher-8528222393-22.09.2025.16.50.09.pdf</a></td>
+                                            <td>108.67 KB</td>
+                                            <td>22/09/2025 16:50:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge rounded-pill text-bg-warning">Voucher</span>
+                                                <div class="small text-muted">Müşteriye Kes</div>
+                                            </td>
+                                            <td><a href="#">voucher-8528222393-28.07.2025.14.40.07.pdf</a></td>
+                                            <td>108.36 KB</td>
+                                            <td>28/07/2025 14:40:07</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Fatura Bilgileri -->
+                        <div class="card-soft p-3 mb-3">
+                            <div class="fw-semibold mb-2">Fatura Bilgileri</div>
+                            <div class="small mb-2">Fatura No: <strong>BLE2025000005665</strong></div>
+                            <a href="#" class="small"><i class="bi bi-filetype-pdf me-1"></i>Fatura dosyası için
+                                tıklayın.</a>
+                            <div class="small text-muted mt-2">Aynı fatura bilgisi işaretlenmiş.</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: reservation summary -->
+                    <div class="col-lg-4">
+                        <div class="card-soft p-0 summary">
+                            <div class="p-3 border-bottom fw-semibold">Rezervasyon Detayı</div>
+                            <div class="p-3">
+                                <div class="d-flex justify-content-between">
+                                    <div>1. Oda</div>
+                                    <div class="fw-semibold">—</div>
+                                </div>
+                                <div class="border rounded p-2 mb-2">
+                                    <div class="d-flex justify-content-between small">
+                                        <div>1.Yetişkin</div>
+                                        <div>549.00 €</div>
+                                    </div>
+                                    <div class="text-success small">Komisyon Oranı: 12.0000 • Komisyon Fiyatı: 65.88 € •
+                                        Komisyon Uygulanacak Fiyat: 549.00 €</div>
+                                </div>
+                                <div class="border rounded p-2 mb-2">
+                                    <div class="d-flex justify-content-between small">
+                                        <div>2.Yetişkin</div>
+                                        <div>549.00 €</div>
+                                    </div>
+                                    <div class="text-success small">Komisyon Oranı: 12.0000 • Komisyon Fiyatı: 65.88 € •
+                                        Komisyon Uygulanacak Fiyat: 549.00 €</div>
+                                </div>
+                                <div class="border rounded p-2 mb-2">
+                                    <div class="d-flex justify-content-between small">
+                                        <div>1.Çocuk</div>
+                                        <div>499.00 €</div>
+                                    </div>
+                                    <div class="text-success small">Komisyon Oranı: 12.0000 • Komisyon Fiyatı: 59.88 € •
+                                        Komisyon Uygulanacak Fiyat: 499.00 €</div>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Genel Toplam</div>
+                                    <div>1,597.00 €</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Komisyon</div>
+                                    <div class="text-danger">-253.92 €</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Net Tutar</div>
+                                    <div class="fw-semibold">1,343.08 €</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Ödenen Tutar</div>
+                                    <div>0.00 €</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Ceza Bedeli Tutarı</div>
+                                    <div>0.00 €</div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="muted">Kalan Tutar</div>
+                                    <div class="text-danger">-1,343.08 €</div>
+                                </div>
+
+                                <div class="d-grid gap-2 mt-3">
+                                    <button class="btn btn-primary btn-sm"><i class="bi bi-credit-card me-1"></i> Ödeme
+                                        Al</button>
+                                </div>
+
+                                <div class="mt-3">
+                                    <div class="small muted mb-1">Ödeme Durumu</div>
+                                    <span class="badge badge-soft text-bg-danger">Ödenmedi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
