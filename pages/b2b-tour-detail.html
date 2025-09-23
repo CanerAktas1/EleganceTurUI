@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tur Detayı | Elegance Tur</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --ana: #000;
+            --kenar: #e5e7eb;
+            --bg: #f6f7fb
+        }
+
+        body {
+            background: var(--bg)
+        }
+
+        .btn-ana {
+            --bs-btn-bg: var(--ana);
+            --bs-btn-border-color: var(--ana);
+            --bs-btn-hover-bg: #333;
+            --bs-btn-hover-border-color: #333;
+            color: #fff
+        }
+
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid var(--kenar);
+            background: linear-gradient(180deg, #ffffff, #f8fafc)
+        }
+
+        .sidebar .nav-link {
+            border-radius: 12px;
+            color: #111;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-weight: 600
+        }
+
+        .sidebar .nav-link .ico {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1118270d
+        }
+
+        .sidebar .nav-link:hover {
+            background: #1118270d
+        }
+
+        .sidebar .nav-link.active {
+            background: #222;
+            color: #fff
+        }
+
+        .card-soft {
+            background: #fff;
+            border: 1px solid var(--kenar);
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .05)
+        }
+
+        .logo-img {
+            height: 32px
+        }
+
+        @media(max-width:575.98px) {
+            .logo-img {
+                height: 44px
+            }
+        }
+
+        /* gallery */
+        .carousel-inner {
+            border-radius: 14px;
+            overflow: hidden
+        }
+
+        .carousel-item .ratio {
+            --bs-aspect-ratio: 56.25%;
+        }
+
+        /* 16:9 */
+        .carousel-item img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .thumbs img {
+            height: 70px;
+            width: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer
+        }
+
+        .thumbs img.active {
+            border-color: #0d6efd
+        }
+
+        /* sticky booking */
+        .booking {
+            position: sticky;
+            top: 90px
+        }
+
+        /* itinerary */
+        .day-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f3f5;
+            font-weight: 700
+        }
+
+        /* extras */
+        .extra-card {
+            border: 1px solid var(--kenar);
+            border-radius: 12px;
+            padding: .75rem;
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            background: #fff;
+            transition: .15s box-shadow, .15s transform
+        }
+
+        .extra-card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, .08);
+            transform: translateY(-1px)
+        }
+
+        .btn-check:checked+.extra-card {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .15)
+        }
+
+        .extra-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #eef4ff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="bg-white border-bottom sticky-top">
+        <div class="container-fluid py-2 d-flex align-items-center gap-2">
+            <button class="btn btn-outline-dark d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offSidebar"
+                aria-label="Menü"><i class="bi bi-list"></i></button>
+            <img src="/img/logo.png" alt="Elegance Tur" class="ms-1 logo-img">
+            <div class="ms-auto d-none d-lg-flex gap-2">
+                <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i> Geri</a>
+                <button class="btn btn-ana btn-sm"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i
+                            class="bi bi-person-circle me-1"></i> Hesap</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profil</a></li>
+                        <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ms-auto d-lg-none"></div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (lg+) -->
+            <aside class="col-lg-2 d-none d-lg-flex sidebar p-3">
+                <nav class="nav flex-column gap-1 w-100">
+                    <a class="nav-link" href="#anasayfa"><span class="ico"><i class="bi bi-house"></i></span> Ana
+                        Sayfa</a>
+                    <a class="nav-link active" href="#turlar"><span class="ico"><i class="bi bi-briefcase"></i></span>
+                        Turlar</a>
+                    <a class="nav-link" href="#muhasebe"><span class="ico"><i class="bi bi-cash-stack"></i></span>
+                        Muhasebe</a>
+                    <a class="nav-link" href="#talepler"><span class="ico"><i class="bi bi-chat-left-text"></i></span>
+                        Talepler</a>
+                    <a class="nav-link" href="#rezervasyonlar"><span class="ico"><i
+                                class="bi bi-calendar2-check"></i></span> Rezervasyon Listesi</a>
+                </nav>
+            </aside>
+
+            <!-- Offcanvas (mobile) -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offSidebar">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menü</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body d-flex flex-column">
+                    <div class="d-grid gap-2 mb-3">
+                        <a href="#" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Geri</a>
+                        <button class="btn btn-ana"><i class="bi bi-plus-lg me-1"></i> Yeni Talep Oluştur</button>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-dark w-100 dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="bi bi-person-circle me-1"></i> Hesap</button>
+                            <ul class="dropdown-menu w-100">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="#">Çıkış</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <nav class="nav flex-column gap-1">
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#anasayfa"><i
+                                class="bi bi-house me-2"></i> Ana Sayfa</a>
+                        <a class="nav-link active" data-bs-dismiss="offcanvas" href="#turlar"><i
+                                class="bi bi-briefcase me-2"></i> Turlar</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#muhasebe"><i
+                                class="bi bi-cash-stack me-2"></i> Muhasebe</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#talepler"><i
+                                class="bi bi-chat-left-text me-2"></i> Talepler</a>
+                        <a class="nav-link" data-bs-dismiss="offcanvas" href="#rezervasyonlar"><i
+                                class="bi bi-calendar2-check me-2"></i> Rezervasyon Listesi</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <main class="col-12 col-lg-10 p-3 p-lg-4">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <!-- Title -->
+                        <div class="d-flex flex-wrap align-items-start gap-3 mb-2">
+                            <div>
+                                <h1 class="h4 mb-1 text-uppercase text-danger">İSTANBUL'DAN BERNİNA EXPRESS ile BİR
+                                    AVRUPA MASALI</h1>
+                                <div class="small text-muted">SunExpress Hava Yolları ile 6 Gece • <i
+                                        class="bi bi-calendar-event me-1"></i> 27/11/2025 – 03/12/2025</div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div id="tourCarousel" class="carousel slide mb-2">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="ratio"><img
+                                            src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                            class="d-block" alt="slide1"></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio"><img
+                                            src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop"
+                                            class="d-block" alt="slide2"></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="ratio"><img
+                                            src="https://images.unsplash.com/photo-1465205568425-23fdd3805e49?q=80&w=1200&auto=format&fit=crop"
+                                            class="d-block" alt="slide3"></div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#tourCarousel"
+                                data-bs-slide="prev"><span class="carousel-control-prev-icon"
+                                    aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#tourCarousel"
+                                data-bs-slide="next"><span class="carousel-control-next-icon"
+                                    aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                        </div>
+                        <div class="thumbs d-flex gap-2 mb-4">
+                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" data-index="0"
+                                class="active" alt>
+                            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=400"
+                                data-index="1" alt>
+                            <img src="https://images.unsplash.com/photo-1465205568425-23fdd3805e49?q=80&w=400"
+                                data-index="2" alt>
+                        </div>
+
+                        <!-- Overview -->
+                        <div class="card-soft p-3 mb-3">
+                            <div class="row g-3 small">
+                                <div class="col-md-4">
+                                    <div class="text-muted">Kalkış / Varış</div>
+                                    <div>IST ➝ MXP / ZRH ➝ IST</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-muted">Konaklama</div>
+                                    <div>4* Oteller • Oda + Kahvaltı</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-muted">Dahil Olan Uçuş</div>
+                                    <div>Pegasus / SunExpress (20kg bagaj)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Itinerary -->
+                        <div class="card-soft p-0 mb-3">
+                            <div class="p-3 border-bottom fw-semibold">Tur Programı</div>
+                            <div class="accordion accordion-flush" id="itinerary">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d1"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c1"><span
+                                                class="day-badge me-2">1</span> İstanbul ➝ Milano</button></h2>
+                                    <div id="c1" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Sabah İstanbul Havalimanı'nda buluşma ve
+                                            Milano'ya uçuş. Şehir turu ve otele yerleşme.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d2"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c2"><span
+                                                class="day-badge me-2">2</span> Bernina Express Turu</button></h2>
+                                    <div id="c2" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Tirana—St.Moritz güzergâhında panoramik tren
+                                            deneyimi, fotoğraf molaları, serbest zaman.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d3"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c3"><span
+                                                class="day-badge me-2">3</span> Zürih • Luzern</button></h2>
+                                    <div id="c3" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Limmat nehri, Eski Şehir, Şapel Köprüsü ve
+                                            Luzern gölü gezisi.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d4"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c4"><span
+                                                class="day-badge me-2">4</span> Serbest Gün</button></h2>
+                                    <div id="c4" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Alışveriş, ekstra turlar veya göl kenarı
+                                            yürüyüşleri için serbest zaman.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d5"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c5"><span
+                                                class="day-badge me-2">5</span> Cenevre</button></h2>
+                                    <div id="c5" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Birleşmiş Milletler, Jet d'Eau, Eski Şehir
+                                            gezisi.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="d6"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#c6"><span
+                                                class="day-badge me-2">6</span> Zürih ➝ İstanbul</button></h2>
+                                    <div id="c6" class="accordion-collapse collapse" data-bs-parent="#itinerary">
+                                        <div class="accordion-body small">Havalimanına transfer ve dönüş uçuşu.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Included / Excluded -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card-soft p-3 h-100">
+                                    <div class="fw-semibold mb-2">Fiyata Dahil Olanlar</div>
+                                    <ul class="small mb-0">
+                                        <li>Belirtilen havayolları ile gidiş–dönüş ekonomi sınıf uçak bileti</li>
+                                        <li>4* otellerde 5 gece konaklama (oda + kahvaltı)</li>
+                                        <li>Havalimanı – otel – havalimanı transferleri</li>
+                                        <li>Panoramik şehir turları ve rehberlik hizmetleri</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-soft p-3 h-100">
+                                    <div class="fw-semibold mb-2">Fiyata Dahil Olmayanlar</div>
+                                    <ul class="small mb-0">
+                                        <li>Vize ücreti ve hizmet bedelleri</li>
+                                        <li>Yurtdışı çıkış harcı</li>
+                                        <li>Öğle/akşam yemekleri ve kişisel harcamalar</li>
+                                        <li>Ekstra turlar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ -->
+                        <div class="card-soft p-0 mt-3">
+                            <div class="p-3 border-bottom fw-semibold">Sık Sorulan Sorular</div>
+                            <div class="accordion accordion-flush" id="faq">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#f1">Vize gerekli mi?</button>
+                                    </h2>
+                                    <div id="f1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                        <div class="accordion-body small">Schengen vizesi gereklidir. Detaylı evrak
+                                            listesi satış sonrası paylaşılır.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"><button class="accordion-button collapsed"
+                                            data-bs-toggle="collapse" data-bs-target="#f2">Kabin bagaj hakkı
+                                            nedir?</button></h2>
+                                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                        <div class="accordion-body small">Kabin 8 kg, check-in 20 kg'dır. Havayollarına
+                                            göre farklılık gösterebilir.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking box -->
+                    <div class="col-lg-4">
+                        <div class="card-soft p-3 booking">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <div>
+                                    <div class="small text-muted">Başlangıç fiyatı</div>
+                                    <div class="fs-4 fw-bold">649.00 €</div>
+                                </div>
+                                <img src="/img/zurich.png" alt="thumb"
+                                    style="width:72px;height:54px;object-fit:cover;border-radius:8px;border:1px solid var(--kenar)">
+                            </div>
+                            <hr>
+                            <form class="small" id="bookForm">
+                                <label class="form-label">Tarih</label>
+                                <select class="form-select mb-2" id="dateSel">
+                                    <option>27/11/2025 – 03/12/2025</option>
+                                    <option>22/01/2026 – 28/01/2026</option>
+                                </select>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <label class="form-label">Yetişkin</label>
+                                        <select class="form-select" id="adult">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2" selected>2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">Çocuk</label>
+                                        <select class="form-select" id="child">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="fw-semibold mb-2">Ekstra Paketler</div>
+
+                                    <input type="checkbox" class="btn-check extra" id="ex1" value="59"
+                                        autocomplete="off">
+                                    <label class="extra-card w-100 mb-2" for="ex1">
+                                        <span class="extra-icon"><i class="bi bi-shield-check"></i></span>
+                                        <span>
+                                            <div class="fw-semibold">Seyahat Sigortası</div>
+                                            <div class="small text-muted">Tüm gezi süresince kapsamlı güvence</div>
+                                        </span>
+                                        <span class="ms-auto fw-semibold">+€59</span>
+                                    </label>
+
+                                    <input type="checkbox" class="btn-check extra" id="ex2" value="129"
+                                        autocomplete="off">
+                                    <label class="extra-card w-100 mb-2" for="ex2">
+                                        <span class="extra-icon"><i class="bi bi-binoculars"></i></span>
+                                        <span>
+                                            <div class="fw-semibold">Panoramik Şehir Turu</div>
+                                            <div class="small text-muted">Yerel rehber eşliğinde keşif turu</div>
+                                        </span>
+                                        <span class="ms-auto fw-semibold">+€129</span>
+                                    </label>
+
+                                    <input type="checkbox" class="btn-check extra" id="ex3" value="89"
+                                        autocomplete="off">
+                                    <label class="extra-card w-100" for="ex3">
+                                        <span class="extra-icon"><i class="bi bi-water"></i></span>
+                                        <span>
+                                            <div class="fw-semibold">Göl Tekne Gezisi</div>
+                                            <div class="small text-muted">Luzern gölünde tekne ile manzara turu</div>
+                                        </span>
+                                        <span class="ms-auto fw-semibold">+€89</span>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center py-2 border-top">
+                                    <div class="small text-muted">Tahmini Toplam</div>
+                                    <div class="fw-bold" id="total">€ 1,298.00</div>
+                                </div>
+                                <button type="button" class="btn btn-primary w-100" id="reserveBtn"><i
+                                        class="bi bi-cart-plus me-1"></i> Rezervasyon Yap</button>
+                            </form>
+                            <div class="alert alert-info mt-3 mb-0 small"><i class="bi bi-info-circle me-1"></i>
+                                Rezervasyon sonrası opsiyon süresi e‑posta ile gönderilecektir.</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Carousel thumbs sync
+        const carouselEl = document.getElementById('tourCarousel');
+        const carousel = new bootstrap.Carousel(carouselEl, { interval: 5000 });
+        const thumbs = document.querySelectorAll('.thumbs img');
+
+        thumbs.forEach((img) => {
+            img.addEventListener('click', () => {
+                const idx = parseInt(img.dataset.index, 10);
+                carousel.to(idx);
+            });
+        });
+
+        function setActiveThumb(index) {
+            thumbs.forEach(t => t.classList.toggle('active', parseInt(t.dataset.index, 10) === index));
+        }
+
+        carouselEl.addEventListener('slid.bs.carousel', (e) => {
+            if (typeof e.to === 'number') setActiveThumb(e.to);
+        });
+
+        // simple total price calc
+        const basePerAdult = 649; // demo
+        const basePerChild = 499; // demo
+        const totalEl = document.getElementById('total');
+        const adultSel = document.getElementById('adult');
+        const childSel = document.getElementById('child');
+        const extras = document.querySelectorAll('.extra');
+
+        const fmt = (n) => '€ ' + n.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+        function recalc() {
+            const a = parseInt(adultSel.value || 0);
+            const c = parseInt(childSel.value || 0);
+            let total = a * basePerAdult + c * basePerChild;
+            extras.forEach(ch => { if (ch.checked) total += parseFloat(ch.value); });
+            totalEl.textContent = fmt(total);
+        }
+        adultSel.addEventListener('change', recalc);
+        childSel.addEventListener('change', recalc);
+        extras.forEach(ch => ch.addEventListener('change', recalc));
+        recalc();
+
+        // reserve button (demo)
+        document.getElementById('reserveBtn').addEventListener('click', () => {
+            const a = parseInt(adultSel.value || 0);
+            if (a === 0) { alert('En az bir yetişkin seçmelisiniz.'); return; }
+            alert('Rezervasyon formuna yönlendirileceksiniz.');
+        });
+    </script>
+</body>
+
+</html>
