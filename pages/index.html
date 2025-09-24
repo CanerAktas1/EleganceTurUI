@@ -40,6 +40,23 @@
     <!-- ! DATA AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <style>
+        @media (max-width: 991px) {
+            .dropdown-mega {
+                display: none !important;
+            }
+
+            .responsive-logo {
+                padding: 0 !important;
+            }
+
+            .navbar {
+                padding: 0 !important;
+            }
+
+        }
+    </style>
+
 </head>
 
 <body>
@@ -73,383 +90,399 @@
     </div>
 
     <header class="header-bot">
-        <div class="container-fluid px-5 d-flex nav-container ">
-            <a href="#">
-                <img src="/img/logo.png" alt="">
-            </a>
-            <nav class="d-flex gap-4 nav-list  navbar navbar-expand pe-5 align-items-center ">
 
-                <div class="position-relative menu-item ">
-                    <a href="#" class="nav-link ">Bayram turları <i class="fa-solid fa-angle-down"
-                            style="font-size: 12px;"></i></a>
+        <nav class="navbar float navbar-expand-lg navbar-light bg-white shadow-sm py-0 pe-5">
+            <div class="container-fluid px-5 responsive-logo">
 
-                    <!-- ! SUBMENU AREA START -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="/img/logo.png" style="width: 300px; height: 80px;" alt="EleganceTur Logo">
+                </a>
 
-                    <!-- <ul class="sub-menu d-flex flex-wrap position-absolute list-unstyled z-2 d-none">
-                    <li class="text-decoration-none">
-                        <div class="row sub-menu-container">
-                            <div class="col-12 col-lg-6">
-                                <h5 class="mt-4 ms-4 fw-bolder">Bayram turları</h5>
-                                <ul class="list-unstyled sub-menu-list ms-4 mt-2 py-2 text-black">
-                                    <li class="mb-3">
-                                        <a href="#">
-                                            <i class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Şeker
-                                            Bayramı
-                                            Turları
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#">
-                                            <i class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kurban
-                                            Bayramı
-                                            Turları
-                                        </a>
-                                    </li>
-                                </ul>
+                <!-- Mobile toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                    <i class="fa-solid fa-bars border-0"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 column-gap-4 mb-lg-0">
+
+                        <!-- Mega Menu Example -->
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle fw-bolder text-black" href="#" style="font-size: 14px;">
+                                Bayram Turları
+                            </a>
+                            <div class="dropdown-mega">
+                                <div class="container">
+                                    <div class="row">
+                                        <h3 class="fw-bold">Bayram Turları</h3>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled ">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Bayramı Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Bayramı Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
+                                                class="img-fluid" alt="Tour Image">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-12 col-lg-6">
-                                <img class="sub-menu-img" src="/img/1.jpg" alt="">
-                                <img class="sub-menu-img" src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg"alt="">
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle fw-bolder text-black navbar-item" href="#"
+                                style="font-size: 14px;">
+                                Yurt Dışı Turları
+                            </a>
+                            <div class="dropdown-mega">
+                                <div class="container">
+                                    <div class="row">
+                                        <h3 class="fw-bold">Yurt Dışı Turları</h3>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Yılbaşı
+                                                        Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Yılbaşı
+                                                        Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Yılbaşı
+                                                        Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
+                                                class="img-fluid" alt="Tour Image">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle fw-bolder text-black navbar-item" href="#"
+                                style="font-size: 14px;">
+                                Yurt İçi Turları
+                            </a>
+                            <div class="dropdown-mega">
+                                <div class="container">
+                                    <h3 class="fw-bold">Popüler</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Yılbaşı
+                                                        Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kapadokya</a>
+                                                </li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Karadeniz</a>
+                                                </li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Doğu Anadolu</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
+                                                class="img-fluid" style="width: 300px; height: 300px;" alt="Tour Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle fw-bolder text-black navbar-item" href="#"
+                                style="font-size: 14px;">
+                                Gemi Turları
+                            </a>
+                            <div class="dropdown-mega">
+                                <div class="container">
+                                    <div class="row">
+                                        <h3 class="fw-bold">Gemi Turları</h3>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Ramazan
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kurban
+                                                        Turları</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Yılbaşı
+                                                        Turları</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Kapadokya</a>
+                                                </li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Karadeniz</a>
+                                                </li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Doğu Anadolu</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Avrupa</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Amerika</a></li>
+                                                <li><a href="#" class="text-black text-decoration-none sub-menu-item"><i
+                                                            class="fa-solid fa-angle-right"></i> Dubai</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="https://theme1.beeinpro.com/uploads/menu/yurt-disi-turlar_1736799347_8dc126ce95eebe2f9282.webp"
+                                                class="img-fluid" alt="Tour Image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item  position-static">
+                            <a class="nav-link  fw-bolder text-black navbar-item" href="#" style="font-size: 14px;">
+                                Vizesiz Turlar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+            <div class="offcanvas-header d-flex justify-content-between align-items-center mb-5">
+                <a href="/pages/index.html" class="" style="height: 30px;"><img src="/img/logo.png" alt=""></a>
+                <!-- <h5 class="offcanvas-title text-info">Elegance Tur</h5>  -->
+                <!-- <img src="/img/mavi yolculuk slider çalışması (1).png"  alt=""> -->
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <ul class="list-unstyled m-0">
+                    <li>
+                        <button
+                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
+                            data-bs-toggle="collapse" data-bs-target="#bayramCollapse">
+                            Bayram Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
+                        </button>
+                        <div class="collapse" id="bayramCollapse">
+                            <ul class="list-unstyled ps-4">
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Ramazan
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kurban
+                                        Turları</a></li>
+                            </ul>
                         </div>
                     </li>
-                </ul> -->
+                </ul>
 
-                    <div class="submenu-buffer"></div>
-
-                    <!-- <ul class="sub-menu d-flex flex-wrap position-absolute list-unstyled z-2 d-none">
-                    <li class="text-decoration-none">
-                        <div class="row sub-menu-container">
-                            <div class="col-12 col-lg-6">
-                                <h5 class="mt-4 ms-4 fw-bolder">Bayram turları</h5>
-                                <div class="list-unstyled sub-menu-list ms-4 mt-2 py-2 text-black">
-                                    <ul id="all-submenu-items" class="d-none">
-                                        <li class="mb-3">
-                                            <a href="#"><i class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Şeker Bayramı Turları</a>
-                                        </li>
-                                        <li class="mb-3">
-                                            <a href="#"><i class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Kurban Bayramı Turları</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <img class="sub-menu-img" src="/img/1.jpg" alt="">
-                                <img class="sub-menu-img" src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg"
-                                    alt="">
-                            </div>
+                <ul class="list-unstyled m-0">
+                    <li>
+                        <button
+                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
+                            data-bs-toggle="collapse" data-bs-target="#yurtDisiCollapse">
+                            Yurt Dışı Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
+                        </button>
+                        <div class="collapse" id="yurtDisiCollapse">
+                            <ul class="list-unstyled ps-4">
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Ekspresi
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
+                                        ve
+                                        Termal Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
+                                        Sonu
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Kapadokya
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Günübirlik
+                                        Turlar</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Safranbolu
+                                        Amasra Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Karadeniz
+                                        Turları</a></li>
+                                <li><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Anadolu Turları</a>
+                                </li>
+                            </ul>
                         </div>
                     </li>
-                </ul> -->
-                    <div class="bg-light p-4 position-absolute sub-menu-wrapper z-2" style="width: 700px;">
-                        <div class="row align-items-center ">
-                            <!-- sub-menu left -->
-                            <div class="col-lg-6 mb-3 mb-lg-0">
-                                <h5 class="fw-bold">Bayram Turları</h5>
-                                <ul class="list-unstyled mt-3">
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                            Ekspresi
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                            ve
-                                            Termal Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                            Sonu
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Kapadokya
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Günübirlik
-                                            Turlar</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Safranbolu
-                                            Amasra Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Karadeniz
-                                            Turları</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                            Anadolu Turları</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Right: Image -->
-                            <div class="col-lg-6 text-center">
-                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                    alt="Yurt İçi Turlar" class="img-fluid rounded">
-                            </div>
+                </ul>
+                <ul class="list-unstyled m-0">
+                    <li>
+                        <button
+                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
+                            data-bs-toggle="collapse" data-bs-target="#yurtIciCollapse">
+                            Yurt İçi Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
+                        </button>
+                        <div class="collapse" id="yurtIciCollapse">
+                            <ul class="list-unstyled ps-4">
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Ekspresi
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
+                                        ve
+                                        Termal Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
+                                        Sonu
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Kapadokya
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Günübirlik
+                                        Turlar</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Safranbolu
+                                        Amasra Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Karadeniz
+                                        Turları</a></li>
+                                <li><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Anadolu Turları</a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
 
-                <!-- ! SUBMENU AREA END -->
-                <div class="position-relative menu-item ">
-                    <a href="#" class="nav-link">Yurt Dışı turlar <i class="fa-solid fa-angle-down"
-                            style="font-size: 12px;"></i></a>
-                    <div class="submenu-buffer"></div>
-                    <div class="bg-light p-4 position-absolute sub-menu-wrapper z-2"
-                        style="width: 1200px; left: -100%; ">
-                        <div class="row align-items-center ">
-                            <!-- sub-menu left -->
-                            <h5 class="fw-bold">Yurt Dışı Turları</h5>
-                            <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
-                                <div class="menu-lists-container d-flex column-gap-5">
-
-                                    <ul class="list-unstyled mt-3">
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Ekspresi
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                                ve
-                                                Termal Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                                Sonu
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Kapadokya
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Günübirlik
-                                                Turlar</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Safranbolu
-                                                Amasra Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Karadeniz
-                                                Turları</a></li>
-                                        <li><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Anadolu Turları</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="list-unstyled mt-3">
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Ekspresi
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                                ve
-                                                Termal Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                                Sonu
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Kapadokya
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Günübirlik
-                                                Turlar</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Safranbolu
-                                                Amasra Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Karadeniz
-                                                Turları</a></li>
-                                        <li><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Anadolu Turları</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Right: Image -->
-                            <div class="col-lg-6 text-center">
-                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                    alt="Yurt İçi Turlar" class="img-fluid rounded">
-                            </div>
+                <ul class="list-unstyled m-0">
+                    <li>
+                        <button
+                            class="w-100 text-start dropdown-header btn btn-link px-3 py-2 fw-bold text-black text-decoration-none border-bottom"
+                            data-bs-toggle="collapse" data-bs-target="#gemiCollapse">
+                            Gemi Turları <i class="fa-solid fa-angle-down" style="font-size: 12px;"></i>
+                        </button>
+                        <div class="collapse" id="gemiCollapse">
+                            <ul class="list-unstyled ps-4">
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Ekspresi
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
+                                        ve
+                                        Termal Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
+                                        Sonu
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Kapadokya
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Günübirlik
+                                        Turlar</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Safranbolu
+                                        Amasra Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
+                                        Turları</a></li>
+                                <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
+                                        Karadeniz
+                                        Turları</a></li>
+                                <li><a href="#" class="text-decoration-none text-dark"><i
+                                            class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
+                                        Anadolu Turları</a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-
-                </div>
-                <div class="position-relative menu-item ">
-                    <a href="#" class="nav-link">Yurt İçi turlar <i class="fa-solid fa-angle-down"
-                            style="font-size: 12px;"></i></a>
-                    <div class="submenu-buffer"></div>
-                    <div class="bg-light p-4 position-absolute sub-menu-wrapper z-2"
-                        style="width: 1200px; left: -300%; ">
-                        <div class="row align-items-center ">
-                            <!-- sub-menu left -->
-                            <h5 class="fw-bold">Yurt Dışı Turları</h5>
-                            <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
-                                <div class="menu-lists-container d-flex column-gap-5">
-                                    <ul class="list-unstyled mt-3">
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Ekspresi
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                                ve
-                                                Termal Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                                Sonu
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Kapadokya
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Günübirlik
-                                                Turlar</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Safranbolu
-                                                Amasra Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Karadeniz
-                                                Turları</a></li>
-                                        <li><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Anadolu Turları</a>
-                                        </li>
-                                    </ul>
-                                    <ul class="list-unstyled mt-3">
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Ekspresi
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                                ve
-                                                Termal Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                                Sonu
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Kapadokya
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Günübirlik
-                                                Turlar</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Safranbolu
-                                                Amasra Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                                Turları</a></li>
-                                        <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                                Karadeniz
-                                                Turları</a></li>
-                                        <li><a href="#" class="text-decoration-none text-dark"><i
-                                                    class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                                Anadolu Turları</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Right: Image -->
-                            <div class="col-lg-6 text-center">
-                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                    alt="Yurt İçi Turlar" class="img-fluid rounded">
-                            </div>
+                    </li>
+                </ul>
+                <ul class="list-unstyled ">
+                    <li>
+                        <div class="dropdown-header px-3 py-2 fw-bold text-black " id="">
+                            <a href="#" class="text-black text-decoration-none "> Vizesiz Turlar</a>
                         </div>
-                    </div>
-
-                </div>
-                <div class="position-relative menu-item ">
-                    <a href="#" class="nav-link">Gemi turları <i class="fa-solid fa-angle-down"
-                            style="font-size: 12px;"></i></a>
-                    <div class="submenu-buffer"></div>
-                    <div class="bg-light p-4 position-absolute sub-menu-wrapper z-2" style="width: 700px; left: -100%;">
-                        <div class="row align-items-center ">
-                            <!-- sub-menu left -->
-                            <div class="col-lg-6 mb-3 mb-lg-0">
-                                <h5 class="fw-bold">Gemi Turu</h5>
-                                <ul class="list-unstyled mt-3">
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                            Ekspresi
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Kayak
-                                            ve
-                                            Termal Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Hafta
-                                            Sonu
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Kapadokya
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Günübirlik
-                                            Turlar</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Safranbolu
-                                            Amasra Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Gap
-                                            Turları</a></li>
-                                    <li class="mb-2"><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i>
-                                            Karadeniz
-                                            Turları</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark"><i
-                                                class="fa-solid fa-angle-right" style="font-size: 12px;"></i> Doğu
-                                            Anadolu Turları</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Right: Image -->
-                            <div class="col-lg-6 text-center">
-                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                    alt="Yurt İçi Turlar" class="img-fluid rounded">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="nav-link">Özel Dönemler</a>
-            </nav>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <!-- ! HEADER END-->
