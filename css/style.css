@@ -605,7 +605,7 @@
  */
 
 
-.item {
+.rounded-item {
     width: 180px;
 }
 
@@ -638,7 +638,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.item:hover .tour-title {
+.rounded-item:hover .tour-title {
     /* background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); */
     cursor: pointer;
     color: #005bb5;
@@ -646,11 +646,7 @@
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
 }
 
-.owl-stage {
-    display: flex !important;
-    justify-content: center;
-    width: 1300px !important;
-}
+
 
 /* ! FEATURES END */
 

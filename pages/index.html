@@ -583,52 +583,31 @@
     <section class="section">
         <div class="container mt-5">
             <h2 class="section-header">Öne Çıkan Turlarımız</h2>
-            <!-- <div class="carousel-wrapper position-relative">
-                <div class="owl-carousel owl-theme">
-                    <div class="item"><img class="square-img" src="/img/mavi yolculuk slider çalışması (1).png" alt="">
-                    </div>
-                    <div class="item">
-                        <img class="square-img"src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt="">
-                    </div>
-                    <div class="item"><img class="square-img" src="/img/1.jpg" alt="">
-                    </div>
-                    <div class="item"><img class="square-img"
-                            src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt=""></div>
-                    <div class="item"><img class="square-img" src="/img/mavi yolculuk slider çalışması (1).png" alt="">
-                    </div>
-                    <div class="item"><img class="square-img"
-                            src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" alt=""></div>
-                    <div class="item"><img class="square-img" src="/img/1.jpg" alt="">
-                    </div>
-                </div>
-            </div> -->
-            <div class="d-flex justify-content-center">
-                <div class="owl-carousel owl-theme tour-carousel">
-                    <div class="item text-center">
+            <div class="d-flex justify-content-center column-gap-3">
+                    <div class="rounded-item text-center">
                         <img src="/img/1.jpg" class="tour-img" alt="">
                         <p class="tour-title">Avrupa Turları</p>
                     </div>
-                    <div class="item text-center">
+                    <div class="rounded-item text-center">
                         <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
                         <p class="tour-title">İtalya Turları</p>
                     </div>
-                    <div class="item text-center">
+                    <div class="rounded-item text-center">
                         <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" class="tour-img" alt="">
                         <p class="tour-title">İtalya Turları</p>
                     </div>
-                    <div class="item text-center">
+                    <div class="rounded-item text-center">
                         <img src="/img/Riddarfjarden-Stockholm.webp" class="tour-img" alt="">
                         <p class="tour-title">İtalya Turları</p>
                     </div>
-                    <div class="item text-center">
+                    <div class="rounded-item text-center">
                         <img src="/img/1.jpg" class="tour-img" alt="">
                         <p class="tour-title">İtalya Turları</p>
                     </div>
-                    <div class="item text-center">
+                    <div class="rounded-item text-center">
                         <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
                         <p class="tour-title">İtalya Turları</p>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1597,8 +1576,6 @@
 
         });
 
-
-
     </script>
 
 
@@ -1694,39 +1671,6 @@
     </script>
 
 
-    <!-- ! AJAX REQUESTING -->
-    <!-- <script>
-        $.ajax({
-            type: "POST",
-            contentType: "application/json;charset = utf8",
-            url: url,
-            data: JSON.stringify(url),
-            error: function (response) {
-                alert("Error: There was a error while proccessing your request.")
-            },
-            succes: function (response) {
-                if (response !== undefined || response !== null) {
-                    return response;
-                } else if (response.data) {
-                    let tourWrapper = document.createElement(div);
-                    tourWrapper.innerHtml = `Data Process: ${response}`;
-                }
-            }
-        });
-
-        $.ajax({
-            type: "GET",
-            contentType: "application/json: charset=utf8",
-            url: url,
-            data: JSON.stringify(url),
-            error: function (response) {
-                alert("");
-            },
-            success: function (response) {
-                return response;
-            }
-        })
-    </script> -->
 
     <!-- ! SEARCH PILLS FUNCTIONALITY -->
     <script>
