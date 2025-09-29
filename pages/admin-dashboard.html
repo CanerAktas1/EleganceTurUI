@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tatil Tur — Admin Paneli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #08090e;
+            --panel: #11131b;
+            --txt: #eaeaf3;
+            --muted: #9ca3af;
+            --accent1: #7c4dff;
+            --accent2: #00e0ff;
+            --green: #22c55e;
+            --yellow: #f59e0b;
+            --red: #ef4444;
+            --grad: linear-gradient(135deg, var(--accent1), var(--accent2));
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--txt);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: var(--panel);
+            border-right: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .sidebar .brand {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .7rem
+        }
+
+        .brand .logo {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--grad)
+        }
+
+        .sidebar .nav-link {
+            color: var(--muted);
+            margin: .2rem .8rem;
+            border-radius: 10px
+        }
+
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            background: rgba(124, 77, 255, .15);
+            color: #fff
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 1rem
+        }
+
+        .card-dark {
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, .06);
+            border-radius: 14px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+            color: var(--txt)
+        }
+
+        .card-dark .title {
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        .chart-box {
+            height: 260px
+        }
+
+        .chart-sm {
+            height: 220px
+        }
+
+        .badge-soft {
+            background: rgba(124, 77, 255, .18);
+            color: #ddd;
+            border: 1px solid rgba(124, 77, 255, .35)
+        }
+
+        .progress .progress-bar {
+            background: var(--grad)
+        }
+
+        .list-group-item {
+            border-color: rgba(255, 255, 255, .08)
+        }
+
+        footer {
+            color: var(--muted);
+            text-align: center;
+            padding: 1rem 0
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                position: static;
+                width: auto;
+                height: auto
+            }
+
+            .content {
+                margin-left: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo"></div>
+            <div>
+                <div class="fw-bold">TatilTur Admin</div>
+                <div class="small text-secondary">v1.0 · Futuristic</div>
+            </div>
+        </div>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="/pages/admin-dashboard.html">Gösterge Paneli</a>
+            <a class="nav-link" href="#">Turlar</a>
+            <a class="nav-link" href="/pages/admin-reservations.html">Rezervasyonlar</a>
+            <a class="nav-link" href="#">Müşteriler</a>
+            <a class="nav-link" href="#">Gelir</a>
+            <a class="nav-link" href="#">Kampanyalar</a>
+            <a class="nav-link" href="#">Ayarlar</a>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <!-- KPI CARDS -->
+        <div class="row g-3">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-dark p-3">
+                    <div class="title">Bugünkü Rezervasyon</div>
+                    <h2 class="mb-0">128</h2><small class="text-success">%12 artış</small>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-dark p-3">
+                    <div class="title">Aylık Gelir</div>
+                    <h2 class="mb-0">₺842K</h2><small class="text-success">%7,3</small>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-dark p-3">
+                    <div class="title">Aktif Turlar</div>
+                    <h2 class="mb-0">46</h2><small>Bu hafta +5 yeni</small>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="card-dark p-3">
+                    <div class="title">Dönüşüm Oranı</div>
+                    <h2 class="mb-0">%3,9</h2><small class="text-danger">-0,2</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHARTS TOP ROW -->
+        <div class="row g-3 mt-1">
+            <div class="col-lg-7">
+                <div class="card-dark p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <div class="title">Son 12 Ay Gelir Trendi</div>
+                            <div class="fw-semibold">₺ Gelir (KDV Dahil)</div>
+                        </div><button class="btn btn-sm btn-outline-light">Dışa Aktar</button>
+                    </div>
+                    <div class="chart-box"><canvas id="revChart"></canvas></div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card-dark p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <div class="title">Tur Kategorileri</div>
+                            <div class="fw-semibold">Satış Dağılımı</div>
+                        </div><span class="small text-secondary">Son 30 gün</span>
+                    </div>
+                    <div class="chart-sm"><canvas id="catChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLES & LISTS -->
+        <div class="row g-3 mt-1">
+            <div class="col-xl-7">
+                <div class="card-dark p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <div class="title">Yaklaşan Turlar</div>
+                            <div class="fw-semibold">Önümüzdeki 2 hafta</div>
+                        </div><button class="btn btn-sm btn-outline-light">Tümünü Gör</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-dark align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Tur</th>
+                                    <th>Başlangıç</th>
+                                    <th>Süre</th>
+                                    <th>Kapasite</th>
+                                    <th>Doluluk</th>
+                                    <th>Aksiyon</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img class="rounded"
+                                                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=120&auto=format&fit=crop"
+                                                width="56" height="40" alt="">
+                                            Kapadokya Balon Turu
+                                        </div>
+                                    </td>
+                                    <td>12 Eki 2025</td>
+                                    <td>2 Gün</td>
+                                    <td>30</td>
+                                    <td>
+                                        <div class="progress" style="height:8px">
+                                            <div class="progress-bar" style="width:78%"></div>
+                                        </div>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-outline-light">Yönet</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img class="rounded"
+                                                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=120&auto=format&fit=crop"
+                                                width="56" height="40" alt="">
+                                            Ege Mavi Yolculuk
+                                        </div>
+                                    </td>
+                                    <td>15 Eki 2025</td>
+                                    <td>5 Gün</td>
+                                    <td>18</td>
+                                    <td>
+                                        <div class="progress" style="height:8px">
+                                            <div class="progress-bar" style="width:64%"></div>
+                                        </div>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-outline-light">Yönet</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img class="rounded"
+                                                src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=120&auto=format&fit=crop"
+                                                width="56" height="40" alt="">
+                                            Doğu Ekspresi Kış Turu
+                                        </div>
+                                    </td>
+                                    <td>20 Eki 2025</td>
+                                    <td>3 Gün</td>
+                                    <td>40</td>
+                                    <td>
+                                        <div class="progress" style="height:8px">
+                                            <div class="progress-bar" style="width:52%"></div>
+                                        </div>
+                                    </td>
+                                    <td><button class="btn btn-sm btn-outline-light">Yönet</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-5">
+                <div class="card-dark p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <div class="title">Son Rezervasyonlar</div>
+                            <div class="fw-semibold">Gerçek zamanlı</div>
+                        </div><button class="btn btn-sm btn-outline-light">İçe Aktar</button>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li
+                            class="list-group-item bg-transparent text-white d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-semibold">Selin Yılmaz</div>
+                                <div class="small text-secondary">Kapadokya Balon Turu · 2 kişi</div>
+                            </div><span class="badge rounded-pill" style="background:var(--grad)">₺4.800</span>
+                        </li>
+                        <li
+                            class="list-group-item bg-transparent text-white d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-semibold">Mert Aksoy</div>
+                                <div class="small text-secondary">Ege Mavi Yolculuk · 1 kişi</div>
+                            </div><span class="badge rounded-pill" style="background:var(--grad)">₺7.200</span>
+                        </li>
+                        <li
+                            class="list-group-item bg-transparent text-white d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-semibold">Derya K.</div>
+                                <div class="small text-secondary">Doğu Ekspresi · 3 kişi</div>
+                            </div><span class="badge rounded-pill" style="background:var(--grad)">₺9.900</span>
+                        </li>
+                        <li
+                            class="list-group-item bg-transparent text-white d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-semibold">Gökhan T.</div>
+                                <div class="small text-secondary">Ağva Hafta Sonu · 2 kişi</div>
+                            </div><span class="badge rounded-pill" style="background:var(--grad)">₺2.400</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW: MARKETING + SUPPORT -->
+        <div class="row g-3 mt-1">
+            <div class="col-lg-7">
+                <div class="card-dark p-3 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div>
+                            <div class="title">Pazarlama Performansı</div>
+                            <div class="fw-semibold">Kanal bazlı dönüşüm</div>
+                        </div><span class="small text-secondary">Son 14 gün</span>
+                    </div>
+                    <div class="chart-sm"><canvas id="mktChart"></canvas></div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card-dark p-3 h-100">
+                    <div class="title mb-2">Destek Talepleri</div>
+                    <div class="fw-semibold mb-3">Durum Özeti</div>
+                    <div class="row g-3 text-center">
+                        <div class="col-4">
+                            <div class="p-3 rounded-3"
+                                style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.35)">
+                                <div class="fs-4 fw-bold">32</div>
+                                <div class="small text-secondary">Açık</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 rounded-3"
+                                style="background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35)">
+                                <div class="fs-4 fw-bold">12</div>
+                                <div class="small text-secondary">Bekleyen</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="p-3 rounded-3"
+                                style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.35)">
+                                <div class="fs-4 fw-bold">5</div>
+                                <div class="small text-secondary">Kritik</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>© 2025 TatilTur — Neon Dark Futuristic UI</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        // CRISP, SIMPLE THEME for Charts — net ve performanslı
+        Chart.defaults.responsive = true;
+        Chart.defaults.maintainAspectRatio = false; // sabit yükseklikli kutular
+        Chart.defaults.animation = false;
+        Chart.defaults.devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2); // net ama hafif
+        Chart.defaults.color = '#cfd6e6';
+        Chart.defaults.borderColor = 'rgba(255,255,255,.07)';
+        Chart.defaults.font.family = 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif';
+        Chart.defaults.font.size = 12;
+
+        // GELİR (Line — sade)
+        (function () {
+            const ctx = document.getElementById('revChart');
+            const grad = ctx.getContext('2d').createLinearGradient(0, 0, 0, 220);
+            grad.addColorStop(0, 'rgba(124,77,255,.25)');
+            grad.addColorStop(1, 'rgba(124,77,255,0)');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'],
+                    datasets: [{ label: 'Gelir', data: [520, 610, 700, 640, 720, 790, 860, 830, 910, 1000, 970, 1120], borderColor: '#8b5cf6', backgroundColor: grad, borderWidth: 3, pointRadius: 0, tension: .35, fill: true }]
+                },
+                options: { plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(255,255,255,.06)' } } } }
+            });
+        })();
+
+        // KATEGORİLER (Doughnut — net)
+        new Chart(document.getElementById('catChart'), {
+            type: 'doughnut',
+            data: { labels: ['Kültür', 'Deniz & Gemi', 'Doğa', 'Şehir', 'Kış'], datasets: [{ data: [35, 25, 15, 12, 13], backgroundColor: ['#8b5cf6', '#06b6d4', '#22c55e', '#f59e0b', '#ef4444'], borderWidth: 0 }] },
+            options: { plugins: { legend: { position: 'bottom' } }, cutout: '62%' }
+        });
+
+        // PAZARLAMA (Bar — sade, iki seri)
+        new Chart(document.getElementById('mktChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Google Ads', 'Meta Ads', 'E‑posta', 'Organik', 'Influencer', 'Affiliate'], datasets: [
+                    { label: 'Tıklama', data: [12000, 9800, 2400, 15000, 3100, 2200], backgroundColor: '#06b6d4', borderRadius: 6, maxBarThickness: 26 },
+                    { label: 'Dönüşüm', data: [640, 520, 110, 720, 90, 80], backgroundColor: '#8b5cf6', borderRadius: 6, maxBarThickness: 26 }
+                ]
+            },
+            options: { plugins: { legend: { position: 'bottom' } }, scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(255,255,255,.06)' }, beginAtZero: true } } }
+        });
+    </script>
+</body>
+
+</html>
