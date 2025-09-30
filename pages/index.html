@@ -580,50 +580,61 @@
 
     <!--! HERO AREA END-->
     <!-- ! FEATURES START -->
-    <section class="section">
-        <div class="container mt-5">
+    <section class="section featured-tours-section">
+        <div class=" mt-5" style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-header">Öne Çıkan Turlarımız</h2>
-            <div class="d-flex justify-content-center column-gap-3">
+            <div class="featured-tours-carousel-wrapper">
+                <div class="owl-carousel owl-theme featured-tours-carousel">
                     <div class="rounded-item text-center">
-                        <img src="/img/1.jpg" class="tour-img" alt="">
-                        <p class="tour-title">Avrupa Turları</p>
+                        <a href="#">
+                            <img src="/img/1.jpg" class="tour-img" alt="">
+                            <p class="tour-title">Avrupa Turları</p>
+                        </a>
                     </div>
                     <div class="rounded-item text-center">
-                        <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
-                        <p class="tour-title">İtalya Turları</p>
+                        <a href="#">
+                            <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
+                            <p class="tour-title">İtalya Turları</p>
+                        </a>
                     </div>
                     <div class="rounded-item text-center">
-                        <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" class="tour-img" alt="">
-                        <p class="tour-title">İtalya Turları</p>
+                        <a href="#">
+                            <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg" class="tour-img"
+                                alt="">
+                            <p class="tour-title">Baltık Turları</p>
+                        </a>
                     </div>
                     <div class="rounded-item text-center">
-                        <img src="/img/Riddarfjarden-Stockholm.webp" class="tour-img" alt="">
-                        <p class="tour-title">İtalya Turları</p>
+                        <a href="#">
+                            <img src="/img/Riddarfjarden-Stockholm.webp" class="tour-img" alt="">
+                            <p class="tour-title">İskandinav Turları</p>
+                        </a>
                     </div>
                     <div class="rounded-item text-center">
-                        <img src="/img/1.jpg" class="tour-img" alt="">
-                        <p class="tour-title">İtalya Turları</p>
+                        <a href="#">
+                            <img src="/img/1.jpg" class="tour-img" alt="">
+                            <p class="tour-title">Almanya Turları</p>
+                        </a>
                     </div>
                     <div class="rounded-item text-center">
-                        <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
-                        <p class="tour-title">İtalya Turları</p>
+                        <a href="#">
+                            <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg" class="tour-img" alt="">
+                            <p class="tour-title">Fransa Turları</p>
+                        </a>
                     </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- ! FEATURES END -->
 
     <!-- ! POPULAR TOURS START -->
-    <section class="section" data-aos="fade-up">
-        <div class="container mt-5">
+    <section class="section popular-tours-section" data-aos="fade-up">
+        <div class="container-fluid mt-5">
             <h2 class="section-header">Efsane Fırsatları Kaçırmayın!</h2>
-            <div class="carousel-wrapper position-relative">
-                <!-- Navigation Buttons -->
-                <!-- <button class="nav-btn left" onclick="scrollCarousel(-1)">&#8249;</button>
-                <button class="nav-btn right" onclick="scrollCarousel(1)">&#8250;</button> -->
-
+            <div class="carousel-wrapper-owl popular-tours-wrapper position-relative">
                 <!-- Card Carousel -->
-                <div class="carousel-track" id="carouselTrack">
+                <div class="owl-carousel owl-theme popular-tours-carousel">
 
                     <!-- Card 1 -->
                     <div class="carousel-card">
@@ -668,6 +679,19 @@
                     <div class="carousel-card">
                         <a href="#" class="text-decoration-none text-dark">
                             <img src="/img/Riddarfjarden-Stockholm.webp" alt="Tour Image">
+                            <div class="card-body">
+                                <h5>MIAMI & ORLANDO TURU KIYI ROTALARI</h5>
+                                <p>Türk Hava Yolları ile 6 Gece</p>
+                                <div class="price">1,699.00 €</div>
+                                <p>🛏 6 Gece / 7 Gün</p>
+                                <p>📅 Eylül - Ekim - Kasım</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="carousel-card">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="/img/1.jpg" alt="Tour Image">
                             <div class="card-body">
                                 <h5>MIAMI & ORLANDO TURU KIYI ROTALARI</h5>
                                 <p>Türk Hava Yolları ile 6 Gece</p>
@@ -1273,6 +1297,12 @@
     </div>
     <!-- ! PAYMENTS -->
 
+    <!-- ! WHATSAPP CTA BUTTON -->
+    <a href="https://wa.me/905373634065" target="_blank" class="whatsapp-float" aria-label="WhatsApp ile İletişim">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">WhatsApp'tan Yazın</span>
+    </a>
+
     <!-- ! FOOTER START-->
     <footer class="footer pt-5">
         <div class="container text-dark mt-5">
@@ -1432,40 +1462,78 @@
 
     <!-- ! OWL CAROUSEL -->
     <script>
-        // $(document).ready(function () {
-        //     $('.owl-carousel').owlCarousel({
-        //         loop: true,
-        //         margin: 0,
-        //         nav: true,
-        //         autoplay: true,
-        //         autoplayTimeout: 3000,
-        //         navText: [
-        //             '<i class="fa fa-chevron-left"></i>',
-        //             '<i class="fa fa-chevron-right"></i>'
-        //         ],
-        //         responsive: {
-        //             0: { items: 1 },
-        //             600: { items: 2 },
-        //             1000: { items: 5 }
-        //         }
-        //     });
-        // });
+        $(document).ready(function () {
+            // Featured Tours Carousel (Öne Çıkan Turlarımız)
+            $('.featured-tours-carousel').owlCarousel({
+                loop: true,
+                margin: 15,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                center: false,
+                responsive: {
+                    0: {
+                        items: 2,
+                        margin: 10
+                    },
+                    576: {
+                        items: 3,
+                        margin: 12
+                    },
+                    768: {
+                        items: 4,
+                        margin: 12
+                    },
+                    992: {
+                        items: 5,
+                        margin: 15
+                    },
+                    1200: {
+                        items: 6,
+                        margin: 0
+                    }
+                }
+            });
 
-        $('.tour-carousel').owlCarousel({
-            loop: false,
-            margin: 20,
-            nav: false,
-            dots: false,
-            autoWidth: true,
-            center: false,
-            responsive: {
-                0: { items: 2 },
-                576: { items: 3 },
-                768: { items: 4 },
-                1200: { items: 5 }
-            }
+            // Popular Tours Carousel (Efsane Fırsatlar)
+            $('.popular-tours-carousel').owlCarousel({
+                loop: true,
+                margin: 25,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="fa-solid fa-chevron-left"></i>',
+                    '<i class="fa-solid fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 15
+                    },
+                    576: {
+                        items: 2,
+                        margin: 20
+                    },
+                    768: {
+                        items: 3,
+                        margin: 20
+                    },
+                    992: {
+                        items: 3,
+                        margin: 25
+                    },
+                    1200: {
+                        items: 4,
+                        margin: 25
+                    }
+                }
+            });
         });
-
     </script>
 
     <!-- ! TESTIMONIALS  -->
@@ -1519,16 +1587,7 @@
     </script>
 
     <!-- ! POPULAR TOURS -->
-    <script>
-        function scrollCarousel(direction) {
-            const track = document.getElementById('carouselTrack');
-            const scrollAmount = 300;
-            track.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    </script>
+    <!-- Owl Carousel ile değiştirildi - yukarıdaki Owl Carousel script'ine bakın -->
 
     <!-- ! COUPON -->
 
