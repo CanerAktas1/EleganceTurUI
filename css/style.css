@@ -172,6 +172,24 @@
 }
 
 /* Responsive spacing */
+@media (max-width: 991px) {
+    .header-top .contact-wrapper {
+        display: none !important;
+    }
+
+    .header-top .auth-links {
+        display: none !important;
+    }
+
+    .header-top .container-fluid {
+        justify-content: center !important;
+    }
+
+    .header-message {
+        margin: 0 !important;
+    }
+}
+
 @media (max-width: 768px) {
     .auth-links {
         justify-content: center;
@@ -1949,6 +1967,39 @@ z .promo-title {
     border-radius: 2px;
 }
 
+/* Mobile Offcanvas Contact Styles */
+.mobile-contact-section {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .mobile-contact-section {
+        display: block;
+    }
+
+    .mobile-contact-item {
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-contact-item:hover {
+        transform: translateX(5px);
+        background-color: #e3f2fd !important;
+    }
+
+    .mobile-auth-buttons .btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-auth-buttons .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
 @media (max-width: 991.98px) {
     .footer {
         text-align: center;
@@ -2155,6 +2206,51 @@ z .promo-title {
 
 .nav-item.dropdown:hover .dropdown-mega {
     display: block;
+}
+
+/* Hero Slider Sabit Yükseklik */
+#carouselExampleIndicators {
+    height: 600px;
+    overflow: hidden;
+}
+
+#carouselExampleIndicators .carousel-inner,
+#carouselExampleIndicators .carousel-item {
+    height: 100%;
+}
+
+#carouselExampleIndicators .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tablet için */
+@media (max-width: 991.98px) {
+    #carouselExampleIndicators {
+        height: 450px;
+    }
+}
+
+/* Mobil için - Daha uzun */
+@media (max-width: 767.98px) {
+    #carouselExampleIndicators {
+        height: 400px;
+    }
+}
+
+/* Küçük mobil için */
+@media (max-width: 575.98px) {
+    #carouselExampleIndicators {
+        height: 350px;
+    }
+}
+
+@media (max-width: 400px) {
+    #carouselExampleIndicators {
+        height: 320px;
+    }
 }
 
 .fixed-carousel {
