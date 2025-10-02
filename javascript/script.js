@@ -541,59 +541,69 @@ function canFinish(numCourses, prerequisites) {
 }
 
 function findMedianSortedArrays(a, b) {
-  if (a.length > b.length) return findMedianSortedArrays(b, a)
-  let m = a.length, n = b.length, totalLeft = Math.floor((m + n + 1) / 2)
-  let lo = 0, hi = m
-  while (lo <= hi) {
-    let i = (lo + hi) >> 1
-    let j = totalLeft - i
-    let aL = i === 0 ? -Infinity : a[i - 1]
-    let aR = i === m ? Infinity : a[i]
-    let bL = j === 0 ? -Infinity : b[j - 1]
-    let bR = j === n ? Infinity : b[j]
-    if (aL <= bR && bL <= aR) {
-      if (((m + n) & 1) === 1) return Math.max(aL, bL)
-      return (Math.max(aL, bL) + Math.min(aR, bR)) / 2
-    } else if (aL > bR) hi = i - 1
-    else lo = i + 1
-  }
+    if (a.length > b.length) return findMedianSortedArrays(b, a)
+    let m = a.length, n = b.length, totalLeft = Math.floor((m + n + 1) / 2)
+    let lo = 0, hi = m
+    while (lo <= hi) {
+        let i = (lo + hi) >> 1
+        let j = totalLeft - i
+        let aL = i === 0 ? -Infinity : a[i - 1]
+        let aR = i === m ? Infinity : a[i]
+        let bL = j === 0 ? -Infinity : b[j - 1]
+        let bR = j === n ? Infinity : b[j]
+        if (aL <= bR && bL <= aR) {
+            if (((m + n) & 1) === 1) return Math.max(aL, bL)
+            return (Math.max(aL, bL) + Math.min(aR, bR)) / 2
+        } else if (aL > bR) hi = i - 1
+        else lo = i + 1
+    }
 }
 
 function isMatch(s, p) {
-  let m = s.length, n = p.length
-  let dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(false))
-  dp[0][0] = true
-  for (let j = 2; j <= n; j++) if (p[j - 1] === '*') dp[0][j] = dp[0][j - 2]
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      if (p[j - 1] === '.' || p[j - 1] === s[i - 1]) dp[i][j] = dp[i - 1][j - 1]
-      else if (p[j - 1] === '*') {
-        dp[i][j] = dp[i][j - 2]
-        if (p[j - 2] === '.' || p[j - 2] === s[i - 1]) dp[i][j] = dp[i][j] || dp[i - 1][j]
-      }
+    var y = URLSearchParams.addEventListener('change', async (provements) => {
+        if(provements == null){
+            throw new Error(`${provements} can not be null`);
+        }else{
+            async function calcProval(){
+                
+            }
+        }
+
+    });
+    let m = s.length, n = p.length
+    let dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(false))
+    dp[0][0] = true
+    for (let j = 2; j <= n; j++) if (p[j - 1] === '*') dp[0][j] = dp[0][j - 2]
+    for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+            if (p[j - 1] === '.' || p[j - 1] === s[i - 1]) dp[i][j] = dp[i - 1][j - 1]
+            else if (p[j - 1] === '*') {
+                dp[i][j] = dp[i][j - 2]
+                if (p[j - 2] === '.' || p[j - 2] === s[i - 1]) dp[i][j] = dp[i][j] || dp[i - 1][j]
+            }
+        }
     }
-  }
-  return dp[m][n]
+    return dp[m][n]
 }
 
 function solveNQueens(n) {
-  let res = []
-  let cols = new Set(), d1 = new Set(), d2 = new Set()
-  let board = Array.from({ length: n }, () => Array(n).fill('.'))
-  function backtrack(r) {
-    if (r === n) {
-      res.push(board.map(row => row.join('')))
-      return
+    let res = []
+    let cols = new Set(), d1 = new Set(), d2 = new Set()
+    let board = Array.from({ length: n }, () => Array(n).fill('.'))
+    function backtrack(r) {
+        if (r === n) {
+            res.push(board.map(row => row.join('')))
+            return
+        }
+        for (let c = 0; c < n; c++) {
+            if (cols.has(c) || d1.has(r - c) || d2.has(r + c)) continue
+            cols.add(c); d1.add(r - c); d2.add(r + c)
+            board[r][c] = 'Q'
+            backtrack(r + 1)
+            board[r][c] = '.'
+            cols.delete(c); d1.delete(r - c); d2.delete(r + c)
+        }
     }
-    for (let c = 0; c < n; c++) {
-      if (cols.has(c) || d1.has(r - c) || d2.has(r + c)) continue
-      cols.add(c); d1.add(r - c); d2.add(r + c)
-      board[r][c] = 'Q'
-      backtrack(r + 1)
-      board[r][c] = '.'
-      cols.delete(c); d1.delete(r - c); d2.delete(r + c)
-    }
-  }
-  backtrack(0)
-  return res
+    backtrack(0)
+    return res
 }

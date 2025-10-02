@@ -355,7 +355,8 @@
     width: 1120px;
     max-width: 95%;
     min-height: 150px;
-    top: 50%;
+    /* top: 50%; */
+    bottom: 25%;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 20px;
@@ -712,22 +713,20 @@
     animation: whatsapp-pulse 2s infinite;
 }
 
+/* Hover Effects */
 .whatsapp-float:hover {
     transform: scale(1.1) translateY(-5px);
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
     background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
 }
 
+/* Icon (artık animasyon yok) */
 .whatsapp-float i {
-    animation: whatsapp-shake 1s ease-in-out infinite;
-}
-
-.whatsapp-float:hover i {
+    transform: none;
     animation: none;
-    transform: rotate(15deg);
 }
 
-/* WhatsApp Tooltip */
+/* Tooltip */
 .whatsapp-tooltip {
     position: absolute;
     left: 75px;
@@ -763,39 +762,18 @@
     transform: translateX(0);
 }
 
-/* Animations */
+/* Pulse Animation (sadece ışık yayılması efekti kaldı) */
 @keyframes whatsapp-pulse {
 
     0%,
     100% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 0 rgba(37, 211, 102, 0.7);
     }
 
     50% {
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 10px rgba(37, 211, 102, 0);
-    }
-}
-
-@keyframes whatsapp-shake {
-
-    0%,
-    100% {
-        transform: rotate(0deg);
-    }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        transform: rotate(-10deg);
-    }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        transform: rotate(10deg);
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
+            0 0 0 10px rgba(37, 211, 102, 0);
     }
 }
 
@@ -823,6 +801,8 @@
         left: 15px;
     }
 }
+
+
 
 /*! Category Detail Page Styles */
 
@@ -1054,7 +1034,8 @@
     height: 443.23px;
     background: #fff;
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
+    box-shadow: 2px 3px 25px 0px rgba(3, 3, 3, 0.08);
     transition: all 0.4s ease;
     overflow: hidden;
     position: relative;
@@ -2726,11 +2707,11 @@ z .promo-title {
 
 .btn-purchase-custom {
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f0f0f 0%, #030303 100%);
     color: white;
     border: none;
     padding: 16px 24px;
-    border-radius: 25px;
+    border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 600;
     display: flex;
@@ -2742,9 +2723,9 @@ z .promo-title {
 }
 
 .btn-purchase-custom:hover {
-    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+    background: linear-gradient(135deg, #333335 0%, #000000 100%);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(12, 12, 14, 0.4);
 }
 
 .btn-purchase-custom:active {
