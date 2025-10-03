@@ -14,29 +14,12 @@
     <!-- ! FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- ! NICE SELECT -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.css"
-        integrity="sha512-CNHBsG9yqXzZbG6b7Q1XW0Ov+uWcSx9YDGJ0fB0KFG1fSS2xd2vM8JQx1J+Peuyq+S3dxw9NsWa6zyxSFMojZA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- ! BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
     <!-- ! BOOTSTRAP ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- ! OWL CAROUSEL -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- ! DATA AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         @media (max-width: 991px) {
@@ -53,10 +36,74 @@
             }
 
         }
+
+        #error-404 {
+            min-height: 60vh;
+            overflow: clip;
+        }
+
+        #error-404 .bg-shape {
+            position: absolute;
+            filter: blur(60px);
+            opacity: .35;
+            z-index: 0;
+        }
+
+        #error-404 .bg-1 {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, #0d6efd 0%, transparent 70%);
+            top: -60px;
+            left: -60px;
+        }
+
+        #error-404 .bg-2 {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, #ffc107 0%, transparent 70%);
+            bottom: -80px;
+            right: -60px;
+        }
+
+        #error-404 .bg-3 {
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, #20c997 0%, transparent 70%);
+            bottom: 20%;
+            left: 40%;
+        }
+
+        #error-404 .illustration-wrapper {
+            max-width: 420px;
+            aspect-ratio: 4/3;
+            position: relative;
+        }
+
+        #error-404 .illustration {
+            width: 100%;
+            height: 100%;
+            color: #0d6efd;
+        }
+
+
+        .tag-btn {
+            border-radius: 999px;
+        }
+
+        .tag-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (min-width: 768px) {
+            #error-404 {
+                min-height: 70vh;
+            }
+        }
     </style>
 </head>
 
 <body>
+
     <div class="main-header">
         <div class="header-top py-2 px-5">
             <div class="container-fluid px-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
@@ -508,481 +555,106 @@
         </div>
     </header>
 
-    <div class="container mt-5">
-        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Ana sayfa</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Yurt Dışı Turları</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Amerika Turları</li>
-            </ol>
-        </nav>
-    </div>
-
-    <!-- ! SEARCH AREA START -->
-    <div class="search-area position-relative mt-5 w-100 shadow-none">
-        <div class="search-pills-wrapper d-flex justify-content-center">
-            <nav class="nav column-gap-2">
-                <a class="nav-link text-black active shadow-lg" aria-current="page" href="#"><i
-                        class="fa-solid fa-earth-americas"></i> Yurt Dışı Turu</a>
-                <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-suitcase-rolling"></i> Yurt
-                    İçi Turu</a>
-                <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-anchor"></i> Gemi Turu</a>
-                <a class="nav-link text-black shadow-lg" href="#"><i class="fa-solid fa-plane"></i> Vizesiz
-                    Turlar</a>
-            </nav>
-        </div>
-
-        <div class="row mt-2 container mx-auto">
-            <div class="col-md-5">
-                <input type="text" class="form-control" placeholder="" id="search-input">
-            </div>
-            <div class="col-md-5">
-                <select class="form-select" id="search-select">
-                    <option selected disabled>Ne zaman gideceksiniz?</option>
-                    <option value="">Ağustos 2025</option>
-                    <option value="">Eylül 2025</option>
-                    <option value="">Ekim 2025</option>
-                    <option value="">Kasım 2025</option>
-                    <option value="">Aralık 2025</option>
-                    <option value="">Ocak 2026</option>
-                    <option value="">Şubat 2026</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-dark w-100">Tur Ara</button>
-            </div>
-        </div>
-    </div>
-    <!-- ! SEARCH AREA END -->
 
 
-    <div class="container my-5">
-        <div class="row">
-            <!-- <div class="col-xl-3 col-lg-12 p-1 ">
-                <form class="form-control">
-                    <h3 class="border-bottom border-2">Sonuçları Filtrele</h3>
-                    <div class="filter-box">
-                        <div class="form-check">
-                            <p>Çıkış Yeri</p>
-                            <input type="checkbox" name="" id="test1" class="form-check-input">
-                            <label for="test1" class="form-label">İstanbul Çıkışlı</label>
+    <main id="error-404" class="position-relative">
+        <!-- Arka Plan Dekorları -->
+        <div class="bg-shape bg-1"></div>
+        <div class="bg-shape bg-2"></div>
+        <div class="bg-shape bg-3 d-none d-md-block"></div>
+
+        <section class="container py-5 py-md-6">
+            <div class="row align-items-center justify-content-between g-5">
+                <!-- Metin Alanı -->
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <span class="badge rounded-pill text-bg-warning mb-3 shadow-sm">Hata 404</span>
+                    <h1 class="display-5 fw-bold mb-3">Kaybolmuş gibisiniz…</h1>
+                    <p class="lead text-secondary mb-4">
+                        Aradığınız sayfayı bulamadık. Belki rota değişti ya da link artık geçerli değil.
+                        Hadi sizi yeni bir <strong>keşfe</strong> çıkaralım!
+                    </p>
+
+                    <!-- Hızlı Arama -->
+                    <form id="quick-search" class="row g-2" role="search" autocomplete="off">
+                        <div class="col-12 col-sm-8">
+                            <label for="q" class="visually-hidden">Tur veya destinasyon ara</label>
+                            <input id="q" name="q" type="search" class="form-control form-control-lg shadow-sm"
+                                placeholder="Örn: Kapadokya, Balkan Turu, Akdeniz…" />
                         </div>
-                    </div>
-                </form>
-            </div> -->
-
-            <div class="col-lg-3 col-md-4 col-12 filter-wrapper border-0">
-                <!--  DESKTOP FILTER (visible ≥ lg) -->
-                <div class="card p-3 border-0 filter-container d-none d-lg-block">
-                    <h5 class="fw-bold mb-3">Sonuçları Filtrele</h5>
-                    <button class="btn btn-danger btn-sm w-75 my-2">Filtreleri temizle</button>
-
-                    <!-- Kalkış Yeri -->
-                    <div class="mb-3">
-                        <h6 class="text-muted">Kalkış Yeri</h6>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="departure1">
-                            <label class="form-check-label" for="departure1">İstanbul Çıkışlı</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="departure2">
-                            <label class="form-check-label" for="departure2">İzmir Çıkışlı</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="departure3">
-                            <label class="form-check-label" for="departure3">İstanbul Havalimanı</label>
-                        </div>
-                    </div>
-
-                    <!-- Süre -->
-                    <div class="mb-3">
-                        <h6 class="text-muted">Süre</h6>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration1"><label
-                                class="form-check-label" for="duration1">3 Gün</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration2"><label
-                                class="form-check-label" for="duration2">4 Gün</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration3"><label
-                                class="form-check-label" for="duration3">5 Gün</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration4"><label
-                                class="form-check-label" for="duration4">6 Gün</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="duration5"><label
-                                class="form-check-label" for="duration5">7 Gün</label></div>
-                    </div>
-
-                    <!-- Ulaşım -->
-                    <div class="mb-3">
-                        <h6 class="text-muted">Ulaşım</h6>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport1"><label
-                                class="form-check-label" for="transport1">Uçak</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport2"><label
-                                class="form-check-label" for="transport2">Otobüs</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="transport3"><label
-                                class="form-check-label" for="transport3">Gemi</label></div>
-                    </div>
-
-                    <!-- Dönem -->
-                    <div class="mb-3">
-                        <h6 class="text-muted">Dönem</h6>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date1"><label
-                                class="form-check-label" for="date1">Ağustos 2025</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date2"><label
-                                class="form-check-label" for="date2">Eylül 2025</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date3"><label
-                                class="form-check-label" for="date3">Ekim 2025</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date4"><label
-                                class="form-check-label" for="date4">Kasım 2025</label></div>
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="date5"><label
-                                class="form-check-label" for="date5">Aralık 2025</label></div>
-                    </div>
-
-                    <!-- Fiyat Aralığı -->
-                    <div class="mb-3">
-                        <h6 class="text-muted">Fiyat Aralığı</h6>
-                        <div class="d-flex gap-2">
-                            <input type="number" class="form-control" placeholder="Min. Fiyat">
-                            <input type="number" class="form-control" placeholder="Max. Fiyat">
-                        </div>
-                    </div>
-
-                    <button class="btn btn-dark w-100 mt-2">Filtrele</button>
-                </div>
-
-                <!--  MOBILE FILTER ACCORDION (visible < lg) -->
-                <div class="accordion d-block d-lg-none mb-3" id="mobileFilterAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFilters">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseFilters" aria-expanded="true" aria-controls="collapseFilters">
-                                Sonuçları Filtrele
+                        <div class="col-12 col-sm-4 d-grid">
+                            <button class="btn btn-lg btn-primary shadow-sm" type="submit">
+                                Ara
                             </button>
-                        </h2>
-                        <div id="collapseFilters" class="accordion-collapse collapse show"
-                            aria-labelledby="headingFilters" data-bs-parent="#mobileFilterAccordion">
-                            <div class="accordion-body">
-                                <button class="btn btn-danger btn-sm w-100 mb-3">Filtreleri temizle</button>
-
-                                <!-- Repeat filter sections (use different IDs to avoid conflict) -->
-
-                                <!-- Kalkış Yeri -->
-                                <div class="mb-3">
-                                    <h6 class="text-muted">Kalkış Yeri</h6>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-departure1"><label class="form-check-label"
-                                            for="m-departure1">İstanbul Çıkışlı</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-departure2"><label class="form-check-label" for="m-departure2">İzmir
-                                            Çıkışlı</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-departure3"><label class="form-check-label"
-                                            for="m-departure3">İstanbul Havalimanı</label></div>
-                                </div>
-
-                                <!-- Süre -->
-                                <div class="mb-3">
-                                    <h6 class="text-muted">Süre</h6>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-duration1"><label class="form-check-label" for="m-duration1">3
-                                            Gün</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-duration2"><label class="form-check-label" for="m-duration2">4
-                                            Gün</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-duration3"><label class="form-check-label" for="m-duration3">5
-                                            Gün</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-duration4"><label class="form-check-label" for="m-duration4">6
-                                            Gün</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-duration5"><label class="form-check-label" for="m-duration5">7
-                                            Gün</label></div>
-                                </div>
-
-                                <!-- Ulaşım -->
-                                <div class="mb-3">
-                                    <h6 class="text-muted">Ulaşım</h6>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-transport1"><label class="form-check-label"
-                                            for="m-transport1">Uçak</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-transport2"><label class="form-check-label"
-                                            for="m-transport2">Otobüs</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-transport3"><label class="form-check-label"
-                                            for="m-transport3">Gemi</label></div>
-                                </div>
-
-                                <!-- Dönem -->
-                                <div class="mb-3">
-                                    <h6 class="text-muted">Dönem</h6>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-date1"><label class="form-check-label" for="m-date1">Ağustos
-                                            2025</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-date2"><label class="form-check-label" for="m-date2">Eylül
-                                            2025</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-date3"><label class="form-check-label" for="m-date3">Ekim 2025</label>
-                                    </div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-date4"><label class="form-check-label" for="m-date4">Kasım
-                                            2025</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                            id="m-date5"><label class="form-check-label" for="m-date5">Aralık
-                                            2025</label></div>
-                                </div>
-
-                                <!-- Fiyat Aralığı -->
-                                <div class="mb-3">
-                                    <h6 class="text-muted">Fiyat Aralığı</h6>
-                                    <div class="d-flex gap-2">
-                                        <input type="number" class="form-control" placeholder="Min. Fiyat">
-                                        <input type="number" class="form-control" placeholder="Max. Fiyat">
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-dark w-100 mt-2">Filtrele</button>
-                            </div>
                         </div>
+                    </form>
+
+                    <!-- Popüler Etiketler -->
+                    <div class="mt-4" aria-label="Popüler aramalar">
+                        <div class="small text-secondary mb-2">Popüler destinasyonlar:</div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-secondary btn-sm tag-btn"
+                                data-tag="Kapadokya">#Kapadokya</button>
+                            <button class="btn btn-outline-secondary btn-sm tag-btn" data-tag="Ege Koyları">#Ege
+                                Koyları</button>
+                            <button class="btn btn-outline-secondary btn-sm tag-btn"
+                                data-tag="Karadeniz">#Karadeniz</button>
+                            <button class="btn btn-outline-secondary btn-sm tag-btn" data-tag="Balkan Turu">#Balkan
+                                Turu</button>
+                            <button class="btn btn-outline-secondary btn-sm tag-btn" data-tag="Mısır">#Mısır</button>
+                        </div>
+                    </div>
+
+                    <!-- Hızlı Eylemler -->
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+                        <a href="/" class="btn btn-outline-primary">
+                            Ana sayfaya dön
+                        </a>
+                        <a href="/turlar" class="btn btn-link">Tüm turlar</a>
+                        <a href="/iletisim" class="btn btn-link">Yardım al</a>
                     </div>
                 </div>
 
+                <!-- Görsel Alanı -->
+                <div class="col-12 col-lg-5 order-1 order-lg-2 text-center">
+                    <div class="illustration-wrapper mx-auto">
+                        <!-- Basit, hafif bir illüstrasyon (inline SVG) -->
+                        <svg class="illustration" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" role="img"
+                            aria-labelledby="svgTitle svgDesc">
+                            <title id="svgTitle">Yolculuk İllüstrasyonu</title>
+                            <desc id="svgDesc">Bulutların üzerinde uçak ve konum işareti</desc>
+                            <!-- Bulutlar -->
+                            <g opacity=".15">
+                                <ellipse cx="70" cy="80" rx="55" ry="25" />
+                                <ellipse cx="140" cy="70" rx="70" ry="30" />
+                                <ellipse cx="300" cy="90" rx="85" ry="35" />
+                            </g>
+                            <!-- Dünya Yay -->
+                            <path d="M20 260c60-60 240-60 360 0" fill="none" stroke="currentColor" stroke-width="3"
+                                opacity=".2" />
+                            <!-- Uçak -->
+                            <g transform="translate(90,170)">
+                                <path d="M0 30 L120 0 L130 10 L40 40 L25 60 L15 55 L20 40 Z" fill="currentColor"
+                                    opacity=".9" />
+                                <circle cx="110" cy="5" r="3" fill="#fff" />
+                            </g>
+                            <!-- Konum pini -->
+                            <g transform="translate(295,210)">
+                                <path
+                                    d="M30 0c-16.6 0-30 12.7-30 28.3C0 51 30 80 30 80s30-29 30-51.7C60 12.7 46.6 0 30 0z"
+                                    fill="currentColor" />
+                                <circle cx="30" cy="28" r="10" fill="#fff" />
+                            </g>
+                            <!-- 404 metni -->
+                            <text x="200" y="145" text-anchor="middle" font-size="64" font-weight="700"
+                                opacity=".12">404</text>
+                        </svg>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-xl-9 col-lg-12">
-                <div class="quick-filters-area">
-                    <div class="quick-filters-wrapper justify-content-center d-flex column-gap-5">
-                        <a href="#" class="text-decoration-none text-black">
-                            <span class="bg-dark text-white px-4 py-1 rounded-5"><i
-                                    class="fa-solid fa-arrow-down-short-wide"></i>
-                                En Düşük Fiyat</span>
-                        </a>
-                        <a href="#" class="text-decoration-none text-black ">
-                            <span class="quick-filter"><i class="fa-solid fa-arrow-up-short-wide"></i> En Yüksek
-                                Fiyat</span>
-                        </a>
-                        <a href="#" class="text-decoration-none text-black">
-                            <span class="quick-filter">En Popüler Turlar</span>
-                        </a>
-                        <a href="#" class="text-decoration-none text-black">
-                            <span class="quick-filter">İndirimli Turlar</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="container my-4">
-                    <div class="card tour-single border-1 rounded-4 mb-4">
-                        <div class="row g-0">
-                            <!-- Image Section -->
-
-                            <div class="col-md-4 position-relative">
-                                <img src="/img/Riddarfjarden-Stockholm.webp"
-                                    class="img-fluid h-100 rounded-start-4 object-fit-cover" alt="Tour Image" />
-                                <a href="#" class="favorite-button"><i class="fa-regular fa-heart"></i></a>
-                            </div>
+        </section>
+    </main>
 
 
-                            <!-- Text Content Section -->
-                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
-                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-                                    <h5 class="fw-bold mb-2 mb-md-0 border-bottom">
-                                        <a href="#" class="text-decoration-none text-black ">
-                                            MIAMI & ORLANDO TURU KIYI ROTALARI – TÜRK HAVA YOLLARI İLE 6 GECE
-                                        </a>
-                                    </h5>
-                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
-                                        1.699,00 € <br />
-                                        <small class="text-muted fw-normal" style="font-size: 10px;">’dan başlayan
-                                            fiyatlar</small>
-                                    </div>
-                                </div>
-
-                                <p class="text-muted mt-2 mb-1">
-                                    <i class="bi bi-geo-alt-fill "></i> 14 Ağustos 2025 – İstanbul Havalimanı IST –
-                                    İstanbul Çıkışlı
-                                </p>
-                                <p class="text-secondary mb-2 border-0">Miami (3) & Orlando (3)</p>
-
-                                <div
-                                    class="d-flex flex-wrap gap-2 align-items-center border-top pt-3 justify-content-between">
-                                    <div class="d-flex gap-3 flex-wrap">
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-moon"></i> 6 Gece / 7 Gün
-                                        </span>
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-airplane"></i> Türk Hava Yolları ile
-                                        </span>
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-geo-alt"></i> İstanbul Çıkışlı
-                                        </span>
-                                    </div>
-                                    <a href="#" class="btn btn-dark btn-sm">Turu İncele</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card tour-single border-1 rounded-4 mb-4">
-                        <div class="row g-0">
-                            <!-- Image Section -->
-                            <div class="col-md-4 position-relative">
-                                <img src="/img/copenhagen-night-denmark-347790-wallpaper-preview.jpg"
-                                    class="img-fluid h-100 rounded-start-4 object-fit-cover" alt="Tour Image" />
-                                <a href="#" class="favorite-button"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-
-                            <!-- Text Content Section -->
-                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
-                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-                                    <h5 class="fw-bold mb-2 mb-md-0 ">
-                                        <a href="#" class="text-decoration-none text-black">
-                                            MIAMI & ORLANDO TURU KIYI ROTALARI – TÜRK HAVA YOLLARI İLE 6 GECE
-                                        </a>
-                                    </h5>
-                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
-                                        1.699,00 € <br />
-                                        <small class="text-muted fw-normal" style="font-size: 10px;">’dan başlayan
-                                            fiyatlar</small>
-                                    </div>
-                                </div>
-
-                                <p class="text-muted mt-2 mb-1">
-                                    <i class="bi bi-geo-alt-fill"></i> 14 Ağustos 2025 – İstanbul Havalimanı IST –
-                                    İstanbul Çıkışlı
-                                </p>
-                                <p class="text-secondary mb-2">Miami (3) & Orlando (3)</p>
-
-                                <div
-                                    class="d-flex flex-wrap gap-2 align-items-center border-top pt-3 justify-content-between">
-                                    <div class="d-flex gap-3 flex-wrap">
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-moon"></i> 6 Gece / 7 Gün
-                                        </span>
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-airplane"></i> Türk Hava Yolları ile
-                                        </span>
-                                    </div>
-                                    <a href="#" class="btn btn-dark btn-sm">Turu İncele</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card tour-single border-1 rounded-4 mb-4">
-                        <div class="row g-0">
-                            <!-- Image Section -->
-                            <div class="col-md-4 position-relative">
-                                <img src="/img/Travel light berlin.adaptive.1024.1546431746858.jpg"
-                                    class="img-fluid h-100 rounded-start-4 object-fit-cover" alt="Tour Image" />
-                                <a href="#" class="favorite-button"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-
-                            <!-- Text Content Section -->
-                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
-                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-                                    <h5 class="fw-bold mb-2 mb-md-0 ">
-                                        <a href="#" class="text-decoration-none text-black">
-                                            MIAMI & ORLANDO TURU KIYI ROTALARI – TÜRK HAVA YOLLARI İLE 6 GECE
-                                        </a>
-                                    </h5>
-                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
-                                        1.699,00 € <br />
-                                        <small class="text-muted fw-normal" style="font-size: 10px;">’dan başlayan
-                                            fiyatlar</small>
-                                    </div>
-                                </div>
-
-                                <p class="text-muted mt-2 mb-1">
-                                    <i class="bi bi-geo-alt-fill"></i> 14 Ağustos 2025 – İstanbul Havalimanı IST –
-                                    İstanbul Çıkışlı
-                                </p>
-                                <p class="text-secondary mb-2">Miami (3) & Orlando (3)</p>
-
-                                <div
-                                    class="d-flex flex-wrap gap-2 align-items-center border-top pt-3 justify-content-between">
-                                    <div class="d-flex gap-3 flex-wrap">
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-moon"></i> 6 Gece / 7 Gün
-                                        </span>
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-airplane"></i> Türk Hava Yolları ile
-                                        </span>
-                                    </div>
-                                    <a href="#" class="btn btn-dark btn-sm">Turu İncele</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card tour-single border-1 rounded-4 mb-4">
-                        <div class="row g-0">
-                            <!-- Image Section -->
-                            <div class="col-md-4 position-relative">
-                                <img src="/img/1.jpg" class="img-fluid h-100 rounded-start-4 object-fit-cover"
-                                    alt="Tour Image" />
-                                <a href="#" class="favorite-button"><i class="fa-regular fa-heart"></i></a>
-                            </div>
-
-                            <!-- Text Content Section -->
-                            <div class="col-md-8 p-3 p-md-4 d-flex flex-column justify-content-between">
-                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
-                                    <h5 class="fw-bold mb-2 mb-md-0 ">
-                                        <a href="#" class="text-decoration-none text-black">
-                                            MIAMI & ORLANDO TURU KIYI ROTALARI – TÜRK HAVA YOLLARI İLE 6 GECE
-                                        </a>
-                                    </h5>
-                                    <div class="text-danger fw-bold fs-5 text-nowrap text-end">
-                                        1.699,00 € <br />
-                                        <small class="text-muted fw-normal" style="font-size: 10px;">’dan başlayan
-                                            fiyatlar</small>
-                                    </div>
-                                </div>
-
-                                <p class="text-muted mt-2 mb-1">
-                                    <i class="bi bi-geo-alt-fill"></i> 14 Ağustos 2025 – İstanbul Havalimanı IST –
-                                    İstanbul Çıkışlı
-                                </p>
-                                <p class="text-secondary mb-2">Miami (3) & Orlando (3)</p>
-
-                                <div
-                                    class="d-flex flex-wrap gap-2 align-items-center border-top pt-3 justify-content-between">
-                                    <div class="d-flex gap-3 flex-wrap">
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-moon"></i> 6 Gece / 7 Gün
-                                        </span>
-                                        <span class="badge bg-light text-dark border">
-                                            <i class="bi bi-airplane"></i> Türk Hava Yolları ile
-                                        </span>
-                                    </div>
-                                    <a href="#" class="btn btn-dark btn-sm">Turu İncele</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <nav aria-label="Page navigation example" class="float-end me-5">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link " href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-
-        </div>
-    </div>
-
-    <!-- ! FOOTER START-->
     <footer class="footer pt-5">
         <div class="container text-dark mt-5">
             <div class="row">
@@ -1086,19 +758,44 @@
         </div>
     </footer>
 
-    <!-- ! FOOTER END-->
+    <script>
+        (function () {
+            const form = document.getElementById('quick-search');
+            const input = document.getElementById('q');
+            const tags = document.querySelectorAll('.tag-btn');
+
+            // Arama formu gönderimi (site yapınıza göre URL'yi düzenleyin)
+            form?.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const q = (input?.value || '').trim();
+                if (!q) { input?.focus(); return; }
+                // Örnek: /arama?q=… ya da /turlar?q=…
+                window.location.href = `/turlar?q=${encodeURIComponent(q)}`;
+            });
+
+            // Etiket kısayolları
+            tags.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const v = btn.getAttribute('data-tag');
+                    if (input) input.value = v;
+                    form?.dispatchEvent(new Event('submit'));
+                });
+            });
+
+            // Klavye kısayolu: / ile odakla
+            document.addEventListener('keydown', (e) => {
+                if (e.key === '/' && !e.target.closest('input, textarea')) {
+                    e.preventDefault();
+                    input?.focus();
+                }
+            });
+        })();
+    </script>
 
 
 
-    <!-- !SCRIPTS -->
 
-    <!-- ? NICE SELECT -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
-        integrity="sha512-NqYds8su6jivy1/WLoW8x1tZMRD7/1ZfhWG/jcRQLOzV1k1rIODCpMgoBnar5QXshKJGV7vi0LXLNXPoFsM5Zg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <!-- ! SCRIPTS -->
     <!-- ? BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
@@ -1106,183 +803,6 @@
 
     <!-- ? SITE JS -->
     <script src="/javascript/script.js"></script>
-
-    <!-- ? OWL CAROUSEL -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- ? DATA AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-    <!-- ! DATA AOS SCRIPT -->
-    <script>
-        AOS.init();
-    </script>
-
-    <script class="owl-carousel-wrapper2 position-relative">
-        document.addEventListener("DOMContentLoaded", function () {
-            const sourceItems = Array.from(document.querySelectorAll("#all-submenu-items li"));
-            const targetContainer = document.getElementById("dynamic-submenu-list");
-            const itemsPerColumn = 10;
-
-            for (let i = 0; i < sourceItems.length; i += itemsPerColumn) {
-                const ul = document.createElement("ul");
-                ul.className = "list-unstyled me-4";
-
-                const group = sourceItems.slice(i, i + itemsPerColumn);
-                group.forEach(item => {
-                    ul.appendChild(item.cloneNode(true));
-                });
-            }
-        });
-    </script>
-
-    <!-- ! OWL CAROUSEL -->
-    <script>
-        // $(document).ready(function () {
-        //     $('.owl-carousel').owlCarousel({
-        //         loop: true,
-        //         margin: 0,
-        //         nav: true,
-        //         autoplay: true,
-        //         autoplayTimeout: 3000,
-        //         navText: [
-        //             '<i class="fa fa-chevron-left"></i>',
-        //             '<i class="fa fa-chevron-right"></i>'
-        //         ],
-        //         responsive: {
-        //             0: { items: 1 },
-        //             600: { items: 2 },
-        //             1000: { items: 5 }
-        //         }
-        //     });
-        // });
-
-        $('.tour-carousel').owlCarousel({
-            loop: false,
-            margin: 20,
-            nav: false,
-            dots: false,
-            autoWidth: true,
-            center: false,
-            responsive: {
-                0: { items: 2 },
-                576: { items: 3 },
-                768: { items: 4 },
-                1200: { items: 5 }
-            }
-        });
-    </script>
-
-    <!-- ! TESTIMONIALS  -->
-    <script>
-        const carousel = document.querySelector('#testimonialCarousel');
-        let startX = 0;
-        let isDragging = false;
-
-        // Touch events (mobile)
-        carousel.addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchend', e => {
-            const endX = e.changedTouches[0].clientX;
-            handleSwipe(endX);
-        });
-
-        // Mouse drag events (desktop)
-        carousel.addEventListener('mousedown', e => {
-            isDragging = true;
-            startX = e.clientX;
-            carousel.classList.add('noselect');
-        });
-
-        carousel.addEventListener('mouseup', e => {
-            if (isDragging) {
-                const endX = e.clientX;
-                handleSwipe(endX);
-                isDragging = false;
-                carousel.classList.remove('noselect');
-                e.preventDefault();
-
-            }
-        });
-
-        carousel.addEventListener('mouseleave', () => {
-            isDragging = false;
-            carousel.classList.remove('noselect');
-        });
-
-        function handleSwipe(endX) {
-            const diff = startX - endX;
-            const instance = bootstrap.Carousel.getInstance(carousel);
-            if (diff > 50) {
-                instance.next();
-            } else if (diff < -50) {
-                instance.prev();
-            }
-        }
-    </script>
-
-    <!-- ! POPULAR TOURS -->
-    <script>
-        function scrollCarousel(direction) {
-            const track = document.getElementById('carouselTrack');
-            const scrollAmount = 300;
-            track.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    </script>
-
-
-    <!-- !TRUSTED BY THOUSANDS -->
-
-    <script>
-        // Counter function
-        function animateCounter(counter) {
-            const target = +counter.getAttribute('data-target');
-            const speed = 200; // lower is faster
-            const increment = target / speed;
-
-            const updateCount = () => {
-                const count = +counter.innerText;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 10);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-
-            updateCount();
-        }
-
-        // Scroll observer setup
-        const counters = document.querySelectorAll('.counter');
-        let hasAnimated = false;
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimated) {
-                    counters.forEach(counter => animateCounter(counter));
-                    hasAnimated = true;
-                    observer.disconnect(); // Optional: stop observing after animation
-                }
-            });
-        }, {
-            threshold: 0.3 // Trigger when 30% visible
-        });
-
-        const section = document.querySelector('.counter').closest('section');
-        if (section) {
-            observer.observe(section);
-        }
-    </script>
 </body>
 
 </html>
